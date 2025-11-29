@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Sharing a secret key over many entitys.">
-    <title>Shamirs secret sharing | post-notes</title>
-    <meta name="description" content="Sharing a secret key over many entitys.">
+    <meta name="description" content="Used to calculate the $gcd(a, n)$ and the multiplicative inverse of $a$, with $a \in \mathbb{Z}^{*}_{n}$">
+    <title>Advaced Euclidean Algorithm | post-notes</title>
+    <meta name="description" content="Used to calculate the $gcd(a, n)$ and the multiplicative inverse of $a$, with $a \in \mathbb{Z}^{*}_{n}$">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -1994,36 +1994,99 @@
         </aside>
 
         <article>
-            <span>cryptography-shamirs-secret-sharing.html</span>
+            <span>math-advanced-euclidean-algorithm.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-10-17T16:13
+                        * created: 2025-11-29T20:35
                         <br>
                          
-                        * modified: 2025-10-17T16:40
+                        * modified: 2025-11-29T23:01
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Shamirs secret sharing</p>
+                <p>Advaced Euclidean Algorithm</p>
 
                 <span>description</span><br>
-                <p>Sharing a secret key over many entitys.</p>
+                <p>Used to calculate the $gcd(a, n)$ and the multiplicative inverse of $a$, with $a \in \mathbb{Z}^{*}_{n}$</p>
 
                 
             </div>
 
-            <h1>Shamir's Secret Sharing</h1>
-<p>This refers to splitting a key <span data-math-style="inline">K</span> over <span data-math-style="inline">n</span> entities. Think of nuclear launch codes, where they split a key over <span data-math-style="inline">5</span> generals and you need at least <span data-math-style="inline">3</span> generals to decrypt the launch codes.</p>
-<ul>
-<li>split <span data-math-style="inline">K</span> over <span data-math-style="inline">n</span> entitys</li>
-<li><span data-math-style="inline">k := {2,...,n-1}</span>; at least <span data-math-style="inline">k &lt; n</span> entities</li>
-</ul>
+            <h1>Advanced Euclidean Algorithm</h1>
+<p>Used to calculate the <span data-math-style="inline">gcd(a, n)</span> and the multiplicative inverse of <span data-math-style="inline">a \mod n</span>, with <span data-math-style="inline">a \in \mathbb{Z}^{*}_{n}</span>, meaning, it calculates both <span data-math-style="inline">s</span> and <span data-math-style="inline">t</span>, for the values <span data-math-style="inline">a</span> and <span data-math-style="inline">n</span>:</p>
+<p><span data-math-style="display">
+gcd(a,n)= n \cdot s + a \cdot t
+</span></p>
+<p>For <span data-math-style="inline">n = 73</span> and <span data-math-style="inline">a = 56</span> we get:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><span data-math-style="inline">\cdot 73</span></th>
+<th><span data-math-style="inline">\cdot 56</span></th>
+<th><span data-math-style="inline">q</span></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span data-math-style="inline">73 \; (n)</span></td>
+<td><span data-math-style="inline">1</span></td>
+<td><span data-math-style="inline">0</span></td>
+<td></td>
+<td><span data-math-style="inline">73 = 1 \cdot 73 + 0 \cdot 56</span></td>
+</tr>
+<tr>
+<td><span data-math-style="inline">56 \; (a)</span></td>
+<td><span data-math-style="inline">0</span></td>
+<td><span data-math-style="inline">1</span></td>
+<td><span data-math-style="inline">1</span></td>
+<td><span data-math-style="inline">56 = 0 \cdot 73 + 1 \cdot 56</span></td>
+</tr>
+<tr>
+<td><span data-math-style="inline">17</span></td>
+<td><span data-math-style="inline">1</span></td>
+<td><span data-math-style="inline">-1</span></td>
+<td><span data-math-style="inline">3</span></td>
+<td><span data-math-style="inline">17 = 1 \cdot 73 - 1 \cdot 56</span></td>
+</tr>
+<tr>
+<td><span data-math-style="inline">5</span></td>
+<td><span data-math-style="inline">-3</span></td>
+<td><span data-math-style="inline">4</span></td>
+<td><span data-math-style="inline">3</span></td>
+<td><span data-math-style="inline">5 = -3 \cdot 73 + 4 \cdot 56</span></td>
+</tr>
+<tr>
+<td><span data-math-style="inline">2</span></td>
+<td><span data-math-style="inline">10</span></td>
+<td><span data-math-style="inline">-13</span></td>
+<td><span data-math-style="inline">2</span></td>
+<td><span data-math-style="inline">2 = 10 \cdot 73 - 13 \cdot 56</span></td>
+</tr>
+<tr>
+<td><span data-math-style="inline">1</span></td>
+<td><span data-math-style="inline">-23</span></td>
+<td><span data-math-style="inline">30</span></td>
+<td><span data-math-style="inline">2</span></td>
+<td><span data-math-style="inline">1 = -23 \cdot 73 + 30 \cdot 56</span></td>
+</tr>
+<tr>
+<td><span data-math-style="inline">0</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The <span data-math-style="inline">gcd(73, 56) = 1</span> and the multiplicative inverse of <span data-math-style="inline">a</span> is <span data-math-style="inline">30</span>, because: <span data-math-style="display">1 \equiv -23 \cdot 73 + 30 \cdot 56 \pmod{73}</span></p>
 
         </article>
 
