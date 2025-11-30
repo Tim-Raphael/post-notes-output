@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="The Binary Unit System (BUS) is responsible for transporting data from one component to another.">
-    <title>Bus-System | post-notes</title>
-    <meta name="description" content="The Binary Unit System (BUS) is responsible for transporting data from one component to another.">
+    <meta name="description" content="Uses both parts symmetric and asymmetric encryption methods. It is based around session keys in addition to public and private keys.">
+    <title>Hybrid Encryption | post-notes</title>
+    <meta name="description" content="Uses both parts symmetric and asymmetric encryption methods. It is based around session keys in addition to public and private keys.">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2050,43 +2050,32 @@
         </aside>
 
         <article>
-            <span>computer-architecture-bus.html</span>
+            <span>cryptography-hybrid-encryption.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-05-20T16:38
+                        * created: 2025-11-30T21:58
                         <br>
                          
-                        * modified: 2025-07-08T12:52
+                        * modified: 2025-11-30T22:31
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Bus-System</p>
+                <p>Hybrid Encryption</p>
 
                 <span>description</span><br>
-                <p>The Binary Unit System (BUS) is responsible for transporting data from one component to another.</p>
+                <p>Uses both parts symmetric and asymmetric encryption methods. It is based around session keys in addition to public and private keys.</p>
 
-                
-                <span>related notes</span><br>
-                <ul>
-                    
-                    <li>
-                        <a href="./computer-architecture-von-neumann.html#Von Neumann bottleneck">computer-architecture-von-neumann.html#Von Neumann bottleneck</a>
-                    </li>
-                    
-                </ul>
                 
             </div>
 
-            <h1>The wheels on the bus go round and round</h1>
-<p>The Bus-System (short for Binary Unit System) is the part of the compute that relays data from one component to another. This commonly happens through separat channel, one for instructions, data, and addresses. This separation through specific channel helps with throughput and mitigates the <a href="computer-architecture-von-neumann.html#Von%20Neumann%20bottleneck" data-wikilink="true">Von-Neumann bottleneck</a>, by allowing different sets of data to be transmitted in parallel.</p>
-<h2>Bridges and I/O</h2>
-<p>The CPU does not communicate directly with slow devices in general, instead only communicating with a bridge that is connected to a secondary bus system. The bridge is responsible for handling the communication with these slow devices. This layer of indirection keeps the main bus from getting clogged by slow I/O operations.</p>
+            <h1>Hybrid Encryption</h1>
+<p>TODO: Generate a session key, which is used to encrypt messages. Then use the public key of the receiving to entity, to encrypt the session key, and send it along side the encrypted message (asymmetric). The receiving entity can now decrypt the session key, using it's private key, and then decrypt the message using the now decrypted session key. Now both parties have the same key an can decrypt all messages fast and securely (symmetric). This key gets rotated every couple minutes for security reasons.</p>
 
         </article>
 
