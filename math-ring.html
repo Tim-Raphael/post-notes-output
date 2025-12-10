@@ -247,10 +247,6 @@
         </li>
         
         <li>
-            <a href="./math-field.html">math-field.html</a>
-        </li>
-        
-        <li>
             <a href="./math-function-properties.html">math-function-properties.html</a>
         </li>
         
@@ -328,6 +324,10 @@
         
         <li>
             <a href="./math-residue-class.html">math-residue-class.html</a>
+        </li>
+        
+        <li>
+            <a href="./math-ring.html">math-ring.html</a>
         </li>
         
         <li>
@@ -579,10 +579,6 @@
         </li>
         
         <li>
-            <a href="./math-field.html">math-field.html</a>
-        </li>
-        
-        <li>
             <a href="./math-function-properties.html">math-function-properties.html</a>
         </li>
         
@@ -640,6 +636,10 @@
         
         <li>
             <a href="./math-residue-class.html">math-residue-class.html</a>
+        </li>
+        
+        <li>
+            <a href="./math-ring.html">math-ring.html</a>
         </li>
         
         <li>
@@ -1136,10 +1136,6 @@
         </li>
         
         <li>
-            <a href="./math-field.html">math-field.html</a>
-        </li>
-        
-        <li>
             <a href="./math-function-properties.html">math-function-properties.html</a>
         </li>
         
@@ -1189,6 +1185,10 @@
         
         <li>
             <a href="./math-residue-class.html">math-residue-class.html</a>
+        </li>
+        
+        <li>
+            <a href="./math-ring.html">math-ring.html</a>
         </li>
         
     </ul>
@@ -1577,7 +1577,7 @@
     <ul>
         
         <li>
-            <a href="./math-field.html">math-field.html</a>
+            <a href="./math-ring.html">math-ring.html</a>
         </li>
         
     </ul>
@@ -2098,7 +2098,7 @@
         </aside>
 
         <article>
-            <span>math-field.html</span>
+            <span>math-ring.html</span>
 
             <div>
                 <p>
@@ -2107,7 +2107,7 @@
                         * created: 2025-12-10T16:37
                         <br>
                          
-                        * modified: 2025-12-10T17:07
+                        * modified: 2025-12-10T19:49
                         <br>
                         
                     </span>
@@ -2124,10 +2124,6 @@
                 <ul>
                     
                     <li>
-                        <a href="./math-groups.html">math-groups.html</a>
-                    </li>
-                    
-                    <li>
                         <a href="./math-set.html">math-set.html</a>
                     </li>
                     
@@ -2140,6 +2136,10 @@
                     </li>
                     
                     <li>
+                        <a href="./math-groups.html">math-groups.html</a>
+                    </li>
+                    
+                    <li>
                         <a href="./math-polynomial.html#Division">math-polynomial.html#Division</a>
                     </li>
                     
@@ -2147,9 +2147,7 @@
                 
             </div>
 
-            <h1>Field</h1>
-<p>Basically a <a href="math-groups.html" data-wikilink="true">group</a> but with two binary operations, instead of one.</p>
-<h2>Ring</h2>
+            <h1>Ring</h1>
 <p>A ring <span data-math-style="inline">(R, +, \cdot)</span> is a non empty <a href="math-set.html" data-wikilink="true">set</a>, with two binary operations <span data-math-style="inline">+</span> and <span data-math-style="inline">\cdot</span> that fulfills the following conditions:</p>
 <ol>
 <li><span data-math-style="inline">(R, +)</span> is a <a href="math-groups.html#Semigroups,%20Monoids,%20Groups" data-wikilink="true">group</a></li>
@@ -2161,6 +2159,10 @@
 </ul>
 </li>
 </ol>
+<blockquote>
+<p>Basically a <a href="math-groups.html" data-wikilink="true">group</a> but with two binary operations, instead of one.</p>
+</blockquote>
+<h2>Field</h2>
 <h2>Polynomial division over residue class fields</h2>
 <p>That's <a href="math-polynomial.html#Division" data-wikilink="true">Polynomial Division with Rest</a>. The main take away here would be, if we have two polynomials <span data-math-style="inline">f, g \in K[x]</span>, then the following holds:</p>
 <ol>
@@ -2168,13 +2170,16 @@
 <li>If <span data-math-style="inline">deg(f) \geq deg(g)</span>, then do the polynomial division thingy</li>
 </ol>
 <h2>Lagrange Interpolation Theorem</h2>
+<blockquote>
+<p>Note: Only learn the concept behind that. The theorem is not part of the exam.</p>
+</blockquote>
 <p>Is used to calculate a polynomial that runs through a given set of points <span data-math-style="inline">(a, b)</span>, i.e. calculate <span data-math-style="inline">p(a_i) = b_i</span> for all <span data-math-style="inline">i \in {1,\dots ,n}</span></p>
 <p>This is done via:</p>
 <p><span data-math-style="display">
 \begin{align}
 p(x) &amp;= \sum^{n}_{i=1} b_i \cdot L_i(x)\\
 \\
-L_i(x) \prod_{j=1,j \not= i}^n &amp;= \frac{x-a_j}{a_i - a_j} = \frac{x-a_1}{a_i-a_1} \cdot \ldots \cdot \frac{x-a_{i-1}}{a_i-a_{i-1}}
+L_i(x) &amp;= \prod_{j=1,j \not= i}^n \frac{x-a_j}{a_i - a_j} = \frac{x-a_1}{a_i-a_1} \cdot \ldots \cdot \frac{x-a_{i-1}}{a_i-a_{i-1}}
 \cdot \frac{x-a_{i+1}}{a_i-a_{i+1}} \cdot \ldots \cdot
 \frac{x-a_n}{a_i-a_n}.
 \end{align}
