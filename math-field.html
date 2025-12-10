@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="A Resource Allocation Graph models the relation between processes and their resources. It can be used to identify deadlocks.">
-    <title>Resource Allocation Graph | post-notes</title>
-    <meta name="description" content="A Resource Allocation Graph models the relation between processes and their resources. It can be used to identify deadlocks.">
+    <meta name="description" content="A group but with two binary opersions.">
+    <title>Field | post-notes</title>
+    <meta name="description" content="A group but with two binary opersions.">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2098,54 +2098,87 @@
         </aside>
 
         <article>
-            <span>modeling-resource-allocation-graph.html</span>
+            <span>math-field.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-06-22T19:06
+                        * created: 2025-12-10T16:37
                         <br>
                          
-                        * modified: 2025-07-14T09:11
+                        * modified: 2025-12-10T17:07
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Resource Allocation Graph</p>
+                <p>Field</p>
 
                 <span>description</span><br>
-                <p>A Resource Allocation Graph models the relation between processes and their resources. It can be used to identify deadlocks.</p>
+                <p>A group but with two binary opersions.</p>
 
                 
                 <span>related notes</span><br>
                 <ul>
                     
                     <li>
-                        <a href="./operating-system-deadlock.html">operating-system-deadlock.html</a>
+                        <a href="./math-groups.html">math-groups.html</a>
                     </li>
                     
                     <li>
-                        <a href="./operating-system-deadlock.html">operating-system-deadlock.html</a>
+                        <a href="./math-set.html">math-set.html</a>
+                    </li>
+                    
+                    <li>
+                        <a href="./math-groups.html#Semigroups, Monoids, Groups">math-groups.html#Semigroups, Monoids, Groups</a>
+                    </li>
+                    
+                    <li>
+                        <a href="./math-groups.html#Semigroups, Monoids, Groups">math-groups.html#Semigroups, Monoids, Groups</a>
+                    </li>
+                    
+                    <li>
+                        <a href="./math-polynomial.html#Division">math-polynomial.html#Division</a>
                     </li>
                     
                 </ul>
                 
             </div>
 
-            <h1>Modeling resource allocation between processes</h1>
-<p>We use a resource allocation graph to model the relation between processes and their respective resources. This can be helpful when looking for potential <a href="operating-system-deadlock.html" data-wikilink="true">Deadlocks</a>.</p>
-<h2>Resources and instances</h2>
-<p>A resource is denoted with a rectangle and an instance of a resource is denoted with a small circle inside the resource.</p>
-<p><img src="./media/Drawing%202025-06-22%2021.59.20.excalidraw.svg" alt="Drawing 2025-06-22 21.59.20.excalidraw" /></p>
-<h2>Processes</h2>
-<p>A process is denoted as a circle and can hold an instance of a resource, or wait for an instance if it's currently used by another.</p>
-<p><img src="./media/Drawing%202025-06-22%2022.04.34.excalidraw.svg" alt="Drawing 2025-06-22 22.04.34.excalidraw" /></p>
-<h2>Deadlocks</h2>
-<p>If this this holding and waiting circular manner there is a good chance that we run into a <a href="operating-system-deadlock.html" data-wikilink="true">Deadlock</a>.</p>
-<p><img src="./media/Drawing%202025-06-22%2022.09.08.excalidraw.svg" alt="" /></p>
+            <h1>Field</h1>
+<p>Basically a <a href="math-groups.html" data-wikilink="true">group</a> but with two binary operations, instead of one.</p>
+<h2>Ring</h2>
+<p>A ring <span data-math-style="inline">(R, +, \cdot)</span> is a non empty <a href="math-set.html" data-wikilink="true">set</a>, with two binary operations <span data-math-style="inline">+</span> and <span data-math-style="inline">\cdot</span> that fulfills the following conditions:</p>
+<ol>
+<li><span data-math-style="inline">(R, +)</span> is a <a href="math-groups.html#Semigroups,%20Monoids,%20Groups" data-wikilink="true">group</a></li>
+<li><span data-math-style="inline">(R, \cdot)</span> is a <a href="math-groups.html#Semigroups,%20Monoids,%20Groups" data-wikilink="true">semigroup</a></li>
+<li>The distributive rules hold for every <span data-math-style="inline">a,b,c\in\mathbb{Z}_{n}</span>:
+<ul>
+<li><span data-math-style="inline">a \cdot (b+c) \equiv (a\cdot b) + (a\cdot c) \pmod{n}</span></li>
+<li><span data-math-style="inline">(a+b) \cdot c \equiv (a\cdot c) + (b\cdot c) \pmod{n}</span></li>
+</ul>
+</li>
+</ol>
+<h2>Polynomial division over residue class fields</h2>
+<p>That's <a href="math-polynomial.html#Division" data-wikilink="true">Polynomial Division with Rest</a>. The main take away here would be, if we have two polynomials <span data-math-style="inline">f, g \in K[x]</span>, then the following holds:</p>
+<ol>
+<li>If <span data-math-style="inline">deg(f) &lt; deg(g)</span>, then: <span data-math-style="inline">q(x) = 0</span> and <span data-math-style="inline">r(x) = f(x)</span>, i.e. the result is <span data-math-style="inline">0 \text{ Rest:} f(x)</span></li>
+<li>If <span data-math-style="inline">deg(f) \geq deg(g)</span>, then do the polynomial division thingy</li>
+</ol>
+<h2>Lagrange Interpolation Theorem</h2>
+<p>Is used to calculate a polynomial that runs through a given set of points <span data-math-style="inline">(a, b)</span>, i.e. calculate <span data-math-style="inline">p(a_i) = b_i</span> for all <span data-math-style="inline">i \in {1,\dots ,n}</span></p>
+<p>This is done via:</p>
+<p><span data-math-style="display">
+\begin{align}
+p(x) &amp;= \sum^{n}_{i=1} b_i \cdot L_i(x)\\
+\\
+L_i(x) \prod_{j=1,j \not= i}^n &amp;= \frac{x-a_j}{a_i - a_j} = \frac{x-a_1}{a_i-a_1} \cdot \ldots \cdot \frac{x-a_{i-1}}{a_i-a_{i-1}}
+\cdot \frac{x-a_{i+1}}{a_i-a_{i+1}} \cdot \ldots \cdot
+\frac{x-a_n}{a_i-a_n}.
+\end{align}
+</span></p>
 
         </article>
 
