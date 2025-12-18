@@ -591,10 +591,6 @@
         </li>
         
         <li>
-            <a href="./math-polynomial.html">math-polynomial.html</a>
-        </li>
-        
-        <li>
             <a href="./math-prime-number-distribution.html">math-prime-number-distribution.html</a>
         </li>
         
@@ -674,6 +670,10 @@
         
         <li>
             <a href="./cryptography-rsa.html">cryptography-rsa.html</a>
+        </li>
+        
+        <li>
+            <a href="./math-polynomial.html">math-polynomial.html</a>
         </li>
         
         <li>
@@ -2123,7 +2123,7 @@
                         * created: 2025-12-10T16:37
                         <br>
                          
-                        * modified: 2025-12-10T19:49
+                        * modified: 2025-12-18T11:41
                         <br>
                         
                     </span>
@@ -2185,21 +2185,6 @@
 <li>If <span data-math-style="inline">deg(f) &lt; deg(g)</span>, then: <span data-math-style="inline">q(x) = 0</span> and <span data-math-style="inline">r(x) = f(x)</span>, i.e. the result is <span data-math-style="inline">0 \text{ Rest:} f(x)</span></li>
 <li>If <span data-math-style="inline">deg(f) \geq deg(g)</span>, then do the polynomial division thingy</li>
 </ol>
-<h2>Lagrange Interpolation Theorem</h2>
-<blockquote>
-<p>Note: Only learn the concept behind that. The theorem is not part of the exam.</p>
-</blockquote>
-<p>Is used to calculate a polynomial that runs through a given set of points <span data-math-style="inline">(a, b)</span>, i.e. calculate <span data-math-style="inline">p(a_i) = b_i</span> for all <span data-math-style="inline">i \in {1,\dots ,n}</span></p>
-<p>This is done via:</p>
-<p><span data-math-style="display">
-\begin{align}
-p(x) &amp;= \sum^{n}_{i=1} b_i \cdot L_i(x)\\
-\\
-L_i(x) &amp;= \prod_{j=1,j \not= i}^n \frac{x-a_j}{a_i - a_j} = \frac{x-a_1}{a_i-a_1} \cdot \ldots \cdot \frac{x-a_{i-1}}{a_i-a_{i-1}}
-\cdot \frac{x-a_{i+1}}{a_i-a_{i+1}} \cdot \ldots \cdot
-\frac{x-a_n}{a_i-a_n}.
-\end{align}
-</span></p>
 
         </article>
 

@@ -591,10 +591,6 @@
         </li>
         
         <li>
-            <a href="./math-polynomial.html">math-polynomial.html</a>
-        </li>
-        
-        <li>
             <a href="./math-prime-number-distribution.html">math-prime-number-distribution.html</a>
         </li>
         
@@ -674,6 +670,10 @@
         
         <li>
             <a href="./cryptography-rsa.html">cryptography-rsa.html</a>
+        </li>
+        
+        <li>
+            <a href="./math-polynomial.html">math-polynomial.html</a>
         </li>
         
         <li>
@@ -2123,7 +2123,7 @@
                         * created: 2025-09-26T13:49
                         <br>
                          
-                        * modified: 2025-12-10T16:22
+                        * modified: 2025-12-18T11:41
                         <br>
                         
                     </span>
@@ -2195,8 +2195,8 @@ p(x) - f(x) &amp;= (4-4) x^4 + (0-7) x^3 -5 x^2 + (1-1) x + (11-43)\\
 &amp;= -7 x^3 -5 x^2 - 32
 \end{align}
 </span></p>
-<h3>Multiplikation</h3>
-<p>When multipliying with a monom:</p>
+<h3>Multiplication</h3>
+<p>When multiplying with a monom:</p>
 <p><span data-math-style="display">
 \begin{align}
 p(x) \cdot q(x) &amp;= (a_n x^n + \ldots + a_0) (b x^m)\\
@@ -2246,6 +2246,21 @@ p(x) \cdot f(x) &amp;= 4 x^4 (2 x^3 + 3 x) + 7x^2 (2 x^3 + 3 x) + 4 ( 2 x^3 + 3 
 \begin{align}
 \frac{p(x)}{q(x)} = s(x) + \frac{r(x)}{q(x)} \\\\
 degree(r) &lt; degree(q)
+\end{align}
+</span></p>
+<h2>Lagrange Interpolation Theorem</h2>
+<blockquote>
+<p>Note: Only learn the concept behind that. The theorem is not part of the exam.</p>
+</blockquote>
+<p>Is used to calculate a polynomial that runs through a given set of points <span data-math-style="inline">(a, b)</span>, i.e. calculate <span data-math-style="inline">p(a_i) = b_i</span> for all <span data-math-style="inline">i \in {1,\dots ,n}</span></p>
+<p>This is done via:</p>
+<p><span data-math-style="display">
+\begin{align}
+p(x) &amp;= \sum^{n}_{i=1} b_i \cdot L_i(x)\\
+\\
+L_i(x) &amp;= \prod_{j=1,j \not= i}^n \frac{x-a_j}{a_i - a_j} = \frac{x-a_1}{a_i-a_1} \cdot \ldots \cdot \frac{x-a_{i-1}}{a_i-a_{i-1}}
+\cdot \frac{x-a_{i+1}}{a_i-a_{i+1}} \cdot \ldots \cdot
+\frac{x-a_n}{a_i-a_n}.
 \end{align}
 </span></p>
 
