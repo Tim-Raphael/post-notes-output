@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="A asymmetric crypto method.">
+    <meta name="description" content="A asymmetric cryptographic method.">
     <title>RSA | post-notes</title>
-    <meta name="description" content="A asymmetric crypto method.">
+    <meta name="description" content="A asymmetric cryptographic method.">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -571,15 +571,7 @@
         </li>
         
         <li>
-            <a href="./math-eulers-theorem.html">math-eulers-theorem.html</a>
-        </li>
-        
-        <li>
             <a href="./math-function-properties.html">math-function-properties.html</a>
-        </li>
-        
-        <li>
-            <a href="./math-groups.html">math-groups.html</a>
         </li>
         
         <li>
@@ -670,6 +662,14 @@
         
         <li>
             <a href="./cryptography-rsa.html">cryptography-rsa.html</a>
+        </li>
+        
+        <li>
+            <a href="./math-eulers-theorem.html">math-eulers-theorem.html</a>
+        </li>
+        
+        <li>
+            <a href="./math-groups.html">math-groups.html</a>
         </li>
         
         <li>
@@ -902,10 +902,6 @@
         
         <li>
             <a href="./math-gaussian-elimination.html">math-gaussian-elimination.html</a>
-        </li>
-        
-        <li>
-            <a href="./math-propositional-logic.html">math-propositional-logic.html</a>
         </li>
         
     </ul>
@@ -1593,6 +1589,14 @@
     <ul>
         
         <li>
+            <a href="./math-eulers-theorem.html">math-eulers-theorem.html</a>
+        </li>
+        
+        <li>
+            <a href="./math-groups.html">math-groups.html</a>
+        </li>
+        
+        <li>
             <a href="./math-ring.html">math-ring.html</a>
         </li>
         
@@ -1795,34 +1799,6 @@
     </ul>
 
     
-    
-    <ul>
-        
-        
-<li>
-    <label for="group">group</label>
-    <input id="group" type="checkbox"></input>
-    <div>
-    
-    <ul>
-        
-        <li>
-            <a href="./math-eulers-theorem.html">math-eulers-theorem.html</a>
-        </li>
-        
-        <li>
-            <a href="./math-groups.html">math-groups.html</a>
-        </li>
-        
-    </ul>
-
-    
-    
-    <div>
-</li>
-
-        
-    </ul>
     
     <div>
 </li>
@@ -2123,7 +2099,7 @@
                         * created: 2025-11-30T21:29
                         <br>
                          
-                        * modified: 2025-12-16T16:38
+                        * modified: 2025-12-19T14:42
                         <br>
                         
                     </span>
@@ -2133,8 +2109,17 @@
                 <p>RSA</p>
 
                 <span>description</span><br>
-                <p>A asymmetric crypto method.</p>
+                <p>A asymmetric cryptographic method.</p>
 
+                
+                <span>related notes</span><br>
+                <ul>
+                    
+                    <li>
+                        <a href="./math-eulers-theorem.html">math-eulers-theorem.html</a>
+                    </li>
+                    
+                </ul>
                 
             </div>
 
@@ -2147,6 +2132,9 @@
 <li>Choose an <span data-math-style="inline">e</span> with <span data-math-style="inline">gcd(e, \varphi(n)) = 1</span></li>
 <li>Calculate <span data-math-style="inline">d</span> with <span data-math-style="inline">ed \equiv 1 \pmod{\varphi(n)}</span> using the extended euclidean algorithm</li>
 </ol>
+<blockquote>
+<p>Reference: <a href="math-eulers-theorem.html" data-wikilink="true">Eulers Theorem</a></p>
+</blockquote>
 <p><strong>Parameter</strong>:</p>
 <ul>
 <li><span data-math-style="inline">e</span>: Public RSA exponent</li>
