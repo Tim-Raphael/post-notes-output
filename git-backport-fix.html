@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Traits are used to share functionality over multiple types. Furthermore we can define trait bounds that check if a type implements a certain trait and therefore has certain properties.">
-    <title>Rust Traits | post-notes</title>
-    <meta name="description" content="Traits are used to share functionality over multiple types. Furthermore we can define trait bounds that check if a type implements a certain trait and therefore has certain properties.">
+    <meta name="description" content="Quick guide on how to backport a fix to a earlier release.">
+    <title>Git: Backport Fix | post-notes</title>
+    <meta name="description" content="Quick guide on how to backport a fix to a earlier release.">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2146,48 +2146,44 @@
         </aside>
 
         <article>
-            <span>development-programming-language-rust-traits.html</span>
+            <span>git-backport-fix.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-07-17T12:02
+                        * created: 2026-01-15T13:16
                         <br>
                          
-                        * modified: 2025-10-15T11:19
+                        * modified: 2026-01-15T17:04
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Rust Traits</p>
+                <p>Git: Backport Fix</p>
 
                 <span>description</span><br>
-                <p>Traits are used to share functionality over multiple types. Furthermore we can define trait bounds that check if a type implements a certain trait and therefore has certain properties.</p>
+                <p>Quick guide on how to backport a fix to a earlier release.</p>
 
                 
             </div>
 
-            <h1>What are Traits?</h1>
-<h2>Common Traits for Types</h2>
-<p>The following traits should generally be implemented by most of the types in a API:</p>
-<ol>
-<li><code>Debug</code>, <code>Clone</code></li>
-<li><code>Send</code>, <code>Sync</code>, and <code>Unpin</code></li>
-<li><code>PartialEq</code>, <code>PartialOrd</code>, <code>Hash</code>, <code>Eq</code> and <code>Ord</code></li>
-<li><code>Serialize</code> and <code>Deserialize</code> (as opt in)</li>
-</ol>
-<p>When using wrapper types the following traits should be implemented in addition: <code>Deref</code>, <code>AsRef</code>, <code>From/Into&lt;InnerType&gt;</code>, <code>Borrow</code>.</p>
-<h3>Exception</h3>
-<p><code>Copy</code>: People generally don't expect types to implement <code>Copy</code> because it changes the move semantics of a given type, which might surprise user. It is often advisable to rely on <code>Clone</code> instead to explicitly create a a new copy. In addition <code>Copy</code> is highly restrictive and could result in a breaking change if a type has to rely on something like <code>String</code> further done the line.</p>
-<h2>dyn vs impl</h2>
-<p><strong>Dynamic dispatch</strong> (<code>dyn</code>) allows for calling methods on trait objects at runtime, enabling <strong>polymorphism</strong>. If a function <code>fn some(&amp;dyn Trait) { ... }</code> is called, it expects the input to be a <strong>pointer</strong> to a <strong>trait object</strong> (because the size  is unknown during compile time). If mutability is needed use a <code>Box&lt;dyn Trait&gt;</code>.</p>
-<blockquote>
-<p>Note: This is achieved using &quot;fat pointers,&quot; which contain a pointer to the data and a pointer to a vtable that holds the method implementations for the specific type.</p>
-</blockquote>
-<p><code>impl</code> on the other hand uses <strong>static dispatch</strong>, which generates a separate version of the function at compile time for each concrete type used. This is referred to as <strong>monomorphization</strong>.</p>
+            <h1>Git: Backport Fix</h1>
+<p>First checkout the release branch you want to apply the change to:</p>
+<pre><code class="language-bash">git checkout upstream/release/vX.XX.X 
+</code></pre>
+<p>Create a hotfix branch:</p>
+<pre><code class="language-bash">git switch -c hotfix-whatever
+</code></pre>
+<p>Then cherry pick your fix. The <code>-x</code> flag appends a line that says &quot;(cherry picked from commit ...)&quot;.</p>
+<pre><code class="language-bash">git cherry-pick -x &lt;commit-with-fix&gt; 
+</code></pre>
+<p>Finally push your back-ported fix.</p>
+<pre><code class="language-bash">git push origin hotfix-whatever
+</code></pre>
+<p>And merge it into the release branch you checked out.</p>
 
         </article>
 
