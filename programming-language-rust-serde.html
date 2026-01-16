@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Description">
-    <title>Computer Networks | post-notes</title>
-    <meta name="description" content="Description">
+    <meta name="description" content="A create used to serialize and deserialize.">
+    <title>Rust Ecosystem: Serde | post-notes</title>
+    <meta name="description" content="A create used to serialize and deserialize.">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2200,51 +2200,46 @@
         </aside>
 
         <article>
-            <span>computer-network.html</span>
+            <span>programming-language-rust-serde.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-06-22T14:29
+                        * created: 2026-01-16T10:39
                         <br>
                          
-                        * modified: 2025-07-27T13:17
+                        * modified: 2026-01-16T10:39
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Computer Networks</p>
+                <p>Rust Ecosystem: Serde</p>
 
                 <span>description</span><br>
-                <p>Description</p>
+                <p>A create used to serialize and deserialize.</p>
 
                 
             </div>
 
-            <h1>Computer Networks</h1>
-<p>The goal of a computer network is to fulfill tasks in a more efficient way. Some tasks can only be handelt by a network. The following list contains some of these use cases:</p>
+            <h1>Rust Ecosystem: Serde</h1>
+<p>The overall structure of Serde consists of:</p>
 <ul>
-<li><strong>Communication and Information Cluster</strong>: Providing devices and connection to handle communication.</li>
-<li><strong>Function Cluster</strong>: Providing devices and programs that are only available on some computer of the network.</li>
-<li><strong>Data Cluster</strong>: The logical coupling of separate data streams, which is supported through system structures that insure safety, consistency and topicality of data.</li>
-<li><strong>Availability Cluster</strong>: Providing a minimum viable system, especially if some components of this system fail (error tolerance).</li>
-<li><strong>Performance Cluster</strong>: A lot of computer work at the same problem by splitting the it into smaller sub problems. The performance is limited by the maximum achievable parallelism.</li>
-<li><strong>Load sharing Cluster</strong>: Distributing incoming request across multiple computer to minimize the load on the individual.</li>
+<li><strong>data type</strong>: The rust type in use (<code>Serialize</code> and <code>Deserialize</code>).</li>
+<li><strong>data model</strong>: Mapping types to a giving format and vise versa.</li>
+<li><strong>data format</strong>: A data format like JSON (<code>Serializer</code> and <code>Deserializer</code>).</li>
 </ul>
-<h2>OSI-Reference-Model</h2>
-<p>The Open System Interconnection reference model is a protocol that defines layer which provide a certain set of functionality to the layer directly above it.</p>
-<ol>
-<li><strong>Physical Layer</strong>: Bit sequences are transmitted.</li>
-<li><strong>Data Link Layer</strong>: The bit sequences are treated as data packets, which are assigned addresses (MAC address, Media Access Control) and a bit sequence for error detection. Additionally, controlled access to Layer 1 is ensured. (Ethernet, ATM)</li>
-<li><strong>Network Layer</strong>: The transmission path in the network is determined. The appropriate addresses (IP address, Internet Protocol) are assigned to the data packets, and they are transmitted. Error detection and correction are also performed. (IP)</li>
-<li><strong>Transport Layer</strong>: The transmission quality and type between sender and receiver are negotiated, and further error handling is carried out. Large messages are segmented into packets. (TCP)</li>
-<li><strong>Session Layer</strong>: The connection during a session is maintained. Login, password verification, dialog control, and logout processes are handled.</li>
-<li><strong>Presentation Layer</strong>: Different data encodings are converted. Data is compressed or decompressed, as well as encrypted and decrypted.</li>
-<li><strong>Application Layer</strong>: Application-specific services, such as email, file transfer, and use of the World Wide Web, are implemented here (TCP, HTTP, FTP, SMTP, Telnet).</li>
-</ol>
+<h2>The Data Model</h2>
+<p>A simplified form of the Rust type system; it contains primitives like <code>bool</code>, <code>u8</code>, <code>u16</code>, .. and <code>char</code>, but also string, byte array, option, unit and so on.</p>
+<p>The requirements for any Rust data type is to implement <code>Serialize</code> to describe how to emit their data, and
+<code>Deserialize</code> to describe how to construct themselves from incoming data.</p>
+<p>On the other side, the <code>Serializer</code> is responsible for convert the Serde data model to the bytes of the serialize protocol (e.g. JSON). The <code>Deserializer</code> maps the data of any given protocol to the Serde data model.  When the <code>Deserializer</code> encounters a <code>bool</code> for example, it will call the <code>visit-bool</code> method, which will end up calling the corresponding deserialize method on our Rust data type.</p>
+<p>The Serde data model is therefore not a intermediate Serde data model type which both sides can convert into, but more like a map, telling the implementation of a data format which methods to call to construct your Rust data type (and also the other way around). The benefit being that we don't have to allocate memory for our in-between type, instead constructing our desired type directly.</p>
+<blockquote>
+<p>That data is not converted into a intermediate Serde data model type, it expresses itself in terms of the Serde data model.</p>
+</blockquote>
 
         </article>
 
