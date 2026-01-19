@@ -2183,7 +2183,7 @@
                         * created: 2026-01-16T10:39
                         <br>
                          
-                        * modified: 2026-01-16T16:30
+                        * modified: 2026-01-19T09:38
                         <br>
                         
                     </span>
@@ -2209,7 +2209,7 @@
 <p>A simplified form of the Rust type system; it contains primitives like <code>bool</code>, <code>u8</code>, <code>u16</code>, .. and <code>char</code>, but also string, byte array, option, unit and so on.</p>
 <p>The requirements for any Rust data type is to implement <code>Serialize</code> to describe how to emit their data, and
 <code>Deserialize</code> to describe how to construct themselves from incoming data.</p>
-<p>On the other side, the <code>Serializer</code> is responsible for convert the Serde data model to the bytes of the serialize protocol (e.g. JSON). The <code>Deserializer</code> maps the data of any given protocol to the Serde data model.  When the <code>Deserializer</code> encounters a <code>bool</code> for example, it will call the <code>visit-bool</code> method, which will end up calling the corresponding deserialize method on our Rust data type.</p>
+<p>On the other side, the <code>Serializer</code> is responsible for converting the Serde data model to the bytes of the serialize protocol (e.g. JSON). The <code>Deserializer</code> maps the data of any given protocol to the Serde data model.  When the <code>Deserializer</code> encounters a <code>bool</code> for example, it will call the <code>visit-bool</code> method, which will end up calling the corresponding deserialize method on our Rust data type.</p>
 <p>The Serde data model is therefore not a intermediate Serde data model type which both sides can convert into, but more like a map, telling the implementation of a data format which methods to call to construct your Rust data type (and also the other way around). The benefit being that we don't have to allocate memory for our in-between type, instead constructing our desired type directly.</p>
 <blockquote>
 <p>That data is not converted into a intermediate Serde data model type, it expresses itself in terms of the Serde data model.</p>
