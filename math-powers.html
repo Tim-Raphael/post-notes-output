@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Combining stuff or something, idk">
-    <title>Combinatorics | post-notes</title>
-    <meta name="description" content="Combining stuff or something, idk">
+    <meta name="description" content="The thing with the funky multiplication.">
+    <title>Math: Powers | post-notes</title>
+    <meta name="description" content="The thing with the funky multiplication.">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2218,83 +2218,58 @@
         </aside>
 
         <article>
-            <span>math-combinatorics.html</span>
+            <span>math-powers.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-11-02T21:32
+                        * created: 2026-01-22T22:55
                         <br>
                          
-                        * modified: 2025-11-07T19:21
+                        * modified: 2026-01-22T23:32
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Combinatorics</p>
+                <p>Math: Powers</p>
 
                 <span>description</span><br>
-                <p>Combining stuff or something, idk</p>
+                <p>The thing with the funky multiplication.</p>
 
-                
-                <span>related notes</span><br>
-                <ul>
-                    
-                    <li>
-                        <a href="./math-probability-equal-distribution.html#Laplace-Formula">math-probability-equal-distribution.html#Laplace-Formula</a>
-                    </li>
-                    
-                </ul>
                 
             </div>
 
-            <h1>Combinatorics</h1>
-<p>The study of countable structures.</p>
-<p>Using a 4 digit pin gives us <span data-math-style="inline">10^4</span> possible combinations. The chance to guess the correct combination is <span data-math-style="inline">\frac{1}{10^4}</span> and the average attack would need around <span data-math-style="inline">\frac{1}{10^4}\div 2</span> attempts.</p>
-<h2>Formula-Matrix</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>ordered</th>
-<th>unordered</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>put back</td>
-<td><span data-math-style="inline">n^k</span></td>
-<td><span data-math-style="inline">\frac{(k+n-1)!}{k!(n-1)!} = {{k+n-1} \choose k}</span></td>
-</tr>
-<tr>
-<td>keep</td>
-<td><span data-math-style="inline">\frac{n!}{(n-k)!}</span></td>
-<td><span data-math-style="inline">\frac{n!}{(n-k)!\cdot k!}={n\choose k}</span></td>
-</tr>
-</tbody>
-</table>
-<h2>Drawing ones</h2>
-<p>Going with the example of drawing a random number <span data-math-style="inline">N</span>. Drawing the first number would be a <a href="math-probability-equal-distribution.html#Laplace-Formula" data-wikilink="true">Laplace experiment</a>.</p>
+            <h1>Powers</h1>
+<p><strong>Base</strong>: <span data-math-style="inline">a</span>
+<strong>Exponent</strong>: <span data-math-style="inline">e</span></p>
 <p><span data-math-style="display">
-P(N_{i})=\frac{1}{|\ohm|}=\frac{1}{N}
+a^e = a_1 \cdot a_2 \cdot a_3 \cdot \dots \cdot a_e
 </span></p>
-<h2>Drawing twice and returning while respecting the order</h2>
-<p>Every element from a tuple <span data-math-style="inline">A_{i_j}</span> can represent <span data-math-style="inline">N</span> states:</p>
+<h2>Power Laws with same base</h2>
+<p>If you multiply two powers with the same base you can strip the base and just add up the exponents.</p>
 <p><span data-math-style="display">
-|\ohm|=N^n
+3^2 \cdot 3^5 = 3^{2+5} = 3^7
 </span></p>
-<p>The probability of any given event happening is:</p>
+<p>The same applies for division, but you have to subtract instead.</p>
 <p><span data-math-style="display">
-P(A_{j_{i}},\dots,A_{j_{i}})=\frac{1}{|\ohm|} = \frac{1}{N^n}
+3^2 : 3^5 = 3^{2-5} = 3^{-3}
 </span></p>
-<blockquote>
-<p>Given a set of values <span data-math-style="inline">[0,1]</span>, with one being present <span data-math-style="inline">3\times</span> and zero <span data-math-style="inline">7\times</span>:</p>
-</blockquote>
+<h2>Exponents of a Exponent</h2>
+<p>If your exponent has an exponent you can flatten that expression by multiplying them.</p>
 <p><span data-math-style="display">
-P((1,0,0,0)) = \frac{3\cdot 7^3}{10^4}
+a^{b^c} = a^{b \cdot c}
+</span></p>
+<h2>Power Laws with same exponent</h2>
+<p>If you multiply two powers with the same exponent you can calculate the product of those bases and then add the exponent.</p>
+<p><span data-math-style="display">
+3^2 \cdot 5^2 = (3 \cdot 5)^2 = 15^2
+</span></p>
+<p>The same applies for division, but you calculate quotient.</p>
+<p><span data-math-style="display">
+4^2 : 2^2 = (4 : 2)^2 = 2^2
 </span></p>
 
         </article>
