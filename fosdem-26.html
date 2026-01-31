@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="This is the act of partially storing or loading processes into memory.">
-    <title>Paging | post-notes</title>
-    <meta name="description" content="This is the act of partially storing or loading processes into memory.">
+    <meta name="description" content="Notes I took at FOSDEM 2026">
+    <title>Notes from FOSDEM 2026 | post-notes</title>
+    <meta name="description" content="Notes I took at FOSDEM 2026">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2282,59 +2282,80 @@
         </aside>
 
         <article>
-            <span>operating-system-paging.html</span>
+            <span>fosdem-26.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-05-29T15:16
+                        * created: 2026-01-31T11:07
                         <br>
                          
-                        * modified: 2025-07-03T08:52
+                        * modified: 2026-01-31T11:07
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Paging</p>
+                <p>Notes from FOSDEM 2026</p>
 
                 <span>description</span><br>
-                <p>This is the act of partially storing or loading processes into memory.</p>
+                <p>Notes I took at FOSDEM 2026</p>
 
-                
-                <span>related notes</span><br>
-                <ul>
-                    
-                    <li>
-                        <a href="./operating-system-mmu.html">operating-system-mmu.html</a>
-                    </li>
-                    
-                    <li>
-                        <a href="./operating-system-swapping.html">operating-system-swapping.html</a>
-                    </li>
-                    
-                    <li>
-                        <a href="./operating-system-mmu.html">operating-system-mmu.html</a>
-                    </li>
-                    
-                    <li>
-                        <a href="./operating-system-mmu.html#Present&#x2F;absent Bit">operating-system-mmu.html#Present&#x2F;absent Bit</a>
-                    </li>
-                    
-                </ul>
                 
             </div>
 
-            <h1>Partially swapping</h1>
-<p>Paging is the act of <strong>partially</strong> loading or storing a process in or out of memory.</p>
+            <h1>The future of Git</h1>
+<h2>SHA-1</h2>
+<ul>
+<li>collisions</li>
+<li>not all source code</li>
+</ul>
+<h2>SHA-256</h2>
+<ul>
+<li>2020</li>
+<li>`git init --object-format=sha256</li>
+<li>Forgejo &lt;3</li>
+</ul>
 <blockquote>
-<p>If we don't have access to a <a href="operating-system-mmu.html" data-wikilink="true">MMU</a> or decide for simplicity reasons that we don't want to handle virtual memory we would resort to <a href="operating-system-swapping.html" data-wikilink="true">swapping</a>.</p>
+<p>Note: git 3.0 will make sha-256 the default</p>
 </blockquote>
-<p>We can use the <a href="operating-system-mmu.html" data-wikilink="true">MMU</a> to map our logical address to a physical address, so that each physical page maps to exactly one virtual page frame which only exists inside our logical memory.</p>
-<p>We can split our process into multiple page frames. The main benefit we get from doing this, is that we can now load individual page frames, instead of our entire process. So we only have to load these parts of our process into the fairly expensive RAM, that are currently needed for execution. The rest can be stored somewhere cheap like a solid state drive.</p>
-<p>A process that is partially loaded into memory can only execute as long as the CPU only accesses these parts that are currently in memory. If the CPU try's to access other parts (see: <a href="operating-system-mmu.html#Present/absent%20Bit" data-wikilink="true">present/absent bit</a>) we trigger a page fault.</p>
+<h2>Packed refs</h2>
+<p><code>git init --ref-format=reftable repo</code></p>
+<ul>
+<li>.git/refs/ &amp;&amp; .git/HEAD stub</li>
+<li><code>ref-tables/</code>
+<ul>
+<li><code>tables.list</code>: tracks active reftables</li>
+</ul>
+</li>
+<li><strong>benefits</strong>: performace, proper atomic updates</li>
+</ul>
+<h2>Stacked branches!</h2>
+<ul>
+<li><code>git history reword</code></li>
+<li><code>git history split</code></li>
+<li><code>git history absorb</code></li>
+</ul>
+<h2>Misc</h2>
+<ul>
+<li><code>git clone --filter=..</code></li>
+<li>Jujutsu &lt;- sounds promising (semester break)</li>
+</ul>
+<h1>NixOS</h1>
+<h2>License metadata</h2>
+<blockquote>
+<p>Note: upstream is brain damaged (could be important)</p>
+</blockquote>
+<ul>
+<li><strong>PURL</strong>: Package URL standard thingy</li>
+</ul>
+<h2>Eilean</h2>
+<ul>
+<li>opinionated NixOS modules</li>
+<li>could be used as inspo for the #project/home-server</li>
+</ul>
 
         </article>
 

@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Description">
-    <title>Notes from FOSDEM 2026 | post-notes</title>
-    <meta name="description" content="Description">
+    <meta name="description" content="Notes I took @EuroRust25">
+    <title>Quick notes from EuroRust25 | post-notes</title>
+    <meta name="description" content="Notes I took @EuroRust25">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -56,6 +56,10 @@
         
         <li>
             <a href="./development-programming-md-templates.html">development-programming-md-templates.html</a>
+        </li>
+        
+        <li>
+            <a href="./euro-rust-25.html">euro-rust-25.html</a>
         </li>
         
         <li>
@@ -231,7 +235,7 @@
         </li>
         
         <li>
-            <a href="./fosdem-2026.html">fosdem-2026.html</a>
+            <a href="./fosdem-26.html">fosdem-26.html</a>
         </li>
         
         <li>
@@ -1351,6 +1355,30 @@
         
         
 <li>
+    <label for="conference">conference</label>
+    <input id="conference" type="checkbox"></input>
+    <div>
+    
+    <ul>
+        
+        <li>
+            <a href="./euro-rust-25.html">euro-rust-25.html</a>
+        </li>
+        
+        <li>
+            <a href="./fosdem-26.html">fosdem-26.html</a>
+        </li>
+        
+    </ul>
+
+    
+    
+    <div>
+</li>
+
+        
+        
+<li>
     <label for="git">git</label>
     <input id="git" type="checkbox"></input>
     <div>
@@ -1358,7 +1386,31 @@
     <ul>
         
         <li>
+            <a href="./fosdem-26.html">fosdem-26.html</a>
+        </li>
+        
+        <li>
             <a href="./git-backport-fix.html">git-backport-fix.html</a>
+        </li>
+        
+    </ul>
+
+    
+    
+    <div>
+</li>
+
+        
+        
+<li>
+    <label for="nixos">nixos</label>
+    <input id="nixos" type="checkbox"></input>
+    <div>
+    
+    <ul>
+        
+        <li>
+            <a href="./fosdem-26.html">fosdem-26.html</a>
         </li>
         
     </ul>
@@ -1494,6 +1546,14 @@
         
         <li>
             <a href="./development-programming-language-rust-traits.html">development-programming-language-rust-traits.html</a>
+        </li>
+        
+        <li>
+            <a href="./euro-rust-25.html">euro-rust-25.html</a>
+        </li>
+        
+        <li>
+            <a href="./fosdem-26.html">fosdem-26.html</a>
         </li>
         
         <li>
@@ -2222,72 +2282,71 @@
         </aside>
 
         <article>
-            <span>fosdem-2026.html</span>
+            <span>euro-rust-25.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2026-01-31T11:07
+                        * created: 2025-10-09T10:00
                         <br>
                          
-                        * modified: 2026-01-31T11:07
+                        * modified: 2025-10-17T11:23
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Notes from FOSDEM 2026</p>
+                <p>Quick notes from EuroRust25</p>
 
                 <span>description</span><br>
-                <p>Description</p>
+                <p>Notes I took @EuroRust25</p>
 
                 
             </div>
 
-            <h1>The future of Git</h1>
-<h2>SHA-1</h2>
+            <h1>EuroRust25</h1>
+<h2>Are we Desktop Yet?</h2>
 <ul>
-<li>collisions</li>
-<li>not all source code</li>
+<li>Cosmic</li>
 </ul>
-<h2>SHA-256</h2>
+<h2>Building and Maintaining Rust at Scale</h2>
+<h3>Error</h3>
 <ul>
-<li>2020</li>
-<li>`git init --object-format=sha256</li>
-<li>Forgejo &lt;3</li>
+<li>eyre for bin</li>
+<li>thiserror for lib</li>
 </ul>
-<blockquote>
-<p>Note: git 3.0 will make sha-256 the default</p>
-</blockquote>
-<h2>Packed refs</h2>
-<p><code>git init --ref-format=reftable repo</code></p>
+<h3>Testing</h3>
 <ul>
-<li>
-<p>.git/refs/ &amp;&amp; .git/HEAD stub</p>
-</li>
-<li>
-<p><code>ref-tables/</code></p>
+<li>quickcheck for property testing</li>
+<li>miri for unsave</li>
+</ul>
+<h2>From any to this</h2>
 <ul>
-<li><code>tables.list</code>: tracks active reftables</li>
+<li>deno is written in rust lol</li>
 </ul>
-</li>
-<li>
-<p><strong>benefits</strong>: performace, proper atomic updates</p>
-</li>
-</ul>
-<h2>Stacked branches!!</h2>
+<h2>Production Unsafe Rust</h2>
+<p>/</p>
+<h2>-Znext-solver</h2>
 <ul>
-<li><code>git history reword</code></li>
-<li><code>git history split</code></li>
-<li><code>git history absorb</code></li>
+<li>rust-analyzer</li>
+<li>rustflags</li>
 </ul>
-<h2>Misc</h2>
+<h2>Rust's Memory Model</h2>
+<p>/</p>
+<h2>Reflection on the humans powering Rust ecosystem</h2>
+<p>/</p>
+<h2>How to make your own stream operators</h2>
+<p>/</p>
+<h2>Rewire, Optimize, Repeat</h2>
+<p>/</p>
+<h2>Data Engineering with Rust</h2>
 <ul>
-<li><code>git clone --filter=...</code></li>
-<li>Jujutsu &lt;- sounds promising (semester break)</li>
+<li>Apache Arrow</li>
+<li>file storage is cheap (in comparison to large databases)</li>
 </ul>
+<h2>A Deep Dive into Serde-Driven Reflection</h2>
 
         </article>
 
