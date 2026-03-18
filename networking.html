@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Groups are a set of numbers which are linked by an operation.">
-    <title>Groups | post-notes</title>
-    <meta name="description" content="Groups are a set of numbers which are linked by an operation.">
+    <meta name="description" content="Description">
+    <title>Networking | post-notes</title>
+    <meta name="description" content="Description">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2322,90 +2322,65 @@
         </aside>
 
         <article>
-            <span>math-groups.html</span>
+            <span>networking.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-11-18T16:21
+                        * created: 2026-03-18T21:24
                         <br>
                          
-                        * modified: 2026-01-29T12:02
+                        * modified: 2026-03-18T22:47
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Groups</p>
+                <p>Networking</p>
 
                 <span>description</span><br>
-                <p>Groups are a set of numbers which are linked by an operation.</p>
+                <p>Description</p>
 
-                
-                <span>related notes</span><br>
-                <ul>
-                    
-                    <li>
-                        <a href="./math-set-properties.html#Closed">math-set-properties.html#Closed</a>
-                    </li>
-                    
-                    <li>
-                        <a href="./math-set.html">math-set.html</a>
-                    </li>
-                    
-                </ul>
                 
             </div>
 
-            <h1>Groups</h1>
-<p>Let <span data-math-style="inline">G</span> be a non empty set. A function
-<span data-math-style="display">
-\circ : G \times G \to G
-</span>
-is called a link on <span data-math-style="inline">G</span>.
-The pair <span data-math-style="inline">(G, \circ)</span> is called groupoid.</p>
-<p>A function <span data-math-style="inline">\circ</span> is a link, if it is <a href="math-set-properties.html#Closed" data-wikilink="true">closed</a>.</p>
-<blockquote>
-<p><span data-math-style="inline">(G, \circ)</span> is commutative if <span data-math-style="inline">\forall a,b \in G: a \circ b = b \circ a</span>
-The addition group <span data-math-style="inline">(\mathbb{N}_{0},+)</span> is a commutative (Albesch') groupoid.
-The subtraction group <span data-math-style="inline">(\mathbb{N}_{0},-)</span> is not a groupoid, because it's not closed. (<span data-math-style="inline">2-7 \notin \mathbb{N}_{0}</span>)</p>
-</blockquote>
-<h2>Semigroups, Monoids, Groups</h2>
-<p>If <span data-math-style="inline">\forall a,b,c \in (G, \circ): a \circ (b \circ c) = (a \circ b) \circ c</span>, then is <span data-math-style="inline">\circ</span> <strong>associative</strong>, and <span data-math-style="inline">(G, \circ)</span> a <strong>semigroup</strong>.</p>
-<p>If the semigroup <span data-math-style="inline">G</span> contains an <span data-math-style="inline">e</span> such that <span data-math-style="inline">a \in G: e\circ a = a \circ e = a</span>, then is <span data-math-style="inline">e</span> the <strong>neutral element</strong>, and <span data-math-style="inline">G</span> a <strong>Monoid</strong></p>
-<p>If <span data-math-style="inline">\forall a \in G, \exists a^{-1} \in G: a \circ a^{-1}=e</span> with <span data-math-style="inline">G</span> being a monoid, then <span data-math-style="inline">G</span> is a <strong>Group</strong>.</p>
-<h2>Finite Group</h2>
-<p>A groupoid <span data-math-style="inline">(G_{n}, \circ)</span> is called finite, if:</p>
-<ol>
-<li>the set <span data-math-style="inline">G</span> is finite</li>
-<li><span data-math-style="inline">\circ</span> is a commutative group operation</li>
-</ol>
-<h2>Cyclical Groups</h2>
-<p>Let <span data-math-style="inline">(G, \circ)</span> be a group with <span data-math-style="inline">e</span> being the neutral element.
-For <span data-math-style="inline">x\in G</span> and <span data-math-style="inline">z\in \mathbb{Z}</span> we define:
-<span data-math-style="display">
-x^{z} = 
-\left\{ 
-\begin{array}{ll}
-x \circ (x^{z-1}) &amp; \text{if } z &gt; 0 \\
-e &amp; \text{if } z = 0 \\
-x^{-1} \circ (x^{z+1}) &amp; \text{if } z &lt; 0 \\
-\end{array}
-\right.
-</span></p>
-<p><span data-math-style="inline">G</span> is a cyclical group, if <span data-math-style="inline">\exists a \in G: G = \{a^{z}| z \in \mathbb{Z} \}</span>. Such an <span data-math-style="inline">a \in G</span> is called <strong>Producer</strong> or <strong>Generator</strong> of <span data-math-style="inline">G</span>.</p>
-<h3>Order</h3>
-<p>Let <span data-math-style="inline">(G, \circ)</span> be a group with <span data-math-style="inline">e</span> being the neutral element.</p>
-<p><span data-math-style="inline">a\in G</span> is the smallest positive number <span data-math-style="inline">z</span> for which the following holds:</p>
-<p><span data-math-style="display">
-a^{z} = \underbrace{a \circ a \circ \dots \circ}_{z \text{ times}} = e
-</span></p>
-<blockquote>
-<p><span data-math-style="inline">\langle {a} \rangle</span> is the <a href="math-set.html" data-wikilink="true">set</a> <span data-math-style="inline">\{a^{z} | z \in \mathbb{Z}\}</span> and is called <strong>Subgroup</strong>.
-<span data-math-style="inline">|\langle {a} \rangle|</span> is the <strong>Order</strong> of the element <span data-math-style="inline">a</span>.</p>
-</blockquote>
+            <h1>Networking</h1>
+<p>Communicating between multiple hosts using a shared infrastructure consisting of nodes.</p>
+<h2>Participants</h2>
+<h3>Nodes</h3>
+<ul>
+<li><strong>Switches/Routers</strong>: Routing decisions using addresses</li>
+<li><strong>Repeater/Hub</strong>: Amplify signals</li>
+</ul>
+<h3>Hosts</h3>
+<p>Typically end systems connected to the network.</p>
+<h2>Classification</h2>
+<h3>Public</h3>
+<p>Standardized options offered by service operators, like DSL lines, mobile telecommunications networks or hotspots.</p>
+<h3>Private</h3>
+<p>Exclusive for closed group of hosts. These often use public networks as infrastructure with a set of restrictions configured on top of them, in which case it is referred to as a <strong>virtual private network</strong> (VPN).</p>
+<h3>Core</h3>
+<p>Main connections structure.</p>
+<h3>Access</h3>
+<p>Facilitate access to core networks. Examples include WLAN or LAN.</p>
+<h3>Distance</h3>
+<ul>
+<li><strong>Personal area network (PAN)</strong>: Linking devices via bluetooth (10m)</li>
+<li><strong>Storage area network (SAN)</strong>: For storage systems in data centers (100m)</li>
+<li><strong>Local area network (LAN)</strong>: Typical home/office network (10m - 10km)</li>
+<li><strong>Metropolitan area network (MAN)</strong>: Mostly deprecated due to LAN's (10km - 100km)</li>
+<li><strong>Wide area network (WAN)</strong>: Often using different technologies like IP or Ethernet (more than 100km)</li>
+<li><strong>Global area network (GAN)</strong>: World wide networks</li>
+</ul>
+<h3>Operations</h3>
+<h4>Packet switching</h4>
+<p>Data is transferred in small packets independent of each other, which the internet operates on.</p>
+<h4>Circuit switching</h4>
+<p>Data routes between communication partners are permanently reserved.</p>
+<h2>Computer network vs distributed system</h2>
+<p>If the implementation matters it is called non-transparent and belongs to the computer network area. If the implementation plays no role it is called transparent and is part of the distributed systems area.</p>
 
         </article>
 
