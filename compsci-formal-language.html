@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="While some terms are language specific, most tend to carry over from one language to another. Words like variable, expression, or function tend to mean the same thing, even if the implementation differs.">
-    <title>Terminology | post-notes</title>
-    <meta name="description" content="While some terms are language specific, most tend to carry over from one language to another. Words like variable, expression, or function tend to mean the same thing, even if the implementation differs.">
+    <meta name="description" content="A set of words over an alphabet">
+    <title>Formal language | post-notes</title>
+    <meta name="description" content="A set of words over an alphabet">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2334,47 +2334,61 @@
         </aside>
 
         <article>
-            <span>programming-terminology.html</span>
+            <span>compsci-formal-language.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-10-14T22:18
+                        * created: 2026-03-24T18:04
                         <br>
                          
-                        * modified: 2026-01-16T17:28
+                        * modified: 2026-03-25T00:14
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Terminology</p>
+                <p>Formal language</p>
 
                 <span>description</span><br>
-                <p>While some terms are language specific, most tend to carry over from one language to another. Words like variable, expression, or function tend to mean the same thing, even if the implementation differs.</p>
+                <p>A set of words over an alphabet</p>
 
+                
+                <span>related notes</span><br>
+                <ul>
+                    
+                    <li>
+                        <a href="./math-set.html">math-set.html</a>
+                    </li>
+                    
+                    <li>
+                        <a href="./math-groups.html#Semigroups, Monoids, Groups">math-groups.html#Semigroups, Monoids, Groups</a>
+                    </li>
+                    
+                </ul>
                 
             </div>
 
-            <h1>Programming Terminology</h1>
+            <h1>Formal language</h1>
+<p>This is a <a href="math-set.html" data-wikilink="true">set</a> of words over an alphabet, i.e. <span data-math-style="inline">L \subseteq \sum^*</span>.</p>
+<h2>Alphabet</h2>
+<p>A finite, non-empty set of characters which is commonly denoted as: <span data-math-style="inline">\sum</span>.</p>
+<p>Examples of such <strong>Alphabets</strong> are:</p>
 <ul>
-<li><strong>Declaration</strong>: Everything that is defined.
-<ul>
-<li>Defined types, function, and variables</li>
+<li><span data-math-style="inline">\sum := \{0,1\}</span></li>
+<li><span data-math-style="inline">\sum := \{a,b,c\}</span></li>
 </ul>
-</li>
-<li><strong>Expression</strong>: Everything that produces a value.
+<h2>Word</h2>
+<p>A finite sequence of characters from an <strong>Alphabet</strong>.</p>
+<blockquote>
+<p><span data-math-style="inline">e</span> describes the sequence without characters. See <a href="math-groups.html#Semigroups,%20Monoids,%20Groups" data-wikilink="true">neutral element</a>.</p>
+</blockquote>
+<p>Examples of such <strong>Words</strong> are:</p>
 <ul>
-<li>Literals, boolean expressions, arithmetic expressions, function calls</li>
-</ul>
-</li>
-<li><strong>Statement</strong>: Everything that describes functionality.
-<ul>
-<li>Sequence, if-else, iteration, assignments</li>
-</ul>
-</li>
+<li><span data-math-style="inline">0</span>: Word over <span data-math-style="inline">\{0,1\}</span></li>
+<li><span data-math-style="inline">hello \ world</span>: Word over <span data-math-style="inline">\{ \ ,a,b,c,\dots,z \}</span></li>
 </ul>
 
         </article>
