@@ -2339,7 +2339,7 @@
                         * created: 2026-03-28T17:53
                         <br>
                          
-                        * modified: 2026-03-28T18:12
+                        * modified: 2026-03-28T19:12
                         <br>
                         
                     </span>
@@ -2357,14 +2357,22 @@
             <h1>Good ol' OSI-Model</h1>
 <p>The <strong>Open System Interconnection</strong> (OSI) reference model is defined as follows:</p>
 <ol>
-<li><strong>Physical Layer</strong>: Bit sequences are transmitted over a medium (e.g. copper wire, air, light).</li>
-<li><strong>Data Link Layer</strong>: Bit sequences are treated as data packets, which are prefixed with a <strong>Media Access Control</strong> (MAC) addresses and suffixed with a bit sequence for error detection. Relevant protocols are Ethernet and ATM.</li>
+<li><strong>Physical Layer</strong>: Bit sequences are transmitted over a medium (e.g. copper cable, fiber-optic cable, air).</li>
+<li><strong>Data Link Layer</strong>: Reliable transmission of bit sequences, which are treated as data packets (frames), prefixed with a <strong>Media Access Control</strong> (MAC) addresses and suffixed with a bit sequence for error detection. A relevant protocol is Ethernet.</li>
 <li><strong>Network Layer</strong>: The transmission path in the network is determined. A IP address is assigned to data packets. Error detection and correction is also performed. The relevant protocol in this layer is the <strong>Internet Protocol</strong> (IP).</li>
 <li><strong>Transport Layer</strong>: The transmission quality and type between sender and receiver are negotiated, and further error handling is carried out. Large messages are segmented into packets. Relevant protocols are <strong>TCP</strong> and <strong>UDP</strong>.</li>
 <li><strong>Session Layer</strong>: The connection during a session is maintained. Login, password verification, dialog control, and logout processes are handled.</li>
 <li><strong>Presentation Layer</strong>: Different data encodings are converted. Data is compressed or decompressed, as well as encrypted and decrypted.</li>
-<li><strong>Application Layer</strong>: Application-specific services, such as email, file transfer, and use of the World Wide Web, are implemented here (TCP, HTTP, FTP, SMTP, Telnet).</li>
+<li><strong>Application Layer</strong>: Application-specific services, such as email, file transfer and use of the World Wide Web are implemented here (HTTP, FTP, SMTP).</li>
 </ol>
+<h2>Communication</h2>
+<p>The functions of the respective layers are performed by <strong>instances</strong>, which are sometimes also called entities.</p>
+<p>Transmission of data units through each layer happens vertically. The communication of each instance with it's direct neighbors happens through <strong>service access point's</strong> (SAP) and is based on <strong>service primitives</strong>.</p>
+<p>Instances also communicate horizontally based on layer specific protocols.</p>
+<p><img src="./media/Drawing%202026-03-28%2018.57.10.excalidraw.svg" alt="" /></p>
+<h2>En-/Decapsulation</h2>
+<p>The process of adding and removing header and trailer information is called en-/decapsulation.</p>
+<p><img src="./media/Drawing%202026-03-28%2019.03.19.excalidraw.svg" alt="" /></p>
 <h2>Derivations</h2>
 <h3>Internet Model</h3>
 <h3>Hybrid Model</h3>
