@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Saving the state of one process and loading the state of another. This is usefull for interactive applications, but not required if you have strictly linear tasks. You can measure context switches using the `vmstat` command.">
-    <title>Context switching | post-notes</title>
-    <meta name="description" content="Saving the state of one process and loading the state of another. This is usefull for interactive applications, but not required if you have strictly linear tasks. You can measure context switches using the `vmstat` command.">
+    <meta name="description" content="Description">
+    <title>Title | post-notes</title>
+    <meta name="description" content="Description">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2330,80 +2330,44 @@
         </aside>
 
         <article>
-            <span>operating-system-context-switching.html</span>
+            <span>networking-osi.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-05-17T23:01
+                        * created: 2026-03-28T17:53
                         <br>
                          
-                        * modified: 2025-07-08T12:52
+                        * modified: 2026-03-28T18:12
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Context switching</p>
+                <p>Title</p>
 
                 <span>description</span><br>
-                <p>Saving the state of one process and loading the state of another. This is usefull for interactive applications, but not required if you have strictly linear tasks. You can measure context switches using the `vmstat` command.</p>
+                <p>Description</p>
 
-                
-                <span>related notes</span><br>
-                <ul>
-                    
-                    <li>
-                        <a href="./operating-system-context.html">operating-system-context.html</a>
-                    </li>
-                    
-                    <li>
-                        <a href="./operating-system-scheduling.html">operating-system-scheduling.html</a>
-                    </li>
-                    
-                </ul>
                 
             </div>
 
-            <h1>Context switching</h1>
-<p>Context switching describes the process of loading storing the <a href="operating-system-context.html" data-wikilink="true">context</a> of one process and loading another. This is handled by the control unit of the CPU and the operating system.</p>
-<p>In general a context switch happens in two distinct steps which are:</p>
+            <h1>Good ol' OSI-Model</h1>
+<p>The <strong>Open System Interconnection</strong> (OSI) reference model is defined as follows:</p>
 <ol>
-<li>Save the context of the context of the currently running process into a known location inside the main memory.</li>
-<li>Load the required state of the program that is to be executed in CPU registers and cache.</li>
+<li><strong>Physical Layer</strong>: Bit sequences are transmitted over a medium (e.g. copper wire, air, light).</li>
+<li><strong>Data Link Layer</strong>: Bit sequences are treated as data packets, which are prefixed with a <strong>Media Access Control</strong> (MAC) addresses and suffixed with a bit sequence for error detection. Relevant protocols are Ethernet and ATM.</li>
+<li><strong>Network Layer</strong>: The transmission path in the network is determined. A IP address is assigned to data packets. Error detection and correction is also performed. The relevant protocol in this layer is the <strong>Internet Protocol</strong> (IP).</li>
+<li><strong>Transport Layer</strong>: The transmission quality and type between sender and receiver are negotiated, and further error handling is carried out. Large messages are segmented into packets. Relevant protocols are <strong>TCP</strong> and <strong>UDP</strong>.</li>
+<li><strong>Session Layer</strong>: The connection during a session is maintained. Login, password verification, dialog control, and logout processes are handled.</li>
+<li><strong>Presentation Layer</strong>: Different data encodings are converted. Data is compressed or decompressed, as well as encrypted and decrypted.</li>
+<li><strong>Application Layer</strong>: Application-specific services, such as email, file transfer, and use of the World Wide Web, are implemented here (TCP, HTTP, FTP, SMTP, Telnet).</li>
 </ol>
-<h2>What are the benefits and downsides?</h2>
-<p><strong>Benefits:</strong></p>
-<ul>
-<li>Concurrent execution of multiple processes without losing state</li>
-<li>Increased responsiveness when it comes to interactive systems</li>
-<li>Stable execution of multiple processes (if one hangs the others can keep running)</li>
-</ul>
-<p><strong>Downsides:</strong></p>
-<ul>
-<li>Overhead for simple linear task which do not require multiple processes</li>
-<li>Potential lag when loading/saving the context of a resource-heavy process</li>
-</ul>
-<h2>When does a context switch happen?</h2>
-<p>There are multiple reasons for a context switch to occur. The simplest answer would be, that a context switch happens any time, that another process becomes “more important” than another (see <a href="operating-system-scheduling.html" data-wikilink="true">scheduling</a>). These changing priorities often coincide with:</p>
-<ul>
-<li>during a interrupt (timed, i/o write back, ...)</li>
-<li>switching user/ kernel mode</li>
-<li>switching state to blocked</li>
-</ul>
-<h2>Measuring context switches</h2>
-<p>You can measure the ongoing context switches on Linux systems using the <code>vmstat</code> command. This takes two inputs, the time interval and the amount of times the data should be logged. The context switches can be found under the <strong>cs</strong> section of the output.</p>
-<p>Running <code>vmstat 2 5</code> for example logs every 2 seconds for five times and produces a output that looks something like this:</p>
-<pre><code>procs -----------memory---------- ---swap-- -----io---- -system-- -------cpu-------
-r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st gu
-1  0      0 2327032 202748 2395872    0    0   250   112 8063    4  3  2 95  0  0  0
-0  0      0 2330848 202764 2395876    0    0     0   258  934  837  1  1 98  0  0  0
-0  0      0 2330848 202764 2395876    0    0     0     0  434  419  0  0 99  0  0  0
-0  0      0 2330784 202764 2395876    0    0     0    34 3146 1640  2  1 97  0  0  0
-0  0      0 2330784 202772 2395876    0    0     0    42 1389  920  1  1 98  0  0  0
-</code></pre>
+<h2>Derivations</h2>
+<h3>Internet Model</h3>
+<h3>Hybrid Model</h3>
 
         </article>
 

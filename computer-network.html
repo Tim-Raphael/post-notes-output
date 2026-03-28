@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Description">
+    <meta name="description" content="Computers talking to computers.">
     <title>Computer Networks | post-notes</title>
-    <meta name="description" content="Description">
+    <meta name="description" content="Computers talking to computers.">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -384,6 +384,10 @@
         
         <li>
             <a href="./modeling-unified-modeling-language.html">modeling-unified-modeling-language.html</a>
+        </li>
+        
+        <li>
+            <a href="./networking-osi.html">networking-osi.html</a>
         </li>
         
         <li>
@@ -987,6 +991,10 @@
         </li>
         
         <li>
+            <a href="./networking-osi.html">networking-osi.html</a>
+        </li>
+        
+        <li>
             <a href="./networking-typology.html">networking-typology.html</a>
         </li>
         
@@ -1162,26 +1170,6 @@
 
         
     </ul>
-    
-    <div>
-</li>
-
-        
-        
-<li>
-    <label for="computer-network">computer-network</label>
-    <input id="computer-network" type="checkbox"></input>
-    <div>
-    
-    <ul>
-        
-        <li>
-            <a href="./computer-network.html">computer-network.html</a>
-        </li>
-        
-    </ul>
-
-    
     
     <div>
 </li>
@@ -2095,6 +2083,14 @@
     <ul>
         
         <li>
+            <a href="./computer-network.html">computer-network.html</a>
+        </li>
+        
+        <li>
+            <a href="./networking-osi.html">networking-osi.html</a>
+        </li>
+        
+        <li>
             <a href="./networking.html">networking.html</a>
         </li>
         
@@ -2343,7 +2339,7 @@
                         * created: 2025-06-22T14:29
                         <br>
                          
-                        * modified: 2025-07-27T13:17
+                        * modified: 2026-03-28T18:10
                         <br>
                         
                     </span>
@@ -2353,8 +2349,17 @@
                 <p>Computer Networks</p>
 
                 <span>description</span><br>
-                <p>Description</p>
+                <p>Computers talking to computers.</p>
 
+                
+                <span>related notes</span><br>
+                <ul>
+                    
+                    <li>
+                        <a href="./networking-osi.html">networking-osi.html</a>
+                    </li>
+                    
+                </ul>
                 
             </div>
 
@@ -2369,16 +2374,9 @@
 <li><strong>Load sharing Cluster</strong>: Distributing incoming request across multiple computer to minimize the load on the individual.</li>
 </ul>
 <h2>OSI-Reference-Model</h2>
-<p>The Open System Interconnection reference model is a protocol that defines layer which provide a certain set of functionality to the layer directly above it.</p>
-<ol>
-<li><strong>Physical Layer</strong>: Bit sequences are transmitted.</li>
-<li><strong>Data Link Layer</strong>: The bit sequences are treated as data packets, which are assigned addresses (MAC address, Media Access Control) and a bit sequence for error detection. Additionally, controlled access to Layer 1 is ensured. (Ethernet, ATM)</li>
-<li><strong>Network Layer</strong>: The transmission path in the network is determined. The appropriate addresses (IP address, Internet Protocol) are assigned to the data packets, and they are transmitted. Error detection and correction are also performed. (IP)</li>
-<li><strong>Transport Layer</strong>: The transmission quality and type between sender and receiver are negotiated, and further error handling is carried out. Large messages are segmented into packets. (TCP)</li>
-<li><strong>Session Layer</strong>: The connection during a session is maintained. Login, password verification, dialog control, and logout processes are handled.</li>
-<li><strong>Presentation Layer</strong>: Different data encodings are converted. Data is compressed or decompressed, as well as encrypted and decrypted.</li>
-<li><strong>Application Layer</strong>: Application-specific services, such as email, file transfer, and use of the World Wide Web, are implemented here (TCP, HTTP, FTP, SMTP, Telnet).</li>
-</ol>
+<blockquote>
+<p>See <a href="networking-osi.html" data-wikilink="true">OSI-Model</a></p>
+</blockquote>
 
         </article>
 
