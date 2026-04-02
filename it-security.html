@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="A number that is only divisible by $1$ and itself.">
-    <title>Prime numbers | post-notes</title>
-    <meta name="description" content="A number that is only divisible by $1$ and itself.">
+    <meta name="description" content="IT-Security describes the protection against intentional attacks against IT infrastructure.">
+    <title>IT-Security | post-notes</title>
+    <meta name="description" content="IT-Security describes the protection against intentional attacks against IT infrastructure.">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2358,77 +2358,60 @@
         </aside>
 
         <article>
-            <span>math-prime-number.html</span>
+            <span>it-security.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-10-21T22:28
+                        * created: 2026-04-02T22:07
                         <br>
                          
-                        * modified: 2026-03-27T18:15
+                        * modified: 2026-04-02T23:13
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Prime numbers</p>
+                <p>IT-Security</p>
 
                 <span>description</span><br>
-                <p>A number that is only divisible by $1$ and itself.</p>
+                <p>IT-Security describes the protection against intentional attacks against IT infrastructure.</p>
 
                 
                 <span>related notes</span><br>
                 <ul>
                     
                     <li>
-                        <a href="./math-set.html">math-set.html</a>
-                    </li>
-                    
-                    <li>
-                        <a href="./math-prime-number-distribution.html">math-prime-number-distribution.html</a>
-                    </li>
-                    
-                    <li>
-                        <a href="./development-programming-algorithm-prime-factorization.html">development-programming-algorithm-prime-factorization.html</a>
-                    </li>
-                    
-                    <li>
-                        <a href="./math-prime-number-fermats-primality-test.html">math-prime-number-fermats-primality-test.html</a>
-                    </li>
-                    
-                    <li>
-                        <a href="./math-prime-number-miller-rabin-test.html">math-prime-number-miller-rabin-test.html</a>
+                        <a href="./cryptography.html#Riddle me this">cryptography.html#Riddle me this</a>
                     </li>
                     
                 </ul>
                 
             </div>
 
-            <h1>Prime Numbers</h1>
-<p>A number <span data-math-style="inline">p \in \mathbb{N}^{+}</span> is a prime number, if it has exactly two positive divisors (<span data-math-style="inline">1</span> and <span data-math-style="inline">p</span>). These numbers are the building blocks of all <span data-math-style="inline">\mathbb{N}</span>, since every natural number <span data-math-style="inline">n&lt;1</span> can be written as the product of prime numbers.</p>
-<blockquote>
-<p><span data-math-style="inline">10</span> is the product of <span data-math-style="inline">2</span> and <span data-math-style="inline">5</span>.
-A lot of asymmetric methods in cryptography are base around prime numbers.
-<span data-math-style="inline">\mathbb{P}</span> is the <a href="math-set.html" data-wikilink="true">set</a> of all prime numbers.
-All prime numbers, except <span data-math-style="inline">2</span>, are odd numbers.</p>
-</blockquote>
-<p>The <strong>prime factor</strong> <span data-math-style="inline">p</span> of <span data-math-style="inline">n \in \mathbb{n} , n&gt;1</span> is defined as <span data-math-style="inline">p \in \mathbb{P}: p | n</span>.</p>
-<h2>Fundamental Theorem of Arithmetic</h2>
-<p>The fundamental theorem of arithmetic asserts that every number <span data-math-style="inline">n \in \mathbb{N}, n&gt;1</span> can be written as the product one or more <span data-math-style="inline">p \in \mathbb{P}</span>.</p>
-<p>Furthermore <span data-math-style="inline">n</span> can be deconstructed in it's prime factors in a process called prime factorization. Numbers that are no prime numbers are also referred to as composite numbers.</p>
-<blockquote>
-<p><strong>Definition</strong>: Every <span data-math-style="inline">n \in \mathbb{N}, n&gt;1</span> can be written as the product of one or more prime numbers, i.e. <span data-math-style="inline">n = \prod_{i=1}^k p_i</span> with <span data-math-style="inline">p_{i} \in \mathbb{P}</span>. Every prime factor is uniquely defined through this product up to the order of the factors.</p>
-</blockquote>
-<h2>Related Topics:</h2>
+            <h1>IT-Security</h1>
+<p>An area on computer science that focuses on protecting the <strong>integrity</strong>, <strong>availability</strong> and <strong>authenticity</strong> of digital resources.</p>
+<h2>Safety vs Security</h2>
+<p>Safety mechanisms aim to protect against dangers that are not invoked on purpose. Security, on the other hand, mainly focuses on the protection against targeted attacks. These attacks try to manipulated, steal or denial access to data.</p>
+<h3>TLDR</h3>
 <ul>
-<li><a href="math-prime-number-distribution.html" data-wikilink="true">Prime Number Distribution</a></li>
-<li><a href="development-programming-algorithm-prime-factorization.html" data-wikilink="true">Prime Factorization</a></li>
-<li><a href="math-prime-number-fermats-primality-test.html" data-wikilink="true">Fermats Primality Test</a></li>
-<li><a href="math-prime-number-miller-rabin-test.html" data-wikilink="true">Miller Rabin</a></li>
+<li><strong>Safety</strong> = protection from <em>unintended</em> events (accidents, nature, human error)</li>
+<li><strong>Security</strong> = protection from <em>intentional</em> threats (attacks, theft, manipulation)</li>
 </ul>
+<h2>Security aspects</h2>
+<blockquote>
+<p>See <a href="cryptography.html#Riddle%20me%20this" data-wikilink="true">Goals of cryptography</a></p>
+</blockquote>
+<ol>
+<li><strong>Integrity:</strong> Any manipulation of a resource can be detected</li>
+<li><strong>Authenticity:</strong> The origin or authorship of a resource can be verified.</li>
+<li><strong>Availability:</strong> The resource is accessible to authorized users when needed.</li>
+<li><strong>Accountability:</strong> Actions and events can be traced back to a responsible entity.</li>
+<li><strong>Confidentiality:</strong> Access to a resource is restricted to authorized parties only.</li>
+<li><strong>Privacy:</strong> A resource cannot be used in a way that contradicts the owner's intent.</li>
+</ol>
 
         </article>
 
