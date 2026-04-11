@@ -2375,7 +2375,7 @@
                         * created: 2026-04-11T18:50
                         <br>
                          
-                        * modified: 2026-04-11T20:27
+                        * modified: 2026-04-12T01:01
                         <br>
                         
                     </span>
@@ -2395,6 +2395,14 @@
                         <a href="./networking-osi.html">networking-osi.html</a>
                     </li>
                     
+                    <li>
+                        <a href="./math-polynomial.html">math-polynomial.html</a>
+                    </li>
+                    
+                    <li>
+                        <a href="./math-ring.html#Field">math-ring.html#Field</a>
+                    </li>
+                    
                 </ul>
                 
             </div>
@@ -2409,6 +2417,13 @@
 </ul>
 <h2>Cyclic redundency checks</h2>
 <p>Error detection can happen by attaching a checksum to the data frame. The cyclic redundancy check (<strong>CRC</strong>) is used to calculated or validate the <strong>Frame Check Sequence</strong> (checksum). This method does not provide any information about which parts of the data are corrupted, so backwards error correction needs to be applied if data is corrupted.</p>
+<p>This is done by interpreting the <strong>messages</strong> as a <a href="math-polynomial.html" data-wikilink="true">polynomial</a> <span data-math-style="inline">M(x)</span> and a <strong>generator polynomial</strong> <span data-math-style="inline">G(x)</span>. First multiply the the message polynomial with the highest term of the generator polynomial and divided by the generator polynomial <span data-math-style="inline">M(x) \cdot x^n \div G(x)</span>, which results in a quotient and a remainder <span data-math-style="inline">R(x)</span>. The <strong>transfer polynomial</strong> <span data-math-style="inline">T(x)</span> is <span data-math-style="inline">M(x) \cdot x^n + R(x)</span>.</p>
+<blockquote>
+<p>All arithmetic is performed in <span data-math-style="inline">GF(2)</span> (the <a href="math-ring.html#Field" data-wikilink="true">Galois Field</a> with two elements), meaning addition and subtraction are both equivalent to <em>XOR</em>, and there are no carries. This makes CRC computations efficient to implement in hardware.</p>
+</blockquote>
+<blockquote>
+<p>The multiplication with the highest term of the generator polynomial <span data-math-style="inline">x^n</span> is done to append nn n placeholder (zero) bits to the message, making room for the checksum remainder <span data-math-style="inline">R(x)</span> to be written into those positions, guaranteeing that the final transmitted codeword is divisible by <span data-math-style="inline">G(x)</span>.</p>
+</blockquote>
 <h2>Parity checks</h2>
 <p>Checks based on additional information being added to a data block. For every horizontal row we get one additional parity bit, which is 1 if the number of 1's is odd. The same applies for every vertical column.</p>
 <blockquote>
