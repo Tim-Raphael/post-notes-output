@@ -2400,15 +2400,15 @@
             </div>
 
             <h1>Faulty data is not good</h1>
-<p>A lot of things can go wrong during the transmission of data. The data can be lost or parts of it corrupted. One job of the <a href="networking-osi.html" data-wikilink="true">second osi layer</a> is to identify and handle these cases correctly.</p>
+<p>A lot of things can go wrong during the transmission of data, which can be lost or parts of it corrupted. One job of the <a href="networking-osi.html" data-wikilink="true">second osi layer</a> is to identify and handle these cases correctly.</p>
 <p>Depending on the medium different bit error ratios are to be expected:</p>
 <ul>
 <li><strong>Digital telephone networks</strong>: from <span data-math-style="inline">10^{-6}</span> to <span data-math-style="inline">10^{-7}</span></li>
 <li><strong>Coaxial cables</strong>: <span data-math-style="inline">10^{-9}</span></li>
 <li><strong>Fiber-optic cables</strong>: <span data-math-style="inline">10^{-12}</span></li>
 </ul>
-<h2>CRC</h2>
-<p>Error detection can happen by attaching a checksum to the data frame. The cyclic redundancy check (<strong>CRC</strong>) is used to calculated/validate the correctness of the checksum. This method does not provide any information about which parts of the data are corrupted, so backwards error correction needs to be applied if data is corrupted.</p>
+<h2>Cyclic redundency checks</h2>
+<p>Error detection can happen by attaching a checksum to the data frame. The cyclic redundancy check (<strong>CRC</strong>) is used to calculated or validate the <strong>Frame Check Sequence</strong> (checksum). This method does not provide any information about which parts of the data are corrupted, so backwards error correction needs to be applied if data is corrupted.</p>
 <h2>Parity checks</h2>
 <p>Checks based on additional information being added to a data block. For every horizontal row we get one additional parity bit, which is 1 if the number of 1's is odd. The same applies for every vertical column.</p>
 <blockquote>
