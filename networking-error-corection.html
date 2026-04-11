@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="A process is a program that currently gets executed.">
-    <title>Process | post-notes</title>
-    <meta name="description" content="A process is a program that currently gets executed.">
+    <meta name="description" content="Transmitting and receiving data can be error prone. Error corection acknowledges this and provides sensible routines for such cases.">
+    <title>Network error corection | post-notes</title>
+    <meta name="description" content="Transmitting and receiving data can be error prone. Error corection acknowledges this and provides sensible routines for such cases.">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2366,48 +2366,65 @@
         </aside>
 
         <article>
-            <span>operating-system-process.html</span>
+            <span>networking-error-corection.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-07-06T16:51
+                        * created: 2026-04-11T18:50
                         <br>
                          
-                        * modified: 2025-10-03T22:42
+                        * modified: 2026-04-11T20:22
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Process</p>
+                <p>Network error corection</p>
 
                 <span>description</span><br>
-                <p>A process is a program that currently gets executed.</p>
+                <p>Transmitting and receiving data can be error prone. Error corection acknowledges this and provides sensible routines for such cases.</p>
 
                 
                 <span>related notes</span><br>
                 <ul>
                     
                     <li>
-                        <a href="./operating-system-paging.html">operating-system-paging.html</a>
+                        <a href="./networking-osi.html">networking-osi.html</a>
                     </li>
                     
                 </ul>
                 
             </div>
 
-            <h1>From Program to Process</h1>
-<p>A program is just static code somewhere on your computer; A process on the other hand is a program that is currently being executed, which means it has it's somewhere in memory (or outside; see <a href="operating-system-paging.html" data-wikilink="true">paging</a>).</p>
-<p>A process can be in three different states, which are: Running, Blocked, or Ready.</p>
-<p><strong>Running</strong>: The process has currently access to the CPU.
-<strong>Blocked</strong>: The process can't continue execution until some resource or information becomes available (waiting on data from I/O-Device for example).
-<strong>Ready</strong>: The process can continue (or start), and is waiting for the CPU to be freed up.</p>
-<h2>Threads</h2>
-<p>Threads are a lightweight subsection of a process which has it's own control flow. This could be something like saving a file every 10 minutes (if edited), or checking if their are any new email in your inbox.</p>
-<p>It's important that this subsection is somewhat independent.</p>
+            <h1>Faulty data is not good</h1>
+<p>A lot of things can go wrong during the transmission of data. The data can be lost or parts of it corrupted. One job of the <a href="networking-osi.html" data-wikilink="true">second osi layer</a> is to identify and handle these cases correctly.</p>
+<p>Depending on the medium different bit error ratios are to be expected:</p>
+<ul>
+<li><strong>Digital telephone networks</strong>: from <span data-math-style="inline">10^{-6}</span> to <span data-math-style="inline">10^{-7}</span></li>
+<li><strong>Coaxial cables</strong>: <span data-math-style="inline">10^{-9}</span></li>
+<li><strong>Fiber-optic cables</strong>: <span data-math-style="inline">10^{-12}</span></li>
+</ul>
+<h2>CRC</h2>
+<p>Error detection can happen by attaching a checksum to the data frame. The cyclic redundancy check (<strong>CRC</strong>) is used to calculated/validate the correctness of the checksum. This method does not provide any information about which parts of the data are corrupted, so backwards error correction needs to be applied if data is corrupted.</p>
+<h2>Parity checks</h2>
+<p>Checks based on additional information being added to a data block. For every horizontal row we get one additional parity bit, which is 1 if the number of 1's is odd. The same applies for every vertical column.</p>
+<blockquote>
+<p>This aforementioned rule is inverted if an odd parity system is used:</p>
+<ul>
+<li><strong>Even parity</strong>: Number of bits is odd = 1</li>
+<li><strong>Odd parity</strong>: Number of bits is odd = 0</li>
+</ul>
+</blockquote>
+<p>These can be used to pin point the corrupted bit. By checking the horizontal parity we can determine that at least one bit in this row has to be corrupted, afterwards we can look up the exact column by checking each vertical parity bit.</p>
+<p>After correcting all corrupted bits the target can send an acknowledgement, which is referred to as forward error correction.</p>
+<h2>Backwards error correction</h2>
+<p>If corrupted data can be detected but not corrected on the target machine the sender needs to resend the data frame. This process is referred <strong>backwards error correction</strong>.</p>
+<p>The target system <strong>does not</strong> send a negative acknowledgement for the data to be re-transmitted by the sender.</p>
+<h2>Forward error correction</h2>
+<p>If corrupted data can be detected and corrected on the target machine, the target does simply send an ack. This process is referred to as <strong>forward error correction</strong>.</p>
 
         </article>
 
