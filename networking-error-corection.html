@@ -2379,7 +2379,7 @@
                         * created: 2026-04-11T18:50
                         <br>
                          
-                        * modified: 2026-04-12T01:04
+                        * modified: 2026-04-12T01:13
                         <br>
                         
                     </span>
@@ -2428,6 +2428,7 @@
 <blockquote>
 <p>The multiplication with the highest term of the generator polynomial <span data-math-style="inline">x^n</span> is done to append nn n placeholder (zero) bits to the message, making room for the checksum remainder <span data-math-style="inline">R(x)</span> to be written into those positions, guaranteeing that the final transmitted codeword is divisible by <span data-math-style="inline">G(x)</span>.</p>
 </blockquote>
+<p>To check if the message was sucessfully transmitted the receiver has to devide <span data-math-style="inline">T(x)</span> with <span data-math-style="inline">G(x)</span>. If the result is <span data-math-style="inline">0</span> the message was probably transmitted correctly.</p>
 <h2>Parity checks</h2>
 <p>Checks based on additional information being added to a data block. For every horizontal row we get one additional parity bit, which is 1 if the number of 1's is odd. The same applies for every vertical column.</p>
 <blockquote>
@@ -2438,12 +2439,12 @@
 </ul>
 </blockquote>
 <p>These can be used to pin point the corrupted bit. By checking the horizontal parity we can determine that at least one bit in this row has to be corrupted, afterwards we can look up the exact column by checking each vertical parity bit.</p>
-<p>After correcting all corrupted bits the target can send an acknowledgement, which is referred to as forward error correction.</p>
+<p>After correcting all corrupted bits the receiver can send an acknowledgement, which is referred to as forward error correction.</p>
 <h2>Backwards error correction</h2>
-<p>If corrupted data can be detected but not corrected on the target machine the sender needs to resend the data frame. This process is referred <strong>backwards error correction</strong>.</p>
-<p>The target system <strong>does not</strong> send a negative acknowledgement for the data to be re-transmitted by the sender.</p>
+<p>If corrupted data can be detected but not corrected on the receiver machine the sender needs to resend the data frame. This process is referred <strong>backwards error correction</strong>.</p>
+<p>The receiver system <strong>does not</strong> send a negative acknowledgement for the data to be re-transmitted by the sender.</p>
 <h2>Forward error correction</h2>
-<p>If corrupted data can be detected and corrected on the target machine, the target does simply send an ack. This process is referred to as <strong>forward error correction</strong>.</p>
+<p>If corrupted data can be detected and corrected on the receiver machine, the receiver does simply send an ack. This process is referred to as <strong>forward error correction</strong>.</p>
 
         </article>
 
