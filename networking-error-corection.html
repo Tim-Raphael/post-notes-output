@@ -2379,7 +2379,7 @@
                         * created: 2026-04-11T18:50
                         <br>
                          
-                        * modified: 2026-04-12T01:13
+                        * modified: 2026-04-12T12:51
                         <br>
                         
                     </span>
@@ -2426,7 +2426,7 @@
 <p>All arithmetic is performed in <span data-math-style="inline">GF(2)</span> (the <a href="math-ring.html#Field" data-wikilink="true">Galois Field</a> with two elements), meaning addition and subtraction are both equivalent to <em>XOR</em>, and there are no carries. This makes CRC computations efficient to implement in hardware.</p>
 </blockquote>
 <blockquote>
-<p>The multiplication with the highest term of the generator polynomial <span data-math-style="inline">x^n</span> is done to append nn n placeholder (zero) bits to the message, making room for the checksum remainder <span data-math-style="inline">R(x)</span> to be written into those positions, guaranteeing that the final transmitted codeword is divisible by <span data-math-style="inline">G(x)</span>.</p>
+<p>The multiplication with the highest term of the generator polynomial <span data-math-style="inline">x^n</span> is done to append <span data-math-style="inline">n-1</span> placeholder (zero) bits to the message, making room for the checksum remainder <span data-math-style="inline">R(x)</span> to be written into those positions, guaranteeing that the final transmitted codeword is divisible by <span data-math-style="inline">G(x)</span>.</p>
 </blockquote>
 <p>To check if the message was sucessfully transmitted the receiver has to devide <span data-math-style="inline">T(x)</span> with <span data-math-style="inline">G(x)</span>. If the result is <span data-math-style="inline">0</span> the message was probably transmitted correctly.</p>
 <h2>Parity checks</h2>
