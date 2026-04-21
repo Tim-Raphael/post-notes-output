@@ -2447,7 +2447,7 @@
                         * created: 2026-04-19T23:48
                         <br>
                          
-                        * modified: 2026-04-21T18:22
+                        * modified: 2026-04-21T22:57
                         <br>
                         
                     </span>
@@ -2474,9 +2474,13 @@
             <h1>(Non-)Deterministic Finite Automaton</h1>
 <p>These are conceptual constructs that can be used to validate any input. This is done by defining states and transitions. For every state there are follow up states defined when encountering a character from an <a href="Formal%20Languages.html#Alphabet" data-wikilink="true">Alphabet</a>.</p>
 <h2>Notation</h2>
+<p><span data-math-style="display">E= \{ Q, \Sigma , \delta, q_0, F \}</span></p>
 <ul>
-<li></li>
-<li><span data-math-style="inline">\delta</span>: A function that describes state transitions by taking in the current state and an input.</li>
+<li><span data-math-style="inline">Q</span>: A non-empty set of states.</li>
+<li><span data-math-style="inline">\Sigma</span>: The input Alphabet.</li>
+<li><span data-math-style="inline">\delta</span>: A function that describes state transitions by taking in the current state and an input <span data-math-style="inline">F: Q \times \Sigma \to Q</span>.</li>
+<li><span data-math-style="inline">q_0</span>: The starting state (<span data-math-style="inline">q_0 \in Q</span>).</li>
+<li><span data-math-style="inline">F</span>: The set of valid end states (<span data-math-style="inline">F \subseteq Q</span>).</li>
 </ul>
 <h2>Non-Deterministic</h2>
 <p>A automaton is non-deterministic if there are <strong>none</strong> or <strong>multiple</strong> possible states for an input.</p>
