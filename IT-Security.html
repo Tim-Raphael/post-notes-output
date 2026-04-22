@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Represents some kind of statement that can either be true or false. There are a couple of propositional logic operators like $\land$ (and) or $\lor$ (or) which can be used to express such logic.">
-    <title>Propositional Logic | post-notes</title>
-    <meta name="description" content="Represents some kind of statement that can either be true or false. There are a couple of propositional logic operators like $\land$ (and) or $\lor$ (or) which can be used to express such logic.">
+    <meta name="description" content="IT-Security describes the protection against intentional attacks against IT infrastructure.">
+    <title>IT-Security | post-notes</title>
+    <meta name="description" content="IT-Security describes the protection against intentional attacks against IT infrastructure.">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2462,72 +2462,67 @@
         </aside>
 
         <article>
-            <span>math-propositional-logic.html</span>
+            <span>IT-Security.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-06-17T17:47
+                        * created: 2026-04-02T22:07
                         <br>
                          
-                        * modified: 2025-12-19T13:46
+                        * modified: 2026-04-22T16:42
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Propositional Logic</p>
+                <p>IT-Security</p>
 
                 <span>description</span><br>
-                <p>Represents some kind of statement that can either be true or false. There are a couple of propositional logic operators like $\land$ (and) or $\lor$ (or) which can be used to express such logic.</p>
+                <p>IT-Security describes the protection against intentional attacks against IT infrastructure.</p>
 
+                
+                <span>related notes</span><br>
+                <ul>
+                    
+                    <li>
+                        <a href="./cryptography.html#Riddle me this">cryptography.html#Riddle me this</a>
+                    </li>
+                    
+                </ul>
                 
             </div>
 
-            <h1>Description</h1>
-<p>Propositional logic is a formal system in logic that deals with propositions (also called statements) and logical connectives. A proposition is a statement that is either true or false, but not both.</p>
-<table>
-<thead>
-<tr>
-<th><strong>Symbol</strong></th>
-<th><strong>Definition</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span data-math-style="inline">\lnot A</span></td>
-<td>NOT A — true if A is false</td>
-</tr>
-<tr>
-<td><span data-math-style="inline">A \land B</span></td>
-<td>A AND B — true if both A and B are true</td>
-</tr>
-<tr>
-<td><span data-math-style="inline">A \lor B</span></td>
-<td>A OR B — true if at least one of A or B is true</td>
-</tr>
-<tr>
-<td><span data-math-style="inline">A \oplus B</span></td>
-<td>A XOR B — true if exactly one of A or B is true</td>
-</tr>
-<tr>
-<td><span data-math-style="inline">A \Rightarrow B</span></td>
-<td>A → B — false only if A is true and B is false</td>
-</tr>
-<tr>
-<td><span data-math-style="inline">A \Leftrightarrow B</span></td>
-<td>A ↔ B — true if A and B are both true or both false</td>
-</tr>
-</tbody>
-</table>
-<h2>De Morgan's law</h2>
-<p>De Morgan’s laws express how negation interacts with logical conjunction (&quot;and&quot;) and logical disjunction (&quot;or&quot;).</p>
+            <h1>IT-Security</h1>
+<p>An area on computer science that focuses on protecting the <strong>integrity</strong>, <strong>availability</strong> and <strong>authenticity</strong> of digital resources.</p>
+<h2>Safety vs Security</h2>
+<p>Safety mechanisms aim to protect against dangers that are not invoked on purpose. Security, on the other hand, mainly focuses on the protection against targeted attacks. These attacks try to manipulated, steal or denial access to data.</p>
+<h3>TLDR</h3>
+<ul>
+<li><strong>Safety</strong> = protection from <em>unintended</em> events (accidents, nature, human error)</li>
+<li><strong>Security</strong> = protection from <em>intentional</em> threats (attacks, theft, manipulation)</li>
+</ul>
+<h2>Security aspects</h2>
+<blockquote>
+<p>See <a href="cryptography.html#Riddle%20me%20this" data-wikilink="true">Goals of cryptography</a></p>
+</blockquote>
 <ol>
-<li><span data-math-style="inline">\neg (A \land B) \Leftrightarrow (\neg A) \lor (\neg B)</span></li>
-<li><span data-math-style="inline">\neg(A \lor B) \Leftrightarrow (\neg A) \land (\neg B)</span></li>
+<li><strong>Integrity:</strong> Any manipulation of a resource can be detected</li>
+<li><strong>Authenticity:</strong> The origin or authorship of a resource can be verified.</li>
+<li><strong>Availability:</strong> The resource is accessible to authorized users when needed.</li>
+<li><strong>Accountability:</strong> Actions and events can be traced back to a responsible entity.</li>
+<li><strong>Confidentiality:</strong> Access to a resource is restricted to authorized parties only.</li>
+<li><strong>Privacy:</strong> A resource cannot be used in a way that contradicts the owner's intent.</li>
 </ol>
+<h2>Risk evaluation</h2>
+<p>A <strong>security risk</strong> is the product of two factors, the first being a <strong>vulnerability</strong> and the second being <strong>threat</strong>.</p>
+<p><span data-math-style="display">
+\text{risk } = \text{vulnerability } \cdot \text{threats}
+</span></p>
+<p>If one of these factors is <span data-math-style="inline">0</span> the risk is also <span data-math-style="inline">0</span>, i.e., when you have a known vulnerability but your system is completly offline, the risk is <span data-math-style="inline">0</span>.</p>
+<p>Security mechanism can either patch vulnerablitlies or decrease the number of attack vectors (e.g., firewalls), both reduce the overall risk multiplicative.</p>
 
         </article>
 

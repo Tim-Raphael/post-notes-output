@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="IT-Security describes the protection against intentional attacks against IT infrastructure.">
-    <title>IT-Security | post-notes</title>
-    <meta name="description" content="IT-Security describes the protection against intentional attacks against IT infrastructure.">
+    <meta name="description" content="Description">
+    <title>Title | post-notes</title>
+    <meta name="description" content="Description">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -91,6 +91,10 @@
     <ul>
         
         <li>
+            <a href="./Cross Side Scripting.html">Cross Side Scripting.html</a>
+        </li>
+        
+        <li>
             <a href="./DFA and NFA.html">DFA and NFA.html</a>
         </li>
         
@@ -99,7 +103,15 @@
         </li>
         
         <li>
+            <a href="./IT-Security.html">IT-Security.html</a>
+        </li>
+        
+        <li>
             <a href="./Internet Protocol.html">Internet Protocol.html</a>
+        </li>
+        
+        <li>
+            <a href="./SQL Injection.html">SQL Injection.html</a>
         </li>
         
         <li>
@@ -240,10 +252,6 @@
         
         <li>
             <a href="./development.html">development.html</a>
-        </li>
-        
-        <li>
-            <a href="./it-security.html">it-security.html</a>
         </li>
         
         <li>
@@ -1007,6 +1015,10 @@
     <ul>
         
         <li>
+            <a href="./Cross Side Scripting.html">Cross Side Scripting.html</a>
+        </li>
+        
+        <li>
             <a href="./DFA and NFA.html">DFA and NFA.html</a>
         </li>
         
@@ -1015,11 +1027,15 @@
         </li>
         
         <li>
+            <a href="./IT-Security.html">IT-Security.html</a>
+        </li>
+        
+        <li>
             <a href="./Internet Protocol.html">Internet Protocol.html</a>
         </li>
         
         <li>
-            <a href="./it-security.html">it-security.html</a>
+            <a href="./SQL Injection.html">SQL Injection.html</a>
         </li>
         
         <li>
@@ -1655,7 +1671,15 @@
     <ul>
         
         <li>
-            <a href="./it-security.html">it-security.html</a>
+            <a href="./Cross Side Scripting.html">Cross Side Scripting.html</a>
+        </li>
+        
+        <li>
+            <a href="./IT-Security.html">IT-Security.html</a>
+        </li>
+        
+        <li>
+            <a href="./SQL Injection.html">SQL Injection.html</a>
         </li>
         
     </ul>
@@ -2438,60 +2462,47 @@
         </aside>
 
         <article>
-            <span>it-security.html</span>
+            <span>SQL Injection.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2026-04-02T22:07
+                        * created: 2026-04-22T16:48
                         <br>
                          
-                        * modified: 2026-04-12T14:38
+                        * modified: 2026-04-22T17:02
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>IT-Security</p>
+                <p>Title</p>
 
                 <span>description</span><br>
-                <p>IT-Security describes the protection against intentional attacks against IT infrastructure.</p>
+                <p>Description</p>
 
-                
-                <span>related notes</span><br>
-                <ul>
-                    
-                    <li>
-                        <a href="./cryptography.html#Riddle me this">cryptography.html#Riddle me this</a>
-                    </li>
-                    
-                </ul>
                 
             </div>
 
-            <h1>IT-Security</h1>
-<p>An area on computer science that focuses on protecting the <strong>integrity</strong>, <strong>availability</strong> and <strong>authenticity</strong> of digital resources.</p>
-<h2>Safety vs Security</h2>
-<p>Safety mechanisms aim to protect against dangers that are not invoked on purpose. Security, on the other hand, mainly focuses on the protection against targeted attacks. These attacks try to manipulated, steal or denial access to data.</p>
-<h3>TLDR</h3>
-<ul>
-<li><strong>Safety</strong> = protection from <em>unintended</em> events (accidents, nature, human error)</li>
-<li><strong>Security</strong> = protection from <em>intentional</em> threats (attacks, theft, manipulation)</li>
-</ul>
-<h2>Security aspects</h2>
-<blockquote>
-<p>See <a href="cryptography.html#Riddle%20me%20this" data-wikilink="true">Goals of cryptography</a></p>
-</blockquote>
-<ol>
-<li><strong>Integrity:</strong> Any manipulation of a resource can be detected</li>
-<li><strong>Authenticity:</strong> The origin or authorship of a resource can be verified.</li>
-<li><strong>Availability:</strong> The resource is accessible to authorized users when needed.</li>
-<li><strong>Accountability:</strong> Actions and events can be traced back to a responsible entity.</li>
-<li><strong>Confidentiality:</strong> Access to a resource is restricted to authorized parties only.</li>
-<li><strong>Privacy:</strong> A resource cannot be used in a way that contradicts the owner's intent.</li>
-</ol>
+            <h1>SQL Injection</h1>
+<p>A vulnerability that allows an attacker to inject arbitrary SQL queries into an existing one, allowing the attacker to access or manipulate data that they should not have acceess to. This can happen if inputs are not sanitized before executing them.</p>
+<pre><code class="language-sql">-- Intended query with normal input (username = &quot;alice&quot;)
+SELECT * FROM users WHERE username = 'alice' AND password = 'secret';
+
+-- Attacker enters as username: ' OR '1'='1
+SELECT * FROM users WHERE username = '' OR '1'='1' AND password = '';
+--                                       ^^^^^^^^^ always true → returns all users
+</code></pre>
+<p>Prepared statements address those by first compiling the query template with placeholders before any user data is involved, locking in the structure so it cannot be changed afterwards, when the actual values are then bound and the query is executed, the database treats them purely as data, meaning an attacker input like <code>'; DROP TABLE users; --</code> is passed as a literal string value to the <code>?</code> placeholder and never interpreted as SQL syntax.</p>
+<pre><code class="language-sql">-- Step 1: structure is compiled, ? is a fixed placeholder
+SELECT * FROM users WHERE username = ? AND password = ?;
+
+-- Step 2: values are bound (&quot;alice&quot;, &quot;secret&quot;) and executed
+-- even &quot;'; DROP TABLE users; --&quot; would just be a string here
+SELECT * FROM users WHERE username = 'alice' AND password = 'secret';
+</code></pre>
 
         </article>
 
