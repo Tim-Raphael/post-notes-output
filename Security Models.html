@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Working together is the main aspect of parallelism. The primary idea is that we could have multiple processor working on a single or multiple tasks at the same time.">
-    <title>Parallel Computing | post-notes</title>
-    <meta name="description" content="Working together is the main aspect of parallelism. The primary idea is that we could have multiple processor working on a single or multiple tasks at the same time.">
+    <meta name="description" content="Description">
+    <title>Title | post-notes</title>
+    <meta name="description" content="Description">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2474,34 +2474,40 @@
         </aside>
 
         <article>
-            <span>operating-systems-parallel-computing.html</span>
+            <span>Security Models.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-06-10T18:44
+                        * created: 2026-04-23T18:42
                         <br>
                          
-                        * modified: 2026-04-19T23:54
+                        * modified: 2026-04-23T18:50
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Parallel Computing</p>
+                <p>Title</p>
 
                 <span>description</span><br>
-                <p>Working together is the main aspect of parallelism. The primary idea is that we could have multiple processor working on a single or multiple tasks at the same time.</p>
+                <p>Description</p>
 
                 
             </div>
 
-            <h1>You can break a single finger, but together we are a fist</h1>
-<p>Working together is the main aspect of parallelism. The primary idea is that we could have multiple processor working on a single or multiple tasks at the same time.</p>
-<h2>Dynamic linking</h2>
-<h2>Static linking</h2>
+            <h1>Security Models</h1>
+<p>These describe criteria by which authorization systems are modeled.</p>
+<h2>Bell-LaPadula (BLP)</h2>
+<p>&quot;No Read Up, No Write Down&quot;</p>
+<p>You can read things at or below your level and write things at or above your level. This does only protect against data leaks and not corruption.</p>
+<h2>Biba</h2>
+<p>&quot;No Read Down, No Write Up&quot;</p>
+<p>Biba addresses the <strong>opposite concern</strong>: protecting data from being modified in untrusted ways. It's useful in environments where accurate and untampered data matters more than secrecy.</p>
+<h2>Mixed Salads</h2>
+<p>Subjects and objects are assigned both a confidentiality level (BLP) and an integrity level (Biba), with access mediated only through trusted transformation procedures (Clark-Wilson) that enforce well-formed transactions. Dynamic conflict-of-interest constraints (Brewer-Nash) further restrict which objects a subject may access based on their access history, while the system guarantees that actions at one level produce no observable side-effects at another (Noninterference).</p>
 
         </article>
 
