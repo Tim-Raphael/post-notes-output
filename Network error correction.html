@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="The distribution of prime numbers.">
-    <title>Prime Number Distribution | post-notes</title>
-    <meta name="description" content="The distribution of prime numbers.">
+    <meta name="description" content="Transmitting and receiving data can be error prone. Error corection acknowledges this and provides sensible routines for such cases.">
+    <title>Network error corection | post-notes</title>
+    <meta name="description" content="Transmitting and receiving data can be error prone. Error corection acknowledges this and provides sensible routines for such cases.">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2546,69 +2546,81 @@
         </aside>
 
         <article>
-            <span>math-prime-number-distribution.html</span>
+            <span>Network error correction.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-10-21T22:38
+                        * created: 2026-04-11T18:50
                         <br>
                          
-                        * modified: 2025-10-29T15:45
+                        * modified: 2026-04-12T14:13
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Prime Number Distribution</p>
+                <p>Network error corection</p>
 
                 <span>description</span><br>
-                <p>The distribution of prime numbers.</p>
+                <p>Transmitting and receiving data can be error prone. Error corection acknowledges this and provides sensible routines for such cases.</p>
 
+                
+                <span>related notes</span><br>
+                <ul>
+                    
+                    <li>
+                        <a href="./networking-osi.html">networking-osi.html</a>
+                    </li>
+                    
+                    <li>
+                        <a href="./math-polynomial.html">math-polynomial.html</a>
+                    </li>
+                    
+                    <li>
+                        <a href="./math-ring.html#Field">math-ring.html#Field</a>
+                    </li>
+                    
+                </ul>
                 
             </div>
 
-            <h1>Prime number distribution</h1>
-<p><strong>Prime number function</strong>:
-<span data-math-style="display">
-\pi(n)=|\{p\in \mathbb{P}| p \leq n\}|
-</span></p>
-<p><strong>Prime number theorem</strong>:</p>
-<p><span data-math-style="display">
-\lim_{n \to \infty} \pi(n) \approx\frac{n}{\ln(n)}
-</span></p>
-<p>This can be used to estimate the number the number of prime numbers.</p>
-<blockquote>
-<p><strong>ln(n)</strong> is the <strong>natural logarithm</strong> of n — it's the logarithm with base <strong>e</strong> (where e ≈ 2.71828, Euler's number).</p>
-</blockquote>
-<p><strong><span data-math-style="inline">l</span>-bit guesstimation function</strong>:
-<span data-math-style="display">
-\begin{align}
-s(n) &amp;= \frac{n}{\ln(n)} \\
-t(l) &amp;= s(2^{l})-s(2^{l-1})
-\end{align}
-</span></p>
-<p><strong>Using the Prime Number Theorem to estimate 512-bit primes:</strong></p>
-<p>A 512-bit number is approximately in the range <span data-math-style="inline">[2^{511}, 2^{512}]</span>.</p>
-<p>Using <span data-math-style="inline">π(n) ≈ n/ln(n)</span>, the number of primes up to <span data-math-style="inline">2^{512}</span> is roughly:</p>
-<p><span data-math-style="display">
-\pi(2^{512}) \approx \frac{2^{512}}{\ln(2^{512})} = \frac{2^{512}}{512 \cdot \ln(2)} \approx \frac{2^{512}}{355}
-</span></p>
-<p>This is approximately <span data-math-style="inline">2^{502}</span> primes.</p>
-<p>The number of primes between <span data-math-style="inline">2^{511}</span> and <span data-math-style="inline">2^{512}</span> is roughly:</p>
-<p><span data-math-style="display">
-\pi(2^{512}) - \pi(2^{511}) \approx \frac{2^{512}}{355} - \frac{2^{511}}{354} \approx 2^{501}
-</span></p>
-<p><strong>To compare with atoms in the universe:</strong></p>
+            <h1>Faulty data is not good</h1>
+<p>A lot of things can go wrong during the transmission of data, which can be lost or parts of it corrupted. One job of the <a href="networking-osi.html" data-wikilink="true">second osi layer</a> is to identify and handle these cases correctly.</p>
+<p>Depending on the medium different bit error ratios are to be expected:</p>
 <ul>
-<li>Atoms in the universe: <span data-math-style="inline">\approx 10^{89} = 2^{296}</span></li>
-<li><span data-math-style="inline">512</span>-bit primes available: <span data-math-style="inline">\approx 2^{501}</span></li>
+<li><strong>Digital telephone networks</strong>: from <span data-math-style="inline">10^{-6}</span> to <span data-math-style="inline">10^{-7}</span></li>
+<li><strong>Coaxial cables</strong>: <span data-math-style="inline">10^{-9}</span></li>
+<li><strong>Fiber-optic cables</strong>: <span data-math-style="inline">10^{-12}</span></li>
 </ul>
-<p>So there are approximately <span data-math-style="inline">2^{(501-296)} = 2^{205}</span> times more <span data-math-style="inline">512</span>-bit primes than atoms in the universe.</p>
-<p><strong>Why this matters for cryptography:</strong></p>
-<p>When RSA generates a <span data-math-style="inline">2048</span>-bit key, it randomly selects from roughly <span data-math-style="inline">2^{2037}</span> available primes. The probability of randomly guessing the same prime twice is about <span data-math-style="inline">1</span> in <span data-math-style="inline">2^{2037}</span>—effectively impossible.</p>
+<h2>Cyclic redundency checks</h2>
+<p>Error detection can happen by attaching a checksum to the data frame. The cyclic redundancy check (<strong>CRC</strong>) is used to calculated or validate the <strong>Frame Check Sequence</strong> (checksum). This method does not provide any information about which parts of the data are corrupted, so backwards error correction needs to be applied if data is corrupted.</p>
+<p>This is done by interpreting the <strong>messages</strong> as a <a href="math-polynomial.html" data-wikilink="true">polynomial</a> <span data-math-style="inline">M(x)</span> and a <strong>generator polynomial</strong> <span data-math-style="inline">G(x)</span>. First multiply the the message polynomial with the highest term of the generator polynomial and divided by the generator polynomial <span data-math-style="inline">M(x) \cdot x^n \div G(x)</span>, which results in a quotient and a remainder <span data-math-style="inline">R(x)</span>. The <strong>transfer polynomial</strong> <span data-math-style="inline">T(x)</span> is <span data-math-style="inline">M(x) \cdot x^n + R(x)</span>.</p>
+<blockquote>
+<p>All arithmetic is performed in <span data-math-style="inline">GF(2)</span> (the <a href="math-ring.html#Field" data-wikilink="true">Galois Field</a> with two elements), meaning addition and subtraction are both equivalent to <em>XOR</em>, and there are no carries. This makes CRC computations efficient to implement in hardware.</p>
+</blockquote>
+<blockquote>
+<p>The multiplication with the highest term of the generator polynomial <span data-math-style="inline">x^n</span> is done to append <span data-math-style="inline">n-1</span> placeholder (zero) bits to the message, making room for the checksum remainder <span data-math-style="inline">R(x)</span> to be written into those positions, guaranteeing that the final transmitted codeword is divisible by <span data-math-style="inline">G(x)</span>.</p>
+</blockquote>
+<p>To check if the message was sucessfully transmitted the receiver has to devide <span data-math-style="inline">T(x)</span> with <span data-math-style="inline">G(x)</span>. If the result is <span data-math-style="inline">0</span> the message was probably transmitted correctly.</p>
+<h2>Parity checks</h2>
+<p>Checks based on additional information being added to a data block. For every horizontal row we get one additional parity bit, which is 1 if the number of 1's is odd. The same applies for every vertical column.</p>
+<blockquote>
+<p>This aforementioned rule is inverted if an odd parity system is used:</p>
+<ul>
+<li><strong>Even parity</strong>: Number of bits is odd = 1</li>
+<li><strong>Odd parity</strong>: Number of bits is odd = 0</li>
+</ul>
+</blockquote>
+<p>These can be used to pin point the corrupted bit. By checking the horizontal parity we can determine that at least one bit in this row has to be corrupted, afterwards we can look up the exact column by checking each vertical parity bit.</p>
+<p>After correcting all corrupted bits the receiver can send an acknowledgement, which is referred to as forward error correction.</p>
+<h2>Backwards error correction</h2>
+<p>If corrupted data can be detected but not corrected on the receiver machine the sender needs to resend the data frame. This process is referred <strong>backwards error correction</strong>.</p>
+<p>The receiver system <strong>does not</strong> send a negative acknowledgement for the data to be re-transmitted by the sender.</p>
+<h2>Forward error correction</h2>
+<p>If corrupted data can be detected and corrected on the receiver machine, the receiver does simply send an ack. This process is referred to as <strong>forward error correction</strong>.</p>
 
         </article>
 

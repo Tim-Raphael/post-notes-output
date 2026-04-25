@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="The distribution of prime numbers.">
-    <title>Prime Number Distribution | post-notes</title>
-    <meta name="description" content="The distribution of prime numbers.">
+    <meta name="description" content="Description">
+    <title>Title | post-notes</title>
+    <meta name="description" content="Description">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2546,69 +2546,80 @@
         </aside>
 
         <article>
-            <span>math-prime-number-distribution.html</span>
+            <span>IPv4.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-10-21T22:38
+                        * created: 2026-04-25T17:28
                         <br>
                          
-                        * modified: 2025-10-29T15:45
+                        * modified: 2026-04-25T18:08
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Prime Number Distribution</p>
+                <p>Title</p>
 
                 <span>description</span><br>
-                <p>The distribution of prime numbers.</p>
+                <p>Description</p>
 
+                
+                <span>related notes</span><br>
+                <ul>
+                    
+                    <li>
+                        <a href="./Subnetting.html">Subnetting.html</a>
+                    </li>
+                    
+                    <li>
+                        <a href="./Network error correction.html#Cyclic redundency checks">Network error correction.html#Cyclic redundency checks</a>
+                    </li>
+                    
+                </ul>
                 
             </div>
 
-            <h1>Prime number distribution</h1>
-<p><strong>Prime number function</strong>:
-<span data-math-style="display">
-\pi(n)=|\{p\in \mathbb{P}| p \leq n\}|
-</span></p>
-<p><strong>Prime number theorem</strong>:</p>
-<p><span data-math-style="display">
-\lim_{n \to \infty} \pi(n) \approx\frac{n}{\ln(n)}
-</span></p>
-<p>This can be used to estimate the number the number of prime numbers.</p>
-<blockquote>
-<p><strong>ln(n)</strong> is the <strong>natural logarithm</strong> of n — it's the logarithm with base <strong>e</strong> (where e ≈ 2.71828, Euler's number).</p>
-</blockquote>
-<p><strong><span data-math-style="inline">l</span>-bit guesstimation function</strong>:
-<span data-math-style="display">
-\begin{align}
-s(n) &amp;= \frac{n}{\ln(n)} \\
-t(l) &amp;= s(2^{l})-s(2^{l-1})
-\end{align}
-</span></p>
-<p><strong>Using the Prime Number Theorem to estimate 512-bit primes:</strong></p>
-<p>A 512-bit number is approximately in the range <span data-math-style="inline">[2^{511}, 2^{512}]</span>.</p>
-<p>Using <span data-math-style="inline">π(n) ≈ n/ln(n)</span>, the number of primes up to <span data-math-style="inline">2^{512}</span> is roughly:</p>
-<p><span data-math-style="display">
-\pi(2^{512}) \approx \frac{2^{512}}{\ln(2^{512})} = \frac{2^{512}}{512 \cdot \ln(2)} \approx \frac{2^{512}}{355}
-</span></p>
-<p>This is approximately <span data-math-style="inline">2^{502}</span> primes.</p>
-<p>The number of primes between <span data-math-style="inline">2^{511}</span> and <span data-math-style="inline">2^{512}</span> is roughly:</p>
-<p><span data-math-style="display">
-\pi(2^{512}) - \pi(2^{511}) \approx \frac{2^{512}}{355} - \frac{2^{511}}{354} \approx 2^{501}
-</span></p>
-<p><strong>To compare with atoms in the universe:</strong></p>
+            <h1>IPv4</h1>
+<h2>Header structure</h2>
 <ul>
-<li>Atoms in the universe: <span data-math-style="inline">\approx 10^{89} = 2^{296}</span></li>
-<li><span data-math-style="inline">512</span>-bit primes available: <span data-math-style="inline">\approx 2^{501}</span></li>
+<li>Stuff like: version, length, ttl, checksum, ...</li>
+<li>Sender Address</li>
+<li>Receiver Address</li>
+<li>Options</li>
+<li>0-Bytes (for alignment)</li>
 </ul>
-<p>So there are approximately <span data-math-style="inline">2^{(501-296)} = 2^{205}</span> times more <span data-math-style="inline">512</span>-bit primes than atoms in the universe.</p>
-<p><strong>Why this matters for cryptography:</strong></p>
-<p>When RSA generates a <span data-math-style="inline">2048</span>-bit key, it randomly selects from roughly <span data-math-style="inline">2^{2037}</span> available primes. The probability of randomly guessing the same prime twice is about <span data-math-style="inline">1</span> in <span data-math-style="inline">2^{2037}</span>—effectively impossible.</p>
+<h2>Addresses</h2>
+<p>Consisting of 4 x 8 bit blocks for a total of 32 bit and is used to uniquely identify members of the network.</p>
+<blockquote>
+<p>Networkmasks
+Networksuffix xxx.xxx.xxx.xxx/xx</p>
+</blockquote>
+<h3>Classes</h3>
+<p>These were used to distinguish network-id and host-id. This was somewhat superseded by propper <a href="Subnetting.html" data-wikilink="true">subnetting</a>.</p>
+<ul>
+<li><strong>Class-A</strong>: <code>[0+net-id].[host-id].[host-id].[host-id]</code></li>
+<li><strong>Class-B</strong>: <code>[01+net-id].[net-id].[host.id].[host-id]</code></li>
+<li><strong>Class-C</strong>: <code>[110+net-id].[net-id].[net-id].[host-id]</code></li>
+<li><strong>Class-D</strong>: <code>[1110+multi-id].[multi-id].[multi-id].[multi-id]</code></li>
+<li><strong>Class-E</strong>: <code>[1111+reserved].[reserved].[reserved].[reserved]</code></li>
+</ul>
+<blockquote>
+<p>A Class-B network can have up to 65534 hosts, which is the range from x.x.0.0 - x.x.255.255 minus the reserved x.x.0.0 unspecied network address and the reserved x.x.255.255 broadcast address.</p>
+</blockquote>
+<h2>Checksum</h2>
+<blockquote>
+<p>See: <a href="Network%20error%20correction.html#Cyclic%20redundency%20checks" data-wikilink="true">Network error correction#Cyclic redundency checks</a></p>
+</blockquote>
+<p>If an error is detected by any node the packet is discarded. The sender is responsible for sending a new packet if they don't receive an ack. Any node that detects an error discards the packet. There is no negative ack, because the node can't be sure that the sender address was not corrupted. No forward error correction is applied.</p>
+<h2>TTL</h2>
+<p>The time to live is a 8 bit field that decreases by 1 every time the packet is received by a node. The default value is 64. When the ttl reaches 0 the packet is discarded to prevent infinite loops.</p>
+<blockquote>
+<p>The checksum has to be recalculated on every hop because of the changing ttl.</p>
+</blockquote>
 
         </article>
 
