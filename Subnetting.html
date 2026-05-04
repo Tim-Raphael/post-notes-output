@@ -111,6 +111,10 @@
         </li>
         
         <li>
+            <a href="./IP Routing Tables.html">IP Routing Tables.html</a>
+        </li>
+        
+        <li>
             <a href="./IPv4.html">IPv4.html</a>
         </li>
         
@@ -1055,6 +1059,10 @@
         </li>
         
         <li>
+            <a href="./IP Routing Tables.html">IP Routing Tables.html</a>
+        </li>
+        
+        <li>
             <a href="./IPv4.html">IPv4.html</a>
         </li>
         
@@ -1756,6 +1764,26 @@
         
         
 <li>
+    <label for="layer-3">layer-3</label>
+    <input id="layer-3" type="checkbox"></input>
+    <div>
+    
+    <ul>
+        
+        <li>
+            <a href="./IP Routing Tables.html">IP Routing Tables.html</a>
+        </li>
+        
+    </ul>
+
+    
+    
+    <div>
+</li>
+
+        
+        
+<li>
     <label for="math">math</label>
     <input id="math" type="checkbox"></input>
     <div>
@@ -2246,6 +2274,30 @@
 
     
     
+    <ul>
+        
+        
+<li>
+    <label for="ip">ip</label>
+    <input id="ip" type="checkbox"></input>
+    <div>
+    
+    <ul>
+        
+        <li>
+            <a href="./IP Routing Tables.html">IP Routing Tables.html</a>
+        </li>
+        
+    </ul>
+
+    
+    
+    <div>
+</li>
+
+        
+    </ul>
+    
     <div>
 </li>
 
@@ -2583,7 +2635,7 @@
                         * created: 2026-04-25T18:07
                         <br>
                          
-                        * modified: 2026-04-28T10:29
+                        * modified: 2026-05-04T15:56
                         <br>
                         
                     </span>
@@ -2598,11 +2650,14 @@
                 
             </div>
 
-            <h1>Subnetting yo</h1>
+            <h1>Subnetting/CIDR</h1>
+<blockquote>
+<p>CIDR stands for Classless Inter-Domain Routing</p>
+</blockquote>
 <p>IP addresses are 32 bits (IPv4), written as four 8-bit octets: <code>192.168.1.42</code>. Every address has two logical parts:</p>
 <ul>
-<li><strong>Network portion</strong> — identifies which network</li>
-<li><strong>Host portion</strong> — identifies which device on that network</li>
+<li><strong>Network portion</strong>: identifies which network</li>
+<li><strong>Host portion</strong>: identifies which device on that network</li>
 </ul>
 <p>Subnetting is just the act of deciding where that boundary falls.</p>
 <h2>The subnet mask</h2>
@@ -2612,8 +2667,8 @@ Mask:     255.255.255.0  →  11111111.11111111.11111111.00000000
                                      ^^^^^^^^^^^^^^^^ network ^^^^^^^^^^^^^^^^  ^^^^ host ^^^^
 </code></pre>
 <p>The mask <code>255.255.255.0</code> says: <em>&quot;the first 24 bits are the network, the last 8 are the host.&quot;</em></p>
-<h2>CIDR notation</h2>
-<p>Writing out <code>255.255.255.0</code> is verbose. <strong>CIDR (Classless Inter-Domain Routing)</strong> just appends a <code>/</code> and the <strong>count of network bits</strong> to the address:</p>
+<h2>Prefix</h2>
+<p>Writing out <code>255.255.255.0</code> is verbose. You can just append a <code>/</code> and the <strong>count of network bits</strong> to the address:</p>
 <pre><code>192.168.1.42/24   ←  same as 255.255.255.0
 10.0.0.0/8        ←  same as 255.0.0.0
 172.16.0.0/12     ←  same as 255.240.0.0
