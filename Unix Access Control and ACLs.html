@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="The Binary Unit System (BUS) is responsible for transporting data from one component to another.">
-    <title>Bus-System | post-notes</title>
-    <meta name="description" content="The Binary Unit System (BUS) is responsible for transporting data from one component to another.">
+    <meta name="description" content="Description">
+    <title>Title | post-notes</title>
+    <meta name="description" content="Description">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2663,43 +2663,122 @@
         </aside>
 
         <article>
-            <span>computer-architecture-bus.html</span>
+            <span>Unix Access Control and ACLs.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-05-20T16:38
+                        * created: 2026-05-06T18:03
                         <br>
                          
-                        * modified: 2025-07-08T12:52
+                        * modified: 2026-05-06T18:19
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Bus-System</p>
+                <p>Title</p>
 
                 <span>description</span><br>
-                <p>The Binary Unit System (BUS) is responsible for transporting data from one component to another.</p>
+                <p>Description</p>
 
-                
-                <span>related notes</span><br>
-                <ul>
-                    
-                    <li>
-                        <a href="./computer-architecture-von-neumann.html#Von Neumann bottleneck">computer-architecture-von-neumann.html#Von Neumann bottleneck</a>
-                    </li>
-                    
-                </ul>
                 
             </div>
 
-            <h1>The wheels on the bus go round and round</h1>
-<p>The Bus-System (short for Binary Unit System) is the part of the compute that relays data from one component to another. This commonly happens through separat channel, one for instructions, data, and addresses. This separation through specific channel helps with throughput and mitigates the <a href="computer-architecture-von-neumann.html#Von%20Neumann%20bottleneck" data-wikilink="true">Von-Neumann bottleneck</a>, by allowing different sets of data to be transmitted in parallel.</p>
-<h2>Bridges and I/O</h2>
-<p>The CPU does not communicate directly with slow devices in general, instead only communicating with a bridge that is connected to a secondary bus system. The bridge is responsible for handling the communication with these slow devices. This layer of indirection keeps the main bus from getting clogged by slow I/O operations.</p>
+            <h1>Unix Access Control</h1>
+<h2>Permission String Format</h2>
+<p><code>-/rwx/rw-/---</code></p>
+<p>Each permission string has <strong>4 sections</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Example</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File type</td>
+<td><code>-</code></td>
+<td><code>-</code> = file, <code>d</code> = directory, <code>l</code> = symlink</td>
+</tr>
+<tr>
+<td>Owner</td>
+<td><code>rwx</code></td>
+<td>read, write, execute</td>
+</tr>
+<tr>
+<td>Group</td>
+<td><code>rw-</code></td>
+<td>read, write, no execute</td>
+</tr>
+<tr>
+<td>Others</td>
+<td><code>---</code></td>
+<td>no permissions</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Permission bits:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Char</th>
+<th>Octal</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>r</code></td>
+<td>4</td>
+<td>Read</td>
+</tr>
+<tr>
+<td><code>w</code></td>
+<td>2</td>
+<td>Write</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td>1</td>
+<td>Execute (or traverse for dirs)</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>0</td>
+<td>Permission not set</td>
+</tr>
+</tbody>
+</table>
+<p>Octal shorthand: <code>rwxr-xr--</code> → <code>754</code></p>
+<h2>Linux Access Control Lists (ACL)</h2>
+<p>Standard Unix permissions only allow one owner and one group. <strong>ACLs</strong> extend this, you can grant permissions to any user or group on a per-file basis.</p>
+<pre><code class="language-bash"># View ACL
+getfacl file.txt
+
+# Grant user alice read+write
+setfacl -m u:alice:rw file.txt
+
+# Grant group devs execute
+setfacl -m g:devs:x script.sh
+
+# Remove ACL entry
+setfacl -x u:alice file.txt
+
+# Remove all ACLs
+setfacl -b file.txt
+</code></pre>
+<p>A <code>+</code> at the end of <code>ls -l</code> output (e.g. <code>-rwxr-xr-x+</code>) means an ACL is set.</p>
+<p><strong>ACL mask</strong> — limits the effective permissions for named users/groups (not the owner):</p>
+<pre><code class="language-bash">setfacl -m m:rx file.txt  # mask: cap named entries to r-x
+</code></pre>
+<p><strong>Default ACLs</strong> (directories only) — inherited by new files/subdirs:</p>
+<pre><code class="language-bash">setfacl -d -m u:alice:rw mydir/
+</code></pre>
 
         </article>
 
