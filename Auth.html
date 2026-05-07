@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="The Complex Instruction Set Architecture describes a general purpose instruction set that focuses on composite instruction that generally range from 3-6 Byte in size, and can take multiple cycles to execute.">
-    <title>CISC | post-notes</title>
-    <meta name="description" content="The Complex Instruction Set Architecture describes a general purpose instruction set that focuses on composite instruction that generally range from 3-6 Byte in size, and can take multiple cycles to execute.">
+    <meta name="description" content="Description">
+    <title>Title | post-notes</title>
+    <meta name="description" content="Description">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2691,44 +2691,60 @@
         </aside>
 
         <article>
-            <span>computer-architecture-cisc.html</span>
+            <span>Auth.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-06-10T17:28
+                        * created: 2026-05-07T19:16
                         <br>
                          
-                        * modified: 2025-07-08T12:52
+                        * modified: 2026-05-07T19:54
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>CISC</p>
+                <p>Title</p>
 
                 <span>description</span><br>
-                <p>The Complex Instruction Set Architecture describes a general purpose instruction set that focuses on composite instruction that generally range from 3-6 Byte in size, and can take multiple cycles to execute.</p>
+                <p>Description</p>
 
-                
-                <span>related notes</span><br>
-                <ul>
-                    
-                    <li>
-                        <a href="./computer-architecture-risc.html">computer-architecture-risc.html</a>
-                    </li>
-                    
-                </ul>
                 
             </div>
 
-            <h1>Complex Instruction Set</h1>
-<p>The main idea behind the complex instruction set architecture is generally &quot;more is more&quot;. There is a strong focus on representing a variety of specific tasks through composite instructions. These composite instruction can often take multiple command cycles to complete and generally range from 3-6 Byte in size.</p>
-<blockquote>
-<p>If you would compare the structure to the <a href="computer-architecture-risc.html" data-wikilink="true">RISC Architecture</a> a great mental model would be to take multiple risc instructions and compose a more complex instruction out of them (even though there are a bunch of hardware differences too).</p>
-</blockquote>
+            <h1>Authentication and Authorization</h1>
+<p>While being similar and often combined these are two sperate concerns.</p>
+<ul>
+<li><strong>Authentication</strong>: Binding an <strong>identity</strong> to a <strong>subject</strong>.</li>
+<li><strong>Authorization</strong>: Binding <strong>rights</strong> to a <strong>subject</strong>.</li>
+</ul>
+<h2>Authentication</h2>
+<p>The authentication process consists of 4 distinct steps:</p>
+<ol>
+<li>Receiving authentication data</li>
+<li>Extracting unique featues</li>
+<li>Comparison with reference data</li>
+<li>Final Authentication</li>
+</ol>
+<p>Most authentication procedures are based around secrets:</p>
+<ul>
+<li>What do I know?</li>
+<li>Where am I?</li>
+<li>What do I have (biometric)?</li>
+</ul>
+<p>The authentication can be split into <strong>verification</strong>, which means comparing the authentictation data with the reference data (1:1) and <strong>identification</strong> were we compare the authentication data against the reference data of all registered people (1:n).</p>
+<h2>Knowledge base authentication</h2>
+<p>Uses secret knowledge like a pin or password which is not known to anyone else. This secret needs to be complex enough such that it can't be guessed and it should be changed frequently.</p>
+<p><strong>Example authentication steps</strong>:</p>
+<ol>
+<li>Typing in your password</li>
+<li>Hashing the password</li>
+<li>Comparing hash with reference hash</li>
+<li>Identical or not identical</li>
+</ol>
 
         </article>
 
