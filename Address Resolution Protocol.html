@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Traits are used to share functionality over multiple types. Furthermore we can define trait bounds that check if a type implements a certain trait and therefore has certain properties.">
-    <title>Rust Traits | post-notes</title>
-    <meta name="description" content="Traits are used to share functionality over multiple types. Furthermore we can define trait bounds that check if a type implements a certain trait and therefore has certain properties.">
+    <meta name="description" content="Description">
+    <title>Title | post-notes</title>
+    <meta name="description" content="Description">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2801,48 +2801,47 @@
         </aside>
 
         <article>
-            <span>development-programming-language-rust-traits.html</span>
+            <span>Address Resolution Protocol.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-07-17T12:02
+                        * created: 2026-05-10T20:23
                         <br>
                          
-                        * modified: 2025-10-15T11:19
+                        * modified: 2026-05-10T21:10
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Rust Traits</p>
+                <p>Title</p>
 
                 <span>description</span><br>
-                <p>Traits are used to share functionality over multiple types. Furthermore we can define trait bounds that check if a type implements a certain trait and therefore has certain properties.</p>
+                <p>Description</p>
 
                 
             </div>
 
-            <h1>What are Traits?</h1>
-<h2>Common Traits for Types</h2>
-<p>The following traits should generally be implemented by most of the types in a API:</p>
-<ol>
-<li><code>Debug</code>, <code>Clone</code></li>
-<li><code>Send</code>, <code>Sync</code>, and <code>Unpin</code></li>
-<li><code>PartialEq</code>, <code>PartialOrd</code>, <code>Hash</code>, <code>Eq</code> and <code>Ord</code></li>
-<li><code>Serialize</code> and <code>Deserialize</code> (as opt in)</li>
-</ol>
-<p>When using wrapper types the following traits should be implemented in addition: <code>Deref</code>, <code>AsRef</code>, <code>From/Into&lt;InnerType&gt;</code>, <code>Borrow</code>.</p>
-<h3>Exception</h3>
-<p><code>Copy</code>: People generally don't expect types to implement <code>Copy</code> because it changes the move semantics of a given type, which might surprise user. It is often advisable to rely on <code>Clone</code> instead to explicitly create a a new copy. In addition <code>Copy</code> is highly restrictive and could result in a breaking change if a type has to rely on something like <code>String</code> further done the line.</p>
-<h2>dyn vs impl</h2>
-<p><strong>Dynamic dispatch</strong> (<code>dyn</code>) allows for calling methods on trait objects at runtime, enabling <strong>polymorphism</strong>. If a function <code>fn some(&amp;dyn Trait) { ... }</code> is called, it expects the input to be a <strong>pointer</strong> to a <strong>trait object</strong> (because the size  is unknown during compile time). If mutability is needed use a <code>Box&lt;dyn Trait&gt;</code>.</p>
-<blockquote>
-<p>Note: This is achieved using &quot;fat pointers,&quot; which contain a pointer to the data and a pointer to a vtable that holds the method implementations for the specific type.</p>
-</blockquote>
-<p><code>impl</code> on the other hand uses <strong>static dispatch</strong>, which generates a separate version of the function at compile time for each concrete type used. This is referred to as <strong>monomorphization</strong>.</p>
+            <h1>Address Resolution Protocol (ARP)</h1>
+<p>A protocol used to map mac address to a given IP address. This is usefull when the sender and the receiver are in the same network, i.e., the packet is not send via a router, which necessitates that we provide the mac address of the receiver.</p>
+<p>When trying to find a mac address the host first looks in it's own ARP table. If the corresponding mapping can't be found the host sends out an ARP request to all known hosts and nodes of a network. If their own ARP table contains the missing mapping they respond with an ARP reply, containing the missing mac address. After the table entry is updated the Ethernet packet can be created and sent to the reciver.</p>
+<h2>ARP table</h2>
+<table>
+<thead>
+<tr>
+<th>IP address</th>
+<th>MAC address</th>
+</tr>
+</thead>
+</table>
+<hr />
+<h2>Quesions</h2>
+<p>What does ARP stand for and what is it used for?
+?
+Address Resolution Protocol: Maps mac addresses to ip address, which is usefull when you are sending packets in a local network, because you know the ip address but the request is not sent via a router and swtiches require the mac address to route the packet correctly.</p>
 
         </article>
 

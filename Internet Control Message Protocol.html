@@ -91,7 +91,7 @@
     <ul>
         
         <li>
-            <a href="./ARP.html">ARP.html</a>
+            <a href="./Address Resolution Protocol.html">Address Resolution Protocol.html</a>
         </li>
         
         <li>
@@ -132,6 +132,10 @@
         
         <li>
             <a href="./IT-Security.html">IT-Security.html</a>
+        </li>
+        
+        <li>
+            <a href="./Internet Control Message Protocol.html">Internet Control Message Protocol.html</a>
         </li>
         
         <li>
@@ -619,15 +623,6 @@
     <input id="exam-prep" type="checkbox"></input>
     <div>
     
-    <ul>
-        
-        <li>
-            <a href="./Unix Access Control and ACLs.html">Unix Access Control and ACLs.html</a>
-        </li>
-        
-    </ul>
-
-    
     
     <ul>
         
@@ -1068,7 +1063,7 @@
     <ul>
         
         <li>
-            <a href="./ARP.html">ARP.html</a>
+            <a href="./Address Resolution Protocol.html">Address Resolution Protocol.html</a>
         </li>
         
         <li>
@@ -1101,6 +1096,10 @@
         
         <li>
             <a href="./IT-Security.html">IT-Security.html</a>
+        </li>
+        
+        <li>
+            <a href="./Internet Control Message Protocol.html">Internet Control Message Protocol.html</a>
         </li>
         
         <li>
@@ -1141,6 +1140,10 @@
         
         <li>
             <a href="./The Legal Stuff.html">The Legal Stuff.html</a>
+        </li>
+        
+        <li>
+            <a href="./Unix Access Control and ACLs.html">Unix Access Control and ACLs.html</a>
         </li>
         
         <li>
@@ -1879,6 +1882,10 @@
             <a href="./IP Routing Tables.html">IP Routing Tables.html</a>
         </li>
         
+        <li>
+            <a href="./Internet Control Message Protocol.html">Internet Control Message Protocol.html</a>
+        </li>
+        
     </ul>
 
     
@@ -2390,11 +2397,15 @@
     <ul>
         
         <li>
-            <a href="./ARP.html">ARP.html</a>
+            <a href="./Address Resolution Protocol.html">Address Resolution Protocol.html</a>
         </li>
         
         <li>
             <a href="./IP Routing Tables.html">IP Routing Tables.html</a>
+        </li>
+        
+        <li>
+            <a href="./Internet Control Message Protocol.html">Internet Control Message Protocol.html</a>
         </li>
         
         <li>
@@ -2760,14 +2771,14 @@
         
         
 <li>
-    <label for="layer-4">layer-4</label>
-    <input id="layer-4" type="checkbox"></input>
+    <label for="layer-3">layer-3</label>
+    <input id="layer-3" type="checkbox"></input>
     <div>
     
     <ul>
         
         <li>
-            <a href="./ARP.html">ARP.html</a>
+            <a href="./Address Resolution Protocol.html">Address Resolution Protocol.html</a>
         </li>
         
     </ul>
@@ -2790,16 +2801,16 @@
         </aside>
 
         <article>
-            <span>ARP.html</span>
+            <span>Internet Control Message Protocol.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2026-05-10T20:23
+                        * created: 2026-05-10T21:06
                         <br>
                          
-                        * modified: 2026-05-10T21:00
+                        * modified: 2026-05-10T21:20
                         <br>
                         
                     </span>
@@ -2812,25 +2823,20 @@
                 <p>Description</p>
 
                 
+                <span>related notes</span><br>
+                <ul>
+                    
+                    <li>
+                        <a href="./Internet Protocol.html">Internet Protocol.html</a>
+                    </li>
+                    
+                </ul>
+                
             </div>
 
-            <h1>Address Resolution Protocol</h1>
-<p>A protocol used to map mac address to a given IP address. This is usefull when the sender and the receiver are in the same network, i.e., the packet is not send via a router, which necessitates that we provide the mac address of the receiver.</p>
-<p>When trying to find a mac address the host first looks in it's own ARP table. If the corresponding mapping can't be found the host sends out an ARP request to all known hosts and nodes of a network. If their own ARP table contains the missing mapping they respond with an ARP reply, containing the missing mac address. After the table entry is updated the Ethernet packet can be created and sent to the reciver.</p>
-<h2>ARP table</h2>
-<table>
-<thead>
-<tr>
-<th>IP address</th>
-<th>MAC address</th>
-</tr>
-</thead>
-</table>
-<hr />
-<h2>Quesions</h2>
-<p>What does ARP stand for and what is it used for?
-?
-Address Resolution Protocol: Maps mac addresses to ip address, which is usefull when you are sending packets in a local network, because you know the ip address but the request is not sent via a router and swtiches require the mac address to route the packet correctly.</p>
+            <h1>Internet Control Message Protocol (ICMP)</h1>
+<p>This adds additional functionality to <a href="Internet%20Protocol.html" data-wikilink="true">IP</a>, such as, providing diagnostics and error messages, e.g., receiver cannot be reached, requested port does not exist, or a datagram exceeded the maximum number of redirects.</p>
+<p>Tools like <code>ping</code> and <code>traceroute</code> are built using ICMP.</p>
 
         </article>
 
