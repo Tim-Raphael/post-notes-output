@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="A algorithm is a set of instruction, that, when execute, result in a desired output.">
-    <title>Algorithm | post-notes</title>
-    <meta name="description" content="A algorithm is a set of instruction, that, when execute, result in a desired output.">
+    <meta name="description" content="Description">
+    <title>Title | post-notes</title>
+    <meta name="description" content="Description">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2833,46 +2833,47 @@
         </aside>
 
         <article>
-            <span>development-programming-algorithm.html</span>
+            <span>Network Address Translation.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-06-03T16:54
+                        * created: 2026-05-11T00:00
                         <br>
                          
-                        * modified: 2025-10-03T16:42
+                        * modified: 2026-05-11T00:20
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Algorithm</p>
+                <p>Title</p>
 
                 <span>description</span><br>
-                <p>A algorithm is a set of instruction, that, when execute, result in a desired output.</p>
+                <p>Description</p>
 
                 
             </div>
 
-            <h1>What is an algorithm?</h1>
-<p>TODO! Baking cake and kidnapping dogs.</p>
-<hr />
-<h2>Algorithm for adding two decimal numbers</h2>
-<p>The following steps should illustrate how we can intuitively define an algorithm for a specific task:</p>
+            <h1>Network Address Translation (NAT)</h1>
+<p>Mapping private IP addresses to public IP addresses. Each local IP address gets its own port on the public IP, allowing many devices to share a single public address.</p>
+<h2>How it works</h2>
+<p>A home router sits between your LAN and the internet. When a device sends a packet out:</p>
 <ol>
-<li>Define the carry as 0.</li>
-<li>Define the result as 0.</li>
-<li>Start at the last digit of each number.</li>
-<li>Add the current digit of the first number, the current digit of the second number and the carry.</li>
-<li>Append the unit digit of the resulting number to the result.</li>
-<li>Store the ten's digit of the resulting number in the carry.</li>
-<li>If the end of both numbers is reached, stop; else go back to step 4.</li>
-<li>If the carry is larger than 0; append the carry to the result.</li>
-<li>Reverse the result to get the product of our addition.</li>
+<li>The router replaces the private source IP (192.168.1.x) with its public IP</li>
+<li>It records the mapping in a NAT table: (private IP, private port) &lt;-&gt; public port</li>
+<li>When a reply arrives, the router looks up the table and forwards the packet back to the correct internal device</li>
 </ol>
+<h2>NAT Traversal</h2>
+<p>When two peers are both behind NAT, direct connection is non-trivial. Common techniques:</p>
+<ul>
+<li><strong>STUN</strong>: Discover your public IP/port</li>
+<li><strong>TURN</strong>: Relay traffic through a server when direct fails</li>
+<li><strong>ICE</strong>: Tries STUN first, falls back to TURN (used in WebRTC)</li>
+<li><strong>UDP hole punching</strong> : Both sides send packets simultaneously to open a path through each other's NAT</li>
+</ul>
 
         </article>
 
