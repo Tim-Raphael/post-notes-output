@@ -2847,7 +2847,7 @@
                         * created: 2026-05-10T00:37
                         <br>
                          
-                        * modified: 2026-05-11T18:38
+                        * modified: 2026-05-13T00:06
                         <br>
                         
                     </span>
@@ -2877,6 +2877,14 @@
 
             <h1>Pumping Lemma</h1>
 <p>The pumping lemma is a tool for <strong>proving a language is not regular</strong>. It cannot prove a language <em>is</em> regular -- only that it isn't.</p>
+<p>It states that for any regular language <span data-math-style="inline">L</span>, there exists an integer <span data-math-style="inline">n</span> such that any string <span data-math-style="inline">w\in L</span> with length <span data-math-style="inline">|x|\geq n</span> can be divided into <span data-math-style="inline">xyz</span>, satisfying the following conditions:</p>
+<p><span data-math-style="display">
+\begin{align}
+|xy| &amp;\leq n \\
+|z| &amp;\geq 1 \\\\
+\forall i \geq 0, &amp;xy^iz\in L
+\end{align}
+</span></p>
 <h2>The Idea</h2>
 <p>Every <a href="Regular%20Language.html" data-wikilink="true">regular language</a> has a <a href="DFA%20and%20NFA.html" data-wikilink="true">fintie automaton</a> recognising it. If that automaton has <span data-math-style="inline">p</span> states and you feed it a string of length <span data-math-style="inline">\geq p</span>, the machine must revisit some state -- creating a <strong>loop</strong>. That loop can be repeated (pumped) any number of times and the resulting string must still be in the language.</p>
 <h2>Formal Statement</h2>
