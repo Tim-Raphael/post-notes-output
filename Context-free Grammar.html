@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Used to calculate the $gcd(a, n)$ and the multiplicative inverse of $a$, with $a \in \mathbb{Z}^{*}_{n}$">
-    <title>Advaced Euclidean Algorithm | post-notes</title>
-    <meta name="description" content="Used to calculate the $gcd(a, n)$ and the multiplicative inverse of $a$, with $a \in \mathbb{Z}^{*}_{n}$">
+    <meta name="description" content="Description">
+    <title>Title | post-notes</title>
+    <meta name="description" content="Description">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2850,99 +2850,73 @@
         </aside>
 
         <article>
-            <span>math-advanced-euclidean-algorithm.html</span>
+            <span>Context-free Grammar.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-11-29T20:35
+                        * created: 2026-05-16T15:07
                         <br>
                          
-                        * modified: 2025-11-30T14:23
+                        * modified: 2026-05-17T01:17
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Advaced Euclidean Algorithm</p>
+                <p>Title</p>
 
                 <span>description</span><br>
-                <p>Used to calculate the $gcd(a, n)$ and the multiplicative inverse of $a$, with $a \in \mathbb{Z}^{*}_{n}$</p>
+                <p>Description</p>
 
+                
+                <span>related notes</span><br>
+                <ul>
+                    
+                    <li>
+                        <a href="./Formal Languages.html">Formal Languages.html</a>
+                    </li>
+                    
+                    <li>
+                        <a href="./Regular Languages.html#Regular Expressions">Regular Languages.html#Regular Expressions</a>
+                    </li>
+                    
+                    <li>
+                        <a href="./DFA and NFA.html">DFA and NFA.html</a>
+                    </li>
+                    
+                    <li>
+                        <a href="./Formal Languages.html">Formal Languages.html</a>
+                    </li>
+                    
+                </ul>
                 
             </div>
 
-            <h1>Advanced Euclidean Algorithm</h1>
-<p>Used to calculate the <span data-math-style="inline">gcd(a, n)</span> and the multiplicative inverse of <span data-math-style="inline">a \mod n</span>, with <span data-math-style="inline">a \in \mathbb{Z}^{*}_{n}</span>, meaning, it calculates both <span data-math-style="inline">s</span> and <span data-math-style="inline">t</span>, for the values <span data-math-style="inline">a</span> and <span data-math-style="inline">n</span>:</p>
+            <h1>Context-free Grammar (CFG)</h1>
+<p>A formal why to describe a class of <a href="Formal%20Languages.html" data-wikilink="true">Formal Languages</a>, or to be more precise, context-free languages.</p>
+<p>They have the same relation to push-down automaton that <a href="Regular%20Languages.html#Regular%20Expressions" data-wikilink="true">Regular Expressions</a> have to <a href="DFA%20and%20NFA.html" data-wikilink="true">Finte Automaton</a>, i.e., they are a different way to express the same idea.</p>
+<h2>Structure</h2>
+<p>A CFG <span data-math-style="inline">G=(V,T,P,S)</span>, where</p>
+<ul>
+<li><span data-math-style="inline">V</span>: Variables/Symbols that can be replaced using production rules</li>
+<li><span data-math-style="inline">\Sigma</span>: Terminals/Symbols that appear in the final strings (<a href="Formal%20Languages.html" data-wikilink="true">Formal Languages</a>)</li>
+<li><span data-math-style="inline">P</span>: Set of production rules</li>
+<li><span data-math-style="inline">S</span>: The start symbol</li>
+</ul>
+<h2>Example</h2>
+<p>Let <span data-math-style="inline">L=\{a^n b^n c^m|m,n\in\mathbb{N}_0\}</span> be a language. The context-free grammar <span data-math-style="inline">G</span>, generating that language is defined as follows:</p>
 <p><span data-math-style="display">
-gcd(a,n)= n \cdot s + a \cdot t
+\begin{align}
+V &amp;= \{ S, A, C \} \\
+\Sigma &amp;= \{a,b,c\} \\
+P &amp;= \{ AB \to aAb | \varepsilon, C \to cC | \varepsilon \} \\
+S &amp;= AC \\\\
+G &amp;= \{V, \Sigma, P, S\}
+\end{align}
 </span></p>
-<p>For <span data-math-style="inline">n = 73</span> and <span data-math-style="inline">a = 56</span> we get:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th><span data-math-style="inline">\cdot 73</span></th>
-<th><span data-math-style="inline">\cdot 56</span></th>
-<th><span data-math-style="inline">q</span></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span data-math-style="inline">73 \; (n)</span></td>
-<td><span data-math-style="inline">1</span></td>
-<td><span data-math-style="inline">0</span></td>
-<td></td>
-<td><span data-math-style="inline">73 = 1 \cdot 73 + 0 \cdot 56</span></td>
-</tr>
-<tr>
-<td><span data-math-style="inline">56 \; (a)</span></td>
-<td><span data-math-style="inline">0</span></td>
-<td><span data-math-style="inline">1</span></td>
-<td><span data-math-style="inline">1</span></td>
-<td><span data-math-style="inline">56 = 0 \cdot 73 + 1 \cdot 56</span></td>
-</tr>
-<tr>
-<td><span data-math-style="inline">17</span></td>
-<td><span data-math-style="inline">1</span></td>
-<td><span data-math-style="inline">-1</span></td>
-<td><span data-math-style="inline">3</span></td>
-<td><span data-math-style="inline">17 = 1 \cdot 73 - 1 \cdot 56</span></td>
-</tr>
-<tr>
-<td><span data-math-style="inline">5</span></td>
-<td><span data-math-style="inline">-3</span></td>
-<td><span data-math-style="inline">4</span></td>
-<td><span data-math-style="inline">3</span></td>
-<td><span data-math-style="inline">5 = -3 \cdot 73 + 4 \cdot 56</span></td>
-</tr>
-<tr>
-<td><span data-math-style="inline">2</span></td>
-<td><span data-math-style="inline">10</span></td>
-<td><span data-math-style="inline">-13</span></td>
-<td><span data-math-style="inline">2</span></td>
-<td><span data-math-style="inline">2 = 10 \cdot 73 - 13 \cdot 56</span></td>
-</tr>
-<tr>
-<td><span data-math-style="inline">1</span></td>
-<td><span data-math-style="inline">-23</span></td>
-<td><span data-math-style="inline">30</span></td>
-<td><span data-math-style="inline">2</span></td>
-<td><span data-math-style="inline">1 = -23 \cdot 73 + 30 \cdot 56</span></td>
-</tr>
-<tr>
-<td><span data-math-style="inline">0</span></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>The <span data-math-style="inline">gcd(73, 56) = 1</span> and the multiplicative inverse of <span data-math-style="inline">a</span> is <span data-math-style="inline">30</span>, because: <span data-math-style="display">1 \equiv -23 \cdot 73 + 30 \cdot 56 \pmod{73}</span></p>
 
         </article>
 
