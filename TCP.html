@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="These are used to categorize numbers, based on their characteristics.">
-    <title>Standard Number Sets | post-notes</title>
-    <meta name="description" content="These are used to categorize numbers, based on their characteristics.">
+    <meta name="description" content="Description">
+    <title>Title | post-notes</title>
+    <meta name="description" content="Description">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2934,66 +2934,38 @@
         </aside>
 
         <article>
-            <span>math-standard-number-sets.html</span>
+            <span>TCP.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-09-26T18:30
+                        * created: 2026-05-18T18:16
                         <br>
                          
-                        * modified: 2026-01-27T22:43
+                        * modified: 2026-05-18T18:45
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Standard Number Sets</p>
+                <p>Title</p>
 
                 <span>description</span><br>
-                <p>These are used to categorize numbers, based on their characteristics.</p>
+                <p>Description</p>
 
-                
-                <span>related notes</span><br>
-                <ul>
-                    
-                    <li>
-                        <a href="./Sets.html">Sets.html</a>
-                    </li>
-                    
-                    <li>
-                        <a href="./math-cartesian-product.html">math-cartesian-product.html</a>
-                    </li>
-                    
-                </ul>
                 
             </div>
 
-            <h1>Standard Number Sets</h1>
-<p>These include the following in order:</p>
+            <h1>Transmission Control Protocol</h1>
+<p>A connection-oriented protocol that aims to enable reliable communication between client and host.</p>
+<h2>Handshake</h2>
 <ul>
-<li><span data-math-style="inline">\mathbb{N}</span>: Natural numbers from <span data-math-style="inline">1</span> to <span data-math-style="inline">\infty</span>, also described as counting numbers.</li>
-<li><span data-math-style="inline">\mathbb{Z}</span>: Integers (ganze Zahlen) are the numbers from <span data-math-style="inline">-\infty</span> to <span data-math-style="inline">\infty</span>.</li>
-<li><span data-math-style="inline">\mathbb{Q}</span>: Rational numbers also include fraction.</li>
-<li><span data-math-style="inline">\mathbb{I}</span>: Irrational numbers have non-repeating, non-terminating decimal expansions (for example: <span data-math-style="inline">\pi</span>).</li>
-<li><span data-math-style="inline">\mathbb{R}</span>: Real numbers on the number line (rational + irrational).</li>
+<li><code>SYN</code>: Client sends a synchronization request -- with the <code>SYN</code>-bit being set</li>
+<li><code>SYN-ACK</code>: Server response with an acknowledgement containing the initial sequence number (ISN) -- with the <code>SYN</code>- and <code>ACK</code>-bit being set</li>
+<li><code>ACK</code>: Client response with an acknowledgement -- with the <code>ACK</code>-bit being set</li>
 </ul>
-<p>You could also express these as:
-<span data-math-style="display">
-\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}
-</span>
-which helps to contextualize these number <a href="Sets.html" data-wikilink="true">sets</a>.</p>
-<h2>Quantifying Sets</h2>
-<p>A set <span data-math-style="inline">M</span> is countable if and only if there exists an injection from <span data-math-style="inline">M</span> into <span data-math-style="inline">\mathbb{N}</span>.</p>
-<ul>
-<li><strong>Countable Infinite</strong>: If there exists a <strong>bijective</strong> function <span data-math-style="inline">f: \mathbb{N} \to M</span>, i.e., <span data-math-style="inline">|M| = |\mathbb{N}|</span></li>
-<li><strong>Uncountable Infinite</strong>: <span data-math-style="inline">|M| &gt; |\mathbb{N}|</span></li>
-</ul>
-<blockquote>
-<p><strong>Note</strong>: The <a href="math-cartesian-product.html" data-wikilink="true">Cartesian Product</a> of two <strong>countable infinite</strong> is also countable infinite, due to the <strong>Cantor-Pairfunction</strong>: <span data-math-style="inline">f(x,y)=\frac{1}{2}(x+y)(x+y+1)+y</span></p>
-</blockquote>
 
         </article>
 
