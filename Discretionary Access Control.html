@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Is part of the page table and keeps track if a page was recently accessed.">
-    <title>R-Bit | post-notes</title>
-    <meta name="description" content="Is part of the page table and keeps track if a page was recently accessed.">
+    <meta name="description" content="Description">
+    <title>Title | post-notes</title>
+    <meta name="description" content="Description">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -2974,51 +2974,32 @@
         </aside>
 
         <article>
-            <span>operating-system-r-bit.html</span>
+            <span>Discretionary Access Control.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-05-29T10:40
+                        * created: 2026-05-21T17:40
                         <br>
                          
-                        * modified: 2025-06-30T21:35
+                        * modified: 2026-05-21T18:00
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>R-Bit</p>
+                <p>Title</p>
 
                 <span>description</span><br>
-                <p>Is part of the page table and keeps track if a page was recently accessed.</p>
+                <p>Description</p>
 
-                
-                <span>related notes</span><br>
-                <ul>
-                    
-                    <li>
-                        <a href="./operating-system-m-bit.html">operating-system-m-bit.html</a>
-                    </li>
-                    
-                    <li>
-                        <a href="./operating-system-paging.html">operating-system-paging.html</a>
-                    </li>
-                    
-                </ul>
                 
             </div>
 
-            <h2>Keeping track of referenced page frames.</h2>
-<p>The R-Bit keeps track of whether a process accessed the page already. If the R-Bit is 0 the content of the page was not accessed. This is used to keep track if the page was recently used or not.</p>
-<p>The <strong>NRU</strong> (Not Recently Used) Algorithm for example checks this bit to determine if a process recently accessed a page, by flipping all bits back to 0 after a certain time interval, we ensure that the page isn't “stale”. Keep in mind that we only want to flip the R-Bit. The M-Bit needs to keep its state.</p>
-<p>TODO! Put NRU in separate file.</p>
-<p>Should the <a href="operating-system-m-bit.html" data-wikilink="true">M-Bit</a> also be removed when the NRU algorithm clears all <strong>R-Bits</strong>?</p>
-<blockquote>
-<p>No, because we still need to track the if the state was modified so that we can handle our <a href="operating-system-paging.html" data-wikilink="true">page swap</a> accordingly.</p>
-</blockquote>
+            <h1>Discretionary Access control (DAC)</h1>
+<p>A type of access control which restricts access to objects based on the identity of subjects or groups. The subject has the ability to pass permissions to others, which is what makes it discretionary.</p>
 
         </article>
 
