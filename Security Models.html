@@ -3022,7 +3022,7 @@
                         * created: 2026-04-23T18:42
                         <br>
                          
-                        * modified: 2026-05-22T16:47
+                        * modified: 2026-05-22T17:26
                         <br>
                         
                     </span>
@@ -3043,6 +3043,10 @@
                     </li>
                     
                     <li>
+                        <a href="./Mandatory Access Control.html">Mandatory Access Control.html</a>
+                    </li>
+                    
+                    <li>
                         <a href="./IT-Security.html#Security aspects">IT-Security.html#Security aspects</a>
                     </li>
                     
@@ -3055,12 +3059,14 @@
 <h2>Bell-LaPadula (BLP)</h2>
 <p>&quot;No Read Up, No Write Down&quot;</p>
 <p>You can read things at or below your level and write things at or above your level. This does only protect against data leaks and not corruption. This model prioritizes <a href="IT-Security.html#Security%20aspects" data-wikilink="true">confidentiality</a>.</p>
+<p>It's based around <a href="Mandatory%20Access%20Control.html" data-wikilink="true">Mandatory Access Control</a>.</p>
 <h2>Biba</h2>
 <p>&quot;No Read Down, No Write Up&quot;</p>
 <p>Biba addresses the <strong>opposite concern</strong>: protecting data from being modified in untrusted ways. It's useful in environments where accurate and untampered data matters more than secrecy. This model prioritizes <a href="IT-Security.html#Security%20aspects" data-wikilink="true">integrity</a>.</p>
-<h2>Clarke Wilson</h2>
+<h2>Clark Wilson</h2>
 <p>This models data access around explicitly constraining resources. Access requests are handled by a <strong>transformation process</strong> that converts the request into permissions. These permissions are forwarded to the <strong>integration verification process</strong>, which performs authentication and authorization. Unconstrained resources can be accessed without this procedure.</p>
 <h2>Chinese Wall</h2>
+<p>This model doesn't use a fixed hierarchy or integrity lattice. Instead it groups companies into conflict-of-interest classes (e.g. all oil companies in one class), and access history dynamically determines what a subject may access next.</p>
 
         </article>
 
