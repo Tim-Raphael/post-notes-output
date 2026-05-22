@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="The control unit is the part of the cpu that is responsible for loading and executing instructions.">
-    <title>Control Unit (CU) | post-notes</title>
-    <meta name="description" content="The control unit is the part of the cpu that is responsible for loading and executing instructions.">
+    <meta name="description" content="A network typology describes the general arrangement of hosts, nodes and edges in a network.">
+    <title>Networking typology | post-notes</title>
+    <meta name="description" content="A network typology describes the general arrangement of hosts, nodes and edges in a network.">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -3013,42 +3013,115 @@
         </aside>
 
         <article>
-            <span>computer-architecture-control-unit.html</span>
+            <span>Network Topology.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-06-09T18:58
+                        * created: 2026-03-18T22:47
                         <br>
                          
-                        * modified: 2025-06-24T18:28
+                        * modified: 2026-05-22T13:20
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Control Unit (CU)</p>
+                <p>Networking typology</p>
 
                 <span>description</span><br>
-                <p>The control unit is the part of the cpu that is responsible for loading and executing instructions.</p>
+                <p>A network typology describes the general arrangement of hosts, nodes and edges in a network.</p>
 
+                
+                <span>related notes</span><br>
+                <ul>
+                    
+                    <li>
+                        <a href="./Network.html">Network.html</a>
+                    </li>
+                    
+                    <li>
+                        <a href="./computer-architecture-bus.html">computer-architecture-bus.html</a>
+                    </li>
+                    
+                </ul>
                 
             </div>
 
-            <h1>Controlling the unit</h1>
-<p>The control unit handles the execution of a program which is already decoded into the hardware specific machine language. This is done by interpreting the machine code and then executing the required steps.</p>
-<h2>The command cycle</h2>
-<p>The CU has to execute 5 main steps during a instruction cycle; which are:</p>
-<ol>
-<li>Fetch: Obtain the instruction from memory.</li>
-<li>Decode: Interpret the instruction's opcode and operands.</li>
-<li>Load: Retrieve any necessary data from memory or registers.</li>
-<li>Execute: Perform the operation (e.g., arithmetic or logical operation).</li>
-<li>Write: Store the result back into memory or a register.</li>
-</ol>
-<p>This cycle runs until the program ends (or the CPU receives an interrupt), which is sometimes denoted by a 6th interrupt step.</p>
+            <h1>Network Topologies</h1>
+<p>Describe the <strong>arrangement</strong> of different <strong>Nodes</strong> in a <strong><a href="Network.html" data-wikilink="true">Network</a></strong>.</p>
+<h2>Bus</h2>
+<p>A simple system where hosts are connected to one centralized bus. Each hosts can read and write to the bus, but writing is mutually exclusive.</p>
+<blockquote>
+<p>See <a href="computer-architecture-bus.html" data-wikilink="true">Bus</a></p>
+</blockquote>
+<p><img src="./media/Drawing%202026-03-19%2022.07.47.excalidraw.svg" alt="" /></p>
+<h3>Advantages</h3>
+<ul>
+<li>Cost effective</li>
+<li>Simple installation</li>
+<li>Hosts can fail <em>safely</em></li>
+<li>Broadcasting is simple</li>
+</ul>
+<h3>Disadvantages</h3>
+<ul>
+<li>Limited capacity</li>
+<li>Hard to debug</li>
+<li>Everyone can read</li>
+</ul>
+<h2>Star</h2>
+<p>Hosts are connected to one node, which either acts as a hub or switch. A hub always forwards packages to all other hosts, whereas a switch only sends the package to the host determined by their address. Switches allow for parallel communication between multiple hosts and are the most common type of node for the star typology nowadays.</p>
+<p><img src="./media/Drawing%202026-03-19%2022.37.39.excalidraw.svg" alt="" /></p>
+<h3>Advantages</h3>
+<ul>
+<li>High capacity</li>
+<li>Easy to debug</li>
+<li>Easy expansion</li>
+<li>Broadcasting is simple</li>
+</ul>
+<h3>Disadvantages</h3>
+<ul>
+<li>Single point of failure</li>
+<li>Costs for cables and switches</li>
+</ul>
+<h2>Tree</h2>
+<p>Several star couplers combined together.</p>
+<p><img src="./media/Drawing%202026-03-19%2022.48.36.excalidraw.svg" alt="" /></p>
+<h3>Advantages and Disadvantages</h3>
+<p>Reference the star typology.</p>
+<h2>Ring</h2>
+<p>Each host is connected to 2 other hosts. Communication does either happen uni- or bi-directional.</p>
+<p><img src="./media/Drawing%202026-03-19%2022.56.18.excalidraw.svg" alt="" /></p>
+<h3>Advantages</h3>
+<ul>
+<li>Parallel communication</li>
+<li>Easy extension</li>
+<li>Broadcasting is easy</li>
+</ul>
+<h3>Disadvantages</h3>
+<ul>
+<li>Single point of failure</li>
+<li>Everyone can read</li>
+<li>Hard to debug</li>
+</ul>
+<h2>Mesh</h2>
+<p>In a mesh their are redundant connections in between nodes. They get categorized into <strong>fully meshed networks</strong>, where each node is connected to every other nodes, and <strong>partially meshed networks</strong>, where each nodes has <strong>at least 3</strong> connections.</p>
+<p><img src="./media/Drawing%202026-03-19%2023.15.19.excalidraw.svg" alt="" /></p>
+<h3>Advantages</h3>
+<ul>
+<li>Fault tolerant</li>
+<li>Parallel communication</li>
+<li>Easy to debug</li>
+</ul>
+<h3>Disadvantages</h3>
+<ul>
+<li>High costs</li>
+<li>Hard to extend</li>
+<li>Broadcasting is difficult</li>
+<li>Potentially everyone can read</li>
+</ul>
 
         </article>
 

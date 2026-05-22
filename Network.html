@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="The control unit is the part of the cpu that is responsible for loading and executing instructions.">
-    <title>Control Unit (CU) | post-notes</title>
-    <meta name="description" content="The control unit is the part of the cpu that is responsible for loading and executing instructions.">
+    <meta name="description" content="Description">
+    <title>Networking | post-notes</title>
+    <meta name="description" content="Description">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -3013,42 +3013,65 @@
         </aside>
 
         <article>
-            <span>computer-architecture-control-unit.html</span>
+            <span>Network.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-06-09T18:58
+                        * created: 2026-03-18T21:24
                         <br>
                          
-                        * modified: 2025-06-24T18:28
+                        * modified: 2026-05-22T13:18
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Control Unit (CU)</p>
+                <p>Networking</p>
 
                 <span>description</span><br>
-                <p>The control unit is the part of the cpu that is responsible for loading and executing instructions.</p>
+                <p>Description</p>
 
                 
             </div>
 
-            <h1>Controlling the unit</h1>
-<p>The control unit handles the execution of a program which is already decoded into the hardware specific machine language. This is done by interpreting the machine code and then executing the required steps.</p>
-<h2>The command cycle</h2>
-<p>The CU has to execute 5 main steps during a instruction cycle; which are:</p>
-<ol>
-<li>Fetch: Obtain the instruction from memory.</li>
-<li>Decode: Interpret the instruction's opcode and operands.</li>
-<li>Load: Retrieve any necessary data from memory or registers.</li>
-<li>Execute: Perform the operation (e.g., arithmetic or logical operation).</li>
-<li>Write: Store the result back into memory or a register.</li>
-</ol>
-<p>This cycle runs until the program ends (or the CPU receives an interrupt), which is sometimes denoted by a 6th interrupt step.</p>
+            <h1>Network</h1>
+<p>Communicating between multiple hosts using a shared infrastructure consisting of nodes.</p>
+<h2>Participants</h2>
+<h3>Nodes</h3>
+<ul>
+<li><strong>Switches/Routers</strong>: Routing decisions using addresses</li>
+<li><strong>Repeater/Hub</strong>: Amplify signals</li>
+</ul>
+<h3>Hosts</h3>
+<p>Typically end systems connected to the network.</p>
+<h2>Classification</h2>
+<h3>Public</h3>
+<p>Standardized options offered by service operators, like DSL lines, mobile telecommunications networks or hotspots.</p>
+<h3>Private</h3>
+<p>Exclusive for closed group of hosts. These often use public networks as infrastructure with a set of restrictions configured on top of them, in which case it is referred to as a <strong>virtual private network</strong> (VPN).</p>
+<h3>Core</h3>
+<p>Main connections structure.</p>
+<h3>Access</h3>
+<p>Facilitate access to core networks. Examples include WLAN or LAN.</p>
+<h3>Distance</h3>
+<ul>
+<li><strong>Personal area network (PAN)</strong>: Linking devices via bluetooth (10m)</li>
+<li><strong>Storage area network (SAN)</strong>: For storage systems in data centers (100m)</li>
+<li><strong>Local area network (LAN)</strong>: Typical home/office network (10m - 10km)</li>
+<li><strong>Metropolitan area network (MAN)</strong>: Mostly deprecated due to LAN's (10km - 100km)</li>
+<li><strong>Wide area network (WAN)</strong>: Often using different technologies like IP or Ethernet (more than 100km)</li>
+<li><strong>Global area network (GAN)</strong>: World wide networks</li>
+</ul>
+<h3>Operations</h3>
+<h4>Packet switching</h4>
+<p>Data is transferred in small packets independent of each other, which the internet operates on.</p>
+<h4>Circuit switching</h4>
+<p>Data routes between communication partners are permanently reserved.</p>
+<h2>Computer network vs distributed system</h2>
+<p>If the implementation matters it is called non-transparent and belongs to the computer network area. If the implementation plays no role it is called transparent and is part of the distributed systems area.</p>
 
         </article>
 

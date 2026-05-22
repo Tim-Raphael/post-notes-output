@@ -91,6 +91,10 @@
     <ul>
         
         <li>
+            <a href="./Access Control.html">Access Control.html</a>
+        </li>
+        
+        <li>
             <a href="./Address Resolution Protocol.html">Address Resolution Protocol.html</a>
         </li>
         
@@ -175,7 +179,15 @@
         </li>
         
         <li>
+            <a href="./Network Topology.html">Network Topology.html</a>
+        </li>
+        
+        <li>
             <a href="./Network error correction.html">Network error correction.html</a>
+        </li>
+        
+        <li>
+            <a href="./Network.html">Network.html</a>
         </li>
         
         <li>
@@ -192,6 +204,10 @@
         
         <li>
             <a href="./Regular Languages.html">Regular Languages.html</a>
+        </li>
+        
+        <li>
+            <a href="./Role-based Access Control.html">Role-based Access Control.html</a>
         </li>
         
         <li>
@@ -496,14 +512,6 @@
         
         <li>
             <a href="./modeling-unified-modeling-language.html">modeling-unified-modeling-language.html</a>
-        </li>
-        
-        <li>
-            <a href="./networking-typology.html">networking-typology.html</a>
-        </li>
-        
-        <li>
-            <a href="./networking.html">networking.html</a>
         </li>
         
         <li>
@@ -1104,6 +1112,10 @@
     <ul>
         
         <li>
+            <a href="./Access Control.html">Access Control.html</a>
+        </li>
+        
+        <li>
             <a href="./Address Resolution Protocol.html">Address Resolution Protocol.html</a>
         </li>
         
@@ -1176,7 +1188,15 @@
         </li>
         
         <li>
+            <a href="./Network Topology.html">Network Topology.html</a>
+        </li>
+        
+        <li>
             <a href="./Network error correction.html">Network error correction.html</a>
+        </li>
+        
+        <li>
+            <a href="./Network.html">Network.html</a>
         </li>
         
         <li>
@@ -1189,6 +1209,10 @@
         
         <li>
             <a href="./Regular Languages.html">Regular Languages.html</a>
+        </li>
+        
+        <li>
+            <a href="./Role-based Access Control.html">Role-based Access Control.html</a>
         </li>
         
         <li>
@@ -1209,14 +1233,6 @@
         
         <li>
             <a href="./Unix Access Control and ACLs.html">Unix Access Control and ACLs.html</a>
-        </li>
-        
-        <li>
-            <a href="./networking-typology.html">networking-typology.html</a>
-        </li>
-        
-        <li>
-            <a href="./networking.html">networking.html</a>
         </li>
         
     </ul>
@@ -1310,7 +1326,20 @@
     <input id="authorization" type="checkbox"></input>
     <div>
     
+    
     <ul>
+        
+        
+<li>
+    <label for="access-control">access-control</label>
+    <input id="access-control" type="checkbox"></input>
+    <div>
+    
+    <ul>
+        
+        <li>
+            <a href="./Access Control.html">Access Control.html</a>
+        </li>
         
         <li>
             <a href="./Discretionary Access Control.html">Discretionary Access Control.html</a>
@@ -1320,9 +1349,23 @@
             <a href="./Mandatory Access Control.html">Mandatory Access Control.html</a>
         </li>
         
+        <li>
+            <a href="./Role-based Access Control.html">Role-based Access Control.html</a>
+        </li>
+        
+        <li>
+            <a href="./Unix Access Control and ACLs.html">Unix Access Control and ACLs.html</a>
+        </li>
+        
     </ul>
 
     
+    
+    <div>
+</li>
+
+        
+    </ul>
     
     <div>
 </li>
@@ -2006,10 +2049,6 @@
             <a href="./The Legal Stuff.html">The Legal Stuff.html</a>
         </li>
         
-        <li>
-            <a href="./Unix Access Control and ACLs.html">Unix Access Control and ACLs.html</a>
-        </li>
-        
     </ul>
 
     
@@ -2623,11 +2662,11 @@
         </li>
         
         <li>
-            <a href="./OSI.html">OSI.html</a>
+            <a href="./Network.html">Network.html</a>
         </li>
         
         <li>
-            <a href="./networking.html">networking.html</a>
+            <a href="./OSI.html">OSI.html</a>
         </li>
         
     </ul>
@@ -2645,7 +2684,7 @@
     <ul>
         
         <li>
-            <a href="./networking-typology.html">networking-typology.html</a>
+            <a href="./Network Topology.html">Network Topology.html</a>
         </li>
         
     </ul>
@@ -2983,7 +3022,7 @@
                         * created: 2026-04-23T18:42
                         <br>
                          
-                        * modified: 2026-04-23T18:50
+                        * modified: 2026-05-22T16:47
                         <br>
                         
                     </span>
@@ -2996,18 +3035,32 @@
                 <p>Description</p>
 
                 
+                <span>related notes</span><br>
+                <ul>
+                    
+                    <li>
+                        <a href="./IT-Security.html#Security aspects">IT-Security.html#Security aspects</a>
+                    </li>
+                    
+                    <li>
+                        <a href="./IT-Security.html#Security aspects">IT-Security.html#Security aspects</a>
+                    </li>
+                    
+                </ul>
+                
             </div>
 
             <h1>Security Models</h1>
 <p>These describe criteria by which authorization systems are modeled.</p>
 <h2>Bell-LaPadula (BLP)</h2>
 <p>&quot;No Read Up, No Write Down&quot;</p>
-<p>You can read things at or below your level and write things at or above your level. This does only protect against data leaks and not corruption.</p>
+<p>You can read things at or below your level and write things at or above your level. This does only protect against data leaks and not corruption. This model prioritizes <a href="IT-Security.html#Security%20aspects" data-wikilink="true">confidentiality</a>.</p>
 <h2>Biba</h2>
 <p>&quot;No Read Down, No Write Up&quot;</p>
-<p>Biba addresses the <strong>opposite concern</strong>: protecting data from being modified in untrusted ways. It's useful in environments where accurate and untampered data matters more than secrecy.</p>
-<h2>Mixed Salads</h2>
-<p>Subjects and objects are assigned both a confidentiality level (BLP) and an integrity level (Biba), with access mediated only through trusted transformation procedures (Clark-Wilson) that enforce well-formed transactions. Dynamic conflict-of-interest constraints (Brewer-Nash) further restrict which objects a subject may access based on their access history, while the system guarantees that actions at one level produce no observable side-effects at another (Noninterference).</p>
+<p>Biba addresses the <strong>opposite concern</strong>: protecting data from being modified in untrusted ways. It's useful in environments where accurate and untampered data matters more than secrecy. This model prioritizes <a href="IT-Security.html#Security%20aspects" data-wikilink="true">integrity</a>.</p>
+<h2>Clarke Wilson</h2>
+<p>This models data access around explicitly constraining resources. Access requests are handled by a <strong>transformation process</strong> that converts the request into permissions. These permissions are forwarded to the <strong>integration verification process</strong>, which performs authentication and authorization. Unconstrained resources can be accessed without this procedure.</p>
+<h2>Chinese Wall</h2>
 
         </article>
 
