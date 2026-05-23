@@ -3017,7 +3017,7 @@
                         * created: 2026-04-23T18:42
                         <br>
                          
-                        * modified: 2026-05-22T18:31
+                        * modified: 2026-05-23T17:16
                         <br>
                         
                     </span>
@@ -3064,9 +3064,9 @@
 <p>You can read things at or below your level and write things at or above your level. This does only protect against data leaks and not corruption. This model prioritizes <a href="IT-Security.html#Security%20aspects" data-wikilink="true">confidentiality</a>.</p>
 <p>It's based around <a href="Mandatory%20Access%20Control.html" data-wikilink="true">Mandatory Access Control</a> in combination with <a href="Discretionary%20Access%20Control.html" data-wikilink="true">Discretionary Access Control</a>.</p>
 <p><img src="./media/Drawing%202026-05-22%2018.10.28.excalidraw.svg" alt="" /></p>
-<blockquote>
-<p>Given a subject (s) and an object (o):</p>
-</blockquote>
+<p>Given a subject (<span data-math-style="inline">s</span>) and an object (<span data-math-style="inline">o</span>) with the following 2 rules apply:</p>
+<p>1.You can only read if <span data-math-style="inline">L(o) \leq L(s)</span>
+2.You can only write if <span data-math-style="inline">L(s) \leq L(o)</span></p>
 <h2>Biba</h2>
 <p>&quot;No Read Down, No Write Up&quot;</p>
 <p>Biba addresses the <strong>opposite concern</strong>: protecting data from being modified in untrusted ways. It's useful in environments where accurate and untampered data matters more than secrecy. This model prioritizes <a href="IT-Security.html#Security%20aspects" data-wikilink="true">integrity</a>.</p>
