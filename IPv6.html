@@ -3030,18 +3030,46 @@
                 <p>Description</p>
 
                 
+                <span>related notes</span><br>
+                <ul>
+                    
+                    <li>
+                        <a href="./IPv4.html">IPv4.html</a>
+                    </li>
+                    
+                    <li>
+                        <a href="./Dynamic Host Configuration Protocol.html">Dynamic Host Configuration Protocol.html</a>
+                    </li>
+                    
+                </ul>
+                
             </div>
 
             <h1>IPv6</h1>
-<h2>Adresses</h2>
-<p>Length of 128 bit.</p>
+<p><a href="IPv4.html" data-wikilink="true">IPv4</a> no much internet for everybody :O. IPv6 much mooore internet for everybody!</p>
+<h2>Addresses</h2>
+<p>These have a length of 128 bit, which is split into eight hexadecimal blocks separated by a colon containing 16 bits each.</p>
 <p><strong>Structure</strong>:</p>
 <ol>
 <li>Global routing prefix</li>
 <li>Subnet ID</li>
 <li>Interface ID</li>
 </ol>
+<blockquote>
+<p>You are allowed to simplify IPv6 addresses by collapsing subsequent blocks of zeros (once) and eliding leading zeros: <code>2030:DE:22::33AF:0:1234</code>
+There is also this mixed IPv4/IPv6 notation used in some environments: <code>xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:ddd.ddd.ddd.ddd</code></p>
+</blockquote>
 <h2>Unicast, Multicast, and Anycast</h2>
+<ul>
+<li><strong>Unicast</strong>: Used for point to point communication and therefore must be unique.</li>
+<li><strong>Multicast</strong>: Used for broadcasting to all users that share the same multicast address, which can be in different networks</li>
+<li><strong>Anycast</strong>: Used to send packet to only one, typically the nearest, interface in a network</li>
+</ul>
+<blockquote>
+<p>An application for anycast would be a service provided by multiple server, i.e., any server would be a valid target for the request, so the request should be sent to whoever is the nearest.</p>
+</blockquote>
+<h2>Automatic Address Configuration</h2>
+<p>IPv6 enables automatic address configuration similar to <a href="Dynamic%20Host%20Configuration%20Protocol.html" data-wikilink="true">Dynamic Host Configuration Protocol</a>. Small networks (without a router) use the link local address, larger ones, on the other side, must use unique local unicast or global unicast addresses</p>
 
         </article>
 
