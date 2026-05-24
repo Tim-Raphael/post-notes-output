@@ -3068,6 +3068,13 @@ There is also this mixed IPv4/IPv6 notation used in some environments: <code>xxx
 <blockquote>
 <p>An application for anycast would be a service provided by multiple server, i.e., any server would be a valid target for the request, so the request should be sent to whoever is the nearest.</p>
 </blockquote>
+<h2>Scopes</h2>
+<ul>
+<li><strong>Node local</strong>: On your machine, i.e., basically localhost</li>
+<li><strong>Link local</strong>: All interfaces connected to the same node</li>
+<li><strong>Site local</strong>: All interfaces in the same closed network, think company network</li>
+<li><strong>Global</strong>: The World Wide Web :O</li>
+</ul>
 <h2>Automatic Address Configuration</h2>
 <p>IPv6 enables automatic address configuration similar to <a href="Dynamic%20Host%20Configuration%20Protocol.html" data-wikilink="true">Dynamic Host Configuration Protocol</a>. Small networks (without a router) use the link local address, larger ones, on the other side, must use unique local unicast or global unicast addresses</p>
 
