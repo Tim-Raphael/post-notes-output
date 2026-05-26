@@ -3049,7 +3049,7 @@
                         * created: 2026-05-26T19:40
                         <br>
                          
-                        * modified: 2026-05-26T19:56
+                        * modified: 2026-05-26T23:45
                         <br>
                         
                     </span>
@@ -3062,6 +3062,15 @@
                 <p>Description</p>
 
                 
+                <span>related notes</span><br>
+                <ul>
+                    
+                    <li>
+                        <a href="./Cryptography.html#Symmetric">Cryptography.html#Symmetric</a>
+                    </li>
+                    
+                </ul>
+                
             </div>
 
             <h1>Kerberos</h1>
@@ -3073,7 +3082,24 @@ of this protocol are:</p>
 <li><strong>Security</strong>: An attacker is not able to obtain unauthorized access.</li>
 <li><strong>Scalability</strong>: The system can be extended with new user or resources at any time.</li>
 </ul>
-<p>To achieve the secure communication Kerberos uses an</p>
+<p>To achieve the secure communication Kerberos uses an <a href="Cryptography.html#Symmetric" data-wikilink="true">Symmetric</a> encryption method:</p>
+<p><span data-math-style="display">
+\begin{align}
+c &amp;= E(m,K_1) \\
+m &amp;= D(c, K_2)
+\end{align}
+</span></p>
+<h2>Architecture</h2>
+<p><img src="./media/Drawing%202026-05-26%2023.19.08.excalidraw.svg" alt="" /></p>
+<ol>
+<li>Client sends a request containing name and the requested resource to the ticket granting server. If the client is not already registered the requests goes to the key distribution server, which verifies the identity and generates a secret key and a session key.</li>
+<li>A follow-up request to the ticket granting server now first validates checks the validity of the key, before granting the client a ticket, which represents the authority to access a predetermined resource.</li>
+<li>The generated ticket can now be transmitted to the resource, which checks the validity of the ticket before granting access.</li>
+</ol>
+<h3>Key Distribution Center (KDC)</h3>
+<p>Responsible for the creation, distribution, and verification of keys, which represent the authenticity of a user.</p>
+<h3>Ticket Granting Server (TGS)</h3>
+<p>Responsible for the creation of so called tickets, which represent the authorization to access a resource.</p>
 <hr />
 <h1>Questions</h1>
 <p>What are the goals of Kerberos?
@@ -3084,6 +3110,17 @@ of this protocol are:</p>
 <li>Security</li>
 <li>Scalability</li>
 </ul>
+<p>Which encryption method does Kerberos use?
+?
+symmetric encryption</p>
+<p>Explain the rough flow of a Kerberos system.
+?
+<img src="./media/Drawing%202026-05-26%2023.19.08.excalidraw.svg" alt="" /></p>
+<ol>
+<li>Authenticity</li>
+<li>Authorization</li>
+<li>Access</li>
+</ol>
 
         </article>
 
