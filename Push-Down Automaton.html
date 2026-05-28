@@ -3069,7 +3069,7 @@
                         * created: 2026-05-27T23:15
                         <br>
                          
-                        * modified: 2026-05-28T18:28
+                        * modified: 2026-05-28T23:07
                         <br>
                         
                     </span>
@@ -3098,7 +3098,7 @@
             </div>
 
             <h1>Push-Down Automaton (PDA)</h1>
-<p>Extends the concept of an <a href="DFA%20and%20NFA.html" data-wikilink="true">Automaton</a> with a stack, i.e., it can count.</p>
+<p>Extends the concept of an <a href="DFA%20and%20NFA.html" data-wikilink="true">Automaton</a> with a stack, i.e., it can count. The automaton needs to go through every input character and every item on the stack before finishing.</p>
 <h2>Structure</h2>
 <p><span data-math-style="inline">PDA = (Q,\Sigma,\Gamma,\delta,q_0,F)</span></p>
 <ul>
@@ -3114,12 +3114,13 @@
 <strong>Lemma</strong>: A language can be recognized by a PDA if it is context free.</p>
 </blockquote>
 <h2>Notation</h2>
-<p>The PDA extends the <a href="DFA%20and%20NFA.html" data-wikilink="true">DFA and NFA</a> state transition notation with <span data-math-style="inline">\text{from} \to \text{to}</span>.</p>
+<p>The PDA extends the <a href="DFA%20and%20NFA.html" data-wikilink="true">DFA and NFA</a> state transition notation with an additional <span data-math-style="inline">\text{remove} \to \text{add}</span>.</p>
 <ul>
 <li><strong>Push</strong>: <span data-math-style="inline">\epsilon \to a</span></li>
 <li><strong>Pop</strong>: <span data-math-style="inline">a \to \epsilon</span></li>
-<li><strong>Replace</strong>: <span data-math-style="inline">a \to b</span></li>
+<li><strong>Swap</strong>: <span data-math-style="inline">a \to b</span></li>
 </ul>
+<p>A <span data-math-style="inline">\$</span> often indicates the end of the stack, i.e., if you read this you have reached the last character. This is used in combination with an initial empty transition <span data-math-style="inline">\epsilon,\epsilon\to\$</span> to initialize the stack.</p>
 
         </article>
 
