@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="A deadlock describes the state which happens when two processes can&#x27;t continue until the respective other process frees it&#x27;s resource.">
-    <title>Deadlocks | post-notes</title>
-    <meta name="description" content="A deadlock describes the state which happens when two processes can&#x27;t continue until the respective other process frees it&#x27;s resource.">
+    <meta name="description" content="Description">
+    <title>Title | post-notes</title>
+    <meta name="description" content="Description">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -3099,53 +3099,45 @@
         </aside>
 
         <article>
-            <span>operating-system-deadlock.html</span>
+            <span>IT-Forensics.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-05-18T22:24
+                        * created: 2026-05-29T19:15
                         <br>
                          
-                        * modified: 2025-07-03T08:52
+                        * modified: 2026-05-29T19:15
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Deadlocks</p>
+                <p>Title</p>
 
                 <span>description</span><br>
-                <p>A deadlock describes the state which happens when two processes can&#x27;t continue until the respective other process frees it&#x27;s resource.</p>
+                <p>Description</p>
 
-                
-                <span>related notes</span><br>
-                <ul>
-                    
-                    <li>
-                        <a href="./modeling-resource-allocation-graph.html">modeling-resource-allocation-graph.html</a>
-                    </li>
-                    
-                </ul>
                 
             </div>
 
-            <h1>Deadlocks, jigsaws, and philosophers</h1>
-<p>A deadlock happens when at least two process try to access the same resource, but can't, until the other one frees up their resource.</p>
-<p>Imagine each of them holding a jigsaw piece, but none of them can finish, until the other one voluntary put their own peace down.</p>
-<p>Another metaphor for this would be the philosopher's problem. Imagine a philosopher which only knows three states of being which are thinking, eating and sleeping. If the philosopher wants to eat, but can't because he is missing a fork, he immediately falls asleep. A philosopher can only be woken up by another philosopher.</p>
-<p>And now imagine a scenario in which these steps (thinking, eating, and sleeping) happen in such an order that all philosophers are asleep; nobody can wake the other ones up and they sleep forever. We got a deadlock.</p>
-<h2>Coffman's four deadlock conditions</h2>
-<ol>
-<li><strong>Mutual Exclusion:</strong> At least one resource has to be held in a non-shareable state.</li>
-<li><strong>Hold on wait:</strong> A process holding at least one resource is waiting to acquire additional resources held by other processes.</li>
-<li><strong>No preemption:</strong> Resources can not be taken by force; they must be released voluntarily.</li>
-<li><strong>Circular wait:</strong> A circular chain of processes exists, where each process is waiting for a resource held by the next process in the chain.</li>
-</ol>
-<h2>Recognizing a deadlock</h2>
-<p>We can use a <a href="modeling-resource-allocation-graph.html" data-wikilink="true">Resource Allocation Graph</a> to recognize such circular wait conditions.</p>
+            <h1>IT-Forensics</h1>
+<p>The field of study that focuses on collecting and processing data to be used as legal evidence. The goal is to answer the following questions:</p>
+<ul>
+<li>What happend?</li>
+<li>Where did it happen?</li>
+<li>When did it happen?</li>
+<li>How did it happen?</li>
+<li>Who did it? (it was albrecht btw.)</li>
+</ul>
+<h2>Types of Analysis</h2>
+<ul>
+<li><strong>Online</strong>: Collecting evidence -- often from volatile memory -- during the runtime of a system</li>
+<li><strong>Post-Mortem</strong>: Running analysis on copies of already collected data</li>
+</ul>
+<h2>Modus Operandi à la Casey</h2>
 
         </article>
 
