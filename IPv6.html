@@ -3142,9 +3142,9 @@
 <p>These have a length of 128 bit, which is split into eight hexadecimal blocks separated by a colon containing 16 bits each.</p>
 <p><strong>Structure</strong>:</p>
 <ol>
-<li>Global routing prefix</li>
-<li>Subnet ID</li>
-<li>Interface ID</li>
+<li>Global routing prefix (48 bit assinged by isp)</li>
+<li>Subnet ID (16 bit local subnet)</li>
+<li>Interface ID (64 bit host ID -- often mac address)</li>
 </ol>
 <blockquote>
 <p>You are allowed to simplify IPv6 addresses by collapsing subsequent blocks of zeros (once) and eliding leading zeros: <code>2030:DE:22::33AF:0:1234</code>
@@ -3161,14 +3161,17 @@ IPv6 uses <code>::1</code> as loopback address (localhost)</p>
 <p>An application for anycast would be a service provided by multiple server, i.e., any server would be a valid target for the request, so the request should be sent to whoever is the nearest.</p>
 </blockquote>
 <h2>Scopes</h2>
+<p>Nodes often have multiple addresses. These are categorized by scope:</p>
 <ul>
-<li><strong>Node local</strong>: On your machine, i.e., basically localhost</li>
+<li><strong>Node local</strong>: On your machine, i.e., basically localhost (<code>::1</code>)</li>
 <li><strong>Link local</strong>: All interfaces connected to the same node</li>
 <li><strong>Site local</strong>: All interfaces in the same closed network, think company network</li>
 <li><strong>Global</strong>: The World Wide Web :O</li>
 </ul>
 <h2>Automatic Address Configuration</h2>
 <p>IPv6 enables automatic address configuration similar to <a href="Dynamic%20Host%20Configuration%20Protocol.html" data-wikilink="true">Dynamic Host Configuration Protocol</a>. Small networks (without a router) use the link local address, larger ones, on the other side, must use unique local unicast or global unicast addresses</p>
+<h2>Stateless Address Auto Configuration (SLAAC)</h2>
+<p>A node generates its own <strong>interface ID</strong>. To ensure it's unique it often uses its MAC address, timestamp, or some other random number.</p>
 
         </article>
 
