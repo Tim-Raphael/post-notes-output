@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="If there is no more space inside our memory, but we still want to load a page into memory, we need to handle this process gracefully.">
-    <title>Replacing a page | post-notes</title>
-    <meta name="description" content="If there is no more space inside our memory, but we still want to load a page into memory, we need to handle this process gracefully.">
+    <meta name="description" content="Description">
+    <title>Title | post-notes</title>
+    <meta name="description" content="Description">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -3143,80 +3143,58 @@
         </aside>
 
         <article>
-            <span>operating-system-replacing-pages.html</span>
+            <span>Database Replication.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-05-29T16:05
+                        * created: 2026-06-01T15:22
                         <br>
                          
-                        * modified: 2025-06-30T21:36
+                        * modified: 2026-06-01T15:43
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Replacing a page</p>
+                <p>Title</p>
 
                 <span>description</span><br>
-                <p>If there is no more space inside our memory, but we still want to load a page into memory, we need to handle this process gracefully.</p>
+                <p>Description</p>
 
-                
-                <span>related notes</span><br>
-                <ul>
-                    
-                    <li>
-                        <a href="./operating-system-mmu.html">operating-system-mmu.html</a>
-                    </li>
-                    
-                    <li>
-                        <a href="./operating-system-mmu.html#What happens if a page is currently missing in memory?">operating-system-mmu.html#What happens if a page is currently missing in memory?</a>
-                    </li>
-                    
-                    <li>
-                        <a href="./operating-system-swapping.html">operating-system-swapping.html</a>
-                    </li>
-                    
-                    <li>
-                        <a href="./operating-system-m-bit.html">operating-system-m-bit.html</a>
-                    </li>
-                    
-                    <li>
-                        <a href="./operating-system-m-bit.html">operating-system-m-bit.html</a>
-                    </li>
-                    
-                    <li>
-                        <a href="./operating-system-mmu.html#Page tables">operating-system-mmu.html#Page tables</a>
-                    </li>
-                    
-                </ul>
                 
             </div>
 
-            <h1>What happens if we replace a page?</h1>
-<p>A simple description of what happens during the replacement would look like this:</p>
-<ol>
-<li>The <a href="operating-system-mmu.html" data-wikilink="true">MMU</a> wants to access a page that is currently not stored inside a page frame and triggers a <a href="operating-system-mmu.html#What%20happens%20if%20a%20page%20is%20currently%20missing%20in%20memory?" data-wikilink="true">page fault</a>.</li>
-<li>We recognize that there is currently no unused page frame inside our physical memory. We start the page replacement procedure.</li>
-<li>We decide which page want to replace to free up a page frame.</li>
-<li>We store the content of this page in our drive (see: <a href="operating-system-swapping.html" data-wikilink="true">swapping</a>), so that we can preserve its current state.</li>
-<li>We load the required page in the page frame that was just freed up. The replacement procedure is now completed.</li>
-</ol>
-<p>Keep in mind that the procedure of loading and storing a page frame is fairly expensive, because we have to rely on our comparatively slow drive.</p>
-<h2>Immutable processes</h2>
-<p>If the page is stateless — meaning it doesn't modify its data during execution — and an identical copy already exists on our drive, we can skip writing it back. Since the content in memory matches the one on the drive, discarding the page won't result in any data loss.</p>
-<h2>Mutable processes</h2>
-<p>Can we skip storing the page if our state has changed?</p>
-<blockquote>
-<p>No, if the <a href="operating-system-m-bit.html" data-wikilink="true">M-Bit</a> is currently 1 then we cannot skip the page part where we store the page, because we would lose our state and with that important data.</p>
-</blockquote>
-<p>What if our state could possibly change, but hasn't?</p>
-<blockquote>
-<p>Sure, if the state did not change since we last loaded the page into memory – indicated by the <a href="operating-system-m-bit.html" data-wikilink="true">M-Bit</a> in the <a href="operating-system-mmu.html#Page%20tables" data-wikilink="true">Page Table</a> – then we can just discard that page, because there would not be any new data we needed to store.</p>
-</blockquote>
+            <h1>Database Replication</h1>
+<p>Used to decrease latency and cope with system failures.</p>
+<h2>Leader-Follower</h2>
+<p>Writes happen to one designated leader which propagates writes to all replicas. This can happen <strong>sync</strong> or <strong>async</strong>.</p>
+<p><strong>Sync</strong> writes have the downside that the writes have to be propagated to all replicas before the transaction finishes, which increases latency especially if a replica becomes unavailable.</p>
+<p><strong>Async</strong> writes have a better latency, but can become out of sync if the write propagation fails.</p>
+<p>If a leader fails the <strong>leader-rollover</strong> mechanism selects a new leader from one of the replicas, which use consensus algorithms like <strong>Paxos</strong>.</p>
+<h2>Mutli-Leader</h2>
+<p>Works similar to <strong>Leader-Follower</strong>, but assigns multiple leader that are available to handle writes. These leaders tend to propagate changes asynchronously between each other.</p>
+<h2>Leaderless</h2>
+<p>Each replica is read and write changes and propagate changes to all other nodes. Mechanisms like <strong>read-repair</strong> can detect inconsistencies and fix them.</p>
+<hr />
+<p>Name 3 Database-Replication strategies.
+?</p>
+<ul>
+<li>Leader-Follower</li>
+<li>Multi-Leader</li>
+<li>Leaderless</li>
+</ul>
+<p>What are the respective downsides of sync and async write propagation using the Leader-Follower database replication strategy?
+?</p>
+<ul>
+<li><strong>Async</strong>: Can become out of sync if write fails</li>
+<li><strong>Sync</strong>: Higher latency because writes need to complete on each replica</li>
+</ul>
+<p>Which algorithm is commonly used for consensus during a leader-rollover?
+?
+Paxos</p>
 
         </article>
 
