@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="A tool for generating a static website out of my notes.">
-    <title>post_notes | post-notes</title>
-    <meta name="description" content="A tool for generating a static website out of my notes.">
+    <meta name="description" content="Description">
+    <title>Title | post-notes</title>
+    <meta name="description" content="Description">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -3167,32 +3167,49 @@
         </aside>
 
         <article>
-            <span>project-post-notes.html</span>
+            <span>Semaphores.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-05-22T10:40
+                        * created: 2026-06-02T17:00
                         <br>
                          
-                        * modified: 2025-08-02T23:41
+                        * modified: 2026-06-02T17:00
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>post_notes</p>
+                <p>Title</p>
 
                 <span>description</span><br>
-                <p>A tool for generating a static website out of my notes.</p>
+                <p>Description</p>
 
+                
+                <span>related notes</span><br>
+                <ul>
+                    
+                    <li>
+                        <a href="./Mutex.html">Mutex.html</a>
+                    </li>
+                    
+                </ul>
                 
             </div>
 
-            <h1>Post Notes</h1>
-<p>The entire project, including my thoughts on current development lives on <a href="https://github.com/Tim-Raphael/post_notes">Github</a> nowadays.</p>
+            <h1>Semaphores</h1>
+<p>A structure that synchronizes access to shared across multiple threads, by limiting the amout of threads that can access the resource.</p>
+<blockquote>
+<p><strong>Examples</strong>: <code>Pool</code></p>
+</blockquote>
+<pre><code class="language-rust">resource.acquire(); // Blocks thread until resource is available
+// do something...
+resource.release(); // Signals all other threads that the resource is free
+</code></pre>
+<p>Counting semaphors allow access across <span data-math-style="inline">n</span> threads, while binary semaphors ensure mutal exclusion -- think <a href="Mutex.html" data-wikilink="true">Mutex</a>.</p>
 
         </article>
 
