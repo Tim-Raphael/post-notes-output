@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="The Binary Unit System (BUS) is responsible for transporting data from one component to another.">
-    <title>Bus-System | post-notes</title>
-    <meta name="description" content="The Binary Unit System (BUS) is responsible for transporting data from one component to another.">
+    <meta name="description" content="Description">
+    <title>Title | post-notes</title>
+    <meta name="description" content="Description">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -3195,43 +3195,48 @@
         </aside>
 
         <article>
-            <span>computer-architecture-bus.html</span>
+            <span>Postgresql Function.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-05-20T16:38
+                        * created: 2026-06-03T13:40
                         <br>
                          
-                        * modified: 2025-07-08T12:52
+                        * modified: 2026-06-03T13:40
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Bus-System</p>
+                <p>Title</p>
 
                 <span>description</span><br>
-                <p>The Binary Unit System (BUS) is responsible for transporting data from one component to another.</p>
+                <p>Description</p>
 
-                
-                <span>related notes</span><br>
-                <ul>
-                    
-                    <li>
-                        <a href="./Von Neumann Architecture.html#Von Neumann bottleneck">Von Neumann Architecture.html#Von Neumann bottleneck</a>
-                    </li>
-                    
-                </ul>
                 
             </div>
 
-            <h1>The wheels on the bus go round and round</h1>
-<p>The Bus-System (short for Binary Unit System) is the part of the compute that relays data from one component to another. This commonly happens through separat channel, one for instructions, data, and addresses. This separation through specific channel helps with throughput and mitigates the <a href="Von%20Neumann%20Architecture.html#Von%20Neumann%20bottleneck" data-wikilink="true">Von-Neumann bottleneck</a>, by allowing different sets of data to be transmitted in parallel.</p>
-<h2>Bridges and I/O</h2>
-<p>The CPU does not communicate directly with slow devices in general, instead only communicating with a bridge that is connected to a secondary bus system. The bridge is responsible for handling the communication with these slow devices. This layer of indirection keeps the main bus from getting clogged by slow I/O operations.</p>
+            <h1>Postgresql Function</h1>
+<p>Reusable piece of code that is stored in the postgresql catalog. This user-defined functions gets dynamically loaded by the posgresql server, enabling the user to extend the core functionality of posgresql.</p>
+<h2>Syntax</h2>
+<pre><code class="language-sql">CREATE OR REPLACE FUNCTION function(parameter text) RETURNS void $$
+	-- snip --
+$$ LANGUAGE sql;
+</code></pre>
+<blockquote>
+<p><code>CREATE OR REPLACE</code> makes the function declaration idempotent</p>
+</blockquote>
+<h2>Types</h2>
+<h3>SQL</h3>
+<p>Uses <code>LANGUAGE sql</code> with the body containing sql statements.</p>
+<h3>Procedural</h3>
+<p>Uses <code>LANGUAGE plpgsql</code>, which stand for: procedural language postgresql. It enables the user to store the output of a statement in variables and run operations using these variables.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-sql">-- TODO
+</code></pre>
 
         </article>
 
