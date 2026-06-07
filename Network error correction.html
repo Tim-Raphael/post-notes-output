@@ -1167,6 +1167,10 @@
         </li>
         
         <li>
+            <a href="./Dynamic Routing.html">Dynamic Routing.html</a>
+        </li>
+        
+        <li>
             <a href="./Ethernet.html">Ethernet.html</a>
         </li>
         
@@ -2004,41 +2008,6 @@
     </ul>
 
     
-    
-    <div>
-</li>
-
-        
-        
-<li>
-    <label for="exam-prep">exam-prep</label>
-    <input id="exam-prep" type="checkbox"></input>
-    <div>
-    
-    
-    <ul>
-        
-        
-<li>
-    <label for="round-up">round-up</label>
-    <input id="round-up" type="checkbox"></input>
-    <div>
-    
-    <ul>
-        
-        <li>
-            <a href="./Dynamic Routing.html">Dynamic Routing.html</a>
-        </li>
-        
-    </ul>
-
-    
-    
-    <div>
-</li>
-
-        
-    </ul>
     
     <div>
 </li>
@@ -3216,7 +3185,7 @@
                         * created: 2026-04-11T18:50
                         <br>
                          
-                        * modified: 2026-04-28T16:37
+                        * modified: 2026-06-07T22:54
                         <br>
                         
                     </span>
@@ -3256,9 +3225,9 @@
 <li><strong>Coaxial cables</strong>: <span data-math-style="inline">10^{-9}</span></li>
 <li><strong>Fiber-optic cables</strong>: <span data-math-style="inline">10^{-12}</span></li>
 </ul>
-<h2>Cyclic redundency checks</h2>
+<h2>Cyclic redundancy checks</h2>
 <p>Error detection can happen by attaching a checksum to the data frame. The cyclic redundancy check (<strong>CRC</strong>) is used to calculated or validate the <strong>Frame Check Sequence</strong> (checksum). This method does not provide any information about which parts of the data are corrupted, so backwards error correction needs to be applied if data is corrupted.</p>
-<p>This is done by interpreting the <strong>messages</strong> as a <a href="math-polynomial.html" data-wikilink="true">polynomial</a> <span data-math-style="inline">M(x)</span> and a <strong>generator polynomial</strong> <span data-math-style="inline">G(x)</span>. First multiply the the message polynomial with the highest term of the generator polynomial and divided by the generator polynomial <span data-math-style="inline">M(x) \cdot x^n \div G(x)</span>, which results in a quotient and a remainder <span data-math-style="inline">R(x)</span>. The <strong>transfer polynomial</strong> <span data-math-style="inline">T(x)</span> is <span data-math-style="inline">M(x) \cdot x^n + R(x)</span>.</p>
+<p>This is done by interpreting the <strong>messages</strong> as a <a href="math-polynomial.html" data-wikilink="true">polynomial</a> <span data-math-style="inline">M(x)</span> and a <strong>generator polynomial</strong> <span data-math-style="inline">G(x)</span>. First multiply the message polynomial with the highest term of the generator polynomial and divided by the generator polynomial <span data-math-style="inline">M(x) \cdot x^n \div G(x)</span>, which results in a quotient and a remainder <span data-math-style="inline">R(x)</span>. The <strong>transfer polynomial</strong> <span data-math-style="inline">T(x)</span> is <span data-math-style="inline">M(x) \cdot x^n + R(x)</span>.</p>
 <blockquote>
 <p>All arithmetic is performed in <span data-math-style="inline">GF(2)</span> (the <a href="math-ring.html#Field" data-wikilink="true">Galois Field</a> with two elements), meaning addition and subtraction are both equivalent to <em>XOR</em>, and there are no carries. This makes CRC computations efficient to implement in hardware.</p>
 </blockquote>

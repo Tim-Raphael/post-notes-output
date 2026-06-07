@@ -1167,6 +1167,10 @@
         </li>
         
         <li>
+            <a href="./Dynamic Routing.html">Dynamic Routing.html</a>
+        </li>
+        
+        <li>
             <a href="./Ethernet.html">Ethernet.html</a>
         </li>
         
@@ -2004,41 +2008,6 @@
     </ul>
 
     
-    
-    <div>
-</li>
-
-        
-        
-<li>
-    <label for="exam-prep">exam-prep</label>
-    <input id="exam-prep" type="checkbox"></input>
-    <div>
-    
-    
-    <ul>
-        
-        
-<li>
-    <label for="round-up">round-up</label>
-    <input id="round-up" type="checkbox"></input>
-    <div>
-    
-    <ul>
-        
-        <li>
-            <a href="./Dynamic Routing.html">Dynamic Routing.html</a>
-        </li>
-        
-    </ul>
-
-    
-    
-    <div>
-</li>
-
-        
-    </ul>
     
     <div>
 </li>
@@ -3216,7 +3185,7 @@
                         * created: 2026-05-07T19:16
                         <br>
                          
-                        * modified: 2026-05-31T22:01
+                        * modified: 2026-06-07T22:26
                         <br>
                         
                     </span>
@@ -3266,7 +3235,12 @@
 <p><strong>Static</strong>: Stuff like a fingerprint or a retina scan, which tend to be more consistently recognizable unless you have sweaty hands for example.</p>
 <p><strong>Dynamic</strong>: This refers to stuff like your handwriting or typing pattern, which are pretty to recognize consistently, but can be a great addition for multifactor authentication.</p>
 <h3>Error-Rate</h3>
-<p>Biometric authenticaiton can be quite unreliable; producing false negatives trying to unlock with wet hands or false positives, e.g., granting access to your twin brother via face id.</p>
+<p>Biometric authenticaiton can be quite unreliable; producing false negatives when trying to unlock with wet hands or false positives when your smartphone grants access to your twin brother via face id. The following 3 metrics are used to compare these kinds of errors between systems:</p>
+<ul>
+<li><strong>False Rejection Rate (FRR)</strong>: <span data-math-style="inline">\frac{\text{False Negatives}}{\text{Total Authorized Tries}}</span></li>
+<li><strong>False Acceptance Rate(FAR)</strong>: <span data-math-style="inline">\frac{\text{False Positives}}{\text{Total Unauthorized Tries}}</span></li>
+<li><strong>Equal Error Rate(EER)</strong>: If <span data-math-style="inline">FAR = FRR</span></li>
+</ul>
 
         </article>
 
