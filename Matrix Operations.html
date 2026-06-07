@@ -191,6 +191,10 @@
         </li>
         
         <li>
+            <a href="./Matrix Operations.html">Matrix Operations.html</a>
+        </li>
+        
+        <li>
             <a href="./Network Address Translation.html">Network Address Translation.html</a>
         </li>
         
@@ -448,10 +452,6 @@
         
         <li>
             <a href="./math-logarithm.html">math-logarithm.html</a>
-        </li>
-        
-        <li>
-            <a href="./math-matrix-operation.html">math-matrix-operation.html</a>
         </li>
         
         <li>
@@ -2308,11 +2308,11 @@
     <ul>
         
         <li>
-            <a href="./math-gaussian-elimination.html">math-gaussian-elimination.html</a>
+            <a href="./Matrix Operations.html">Matrix Operations.html</a>
         </li>
         
         <li>
-            <a href="./math-matrix-operation.html">math-matrix-operation.html</a>
+            <a href="./math-gaussian-elimination.html">math-gaussian-elimination.html</a>
         </li>
         
         <li>
@@ -3176,7 +3176,7 @@
         </aside>
 
         <article>
-            <span>math-matrix-operation.html</span>
+            <span>Matrix Operations.html</span>
 
             <div>
                 <p>
@@ -3202,7 +3202,7 @@
 
             <h1>Arithmetic with matrices</h1>
 <h2>Multiplying matrices</h2>
-<p>Multiplying matrices is only possible if the one matrix has as many columns as the second matrix has rows.</p>
+<p>Multiplying matrices is only possible if the first matrix has as many columns as the second matrix has rows.</p>
 <p>We multiply each element of each row of the first matrix by the corresponding element of each column of the second matrix, then sum these products.</p>
 <p>We define:</p>
 <p><span data-math-style="display">
@@ -3227,12 +3227,13 @@ C :=
 \end{bmatrix}
 </span></p>
 <p>To calculate <span data-math-style="inline">A \cdot B</span>:</p>
-<h1>$$
-X =
-\begin{bmatrix}
+<p>$$
+X =</p>
+<p>\begin{bmatrix}
 1 \cdot 1 + -1 \cdot 4 + 2 \cdot -3 &amp; 1 \cdot -2 + -1 \cdot 5 + 2 \cdot 7 \
 -2 \cdot 1 + 0 \cdot 4 + 6 \cdot -3 &amp; -2 \cdot -2 + 0 \cdot 5 + 6 \cdot 7
-\end{bmatrix}</h1>
+\end{bmatrix}</p>
+<p>=</p>
 <p>\begin{bmatrix}
 -9 &amp; 7 \
 -20 &amp; 46
@@ -3240,13 +3241,14 @@ X =
 $$</p>
 <p>The resulting matrix has <span data-math-style="inline">2\times2</span> dimensions.</p>
 <p>To calculate <span data-math-style="inline">B \cdot A</span>:</p>
-<h1>$$
-X =
-\begin{bmatrix}
+<p>$$
+X =</p>
+<p>\begin{bmatrix}
 1 \cdot 1 + -2 \cdot -2  &amp;  1 \cdot -1 + -2 \cdot 0 &amp; 1 \cdot 2 + -2 \cdot 6 \
 4 \cdot 1 + 5 \cdot -2 &amp; 4 \cdot -1 + 5 \cdot 0 &amp; 4 \cdot 2 + 5 \cdot 6 \
 -3 \cdot 1 + 7 \cdot -2 &amp; -3 \cdot -1 + 0 \cdot 7 &amp; -3 \cdot 2 + 7 \cdot 6 \
-\end{bmatrix}</h1>
+\end{bmatrix}</p>
+<p>=</p>
 <p>\begin{bmatrix}
 5 &amp; -1 &amp; -10 \
 -6 &amp; -4 &amp; 38 \
