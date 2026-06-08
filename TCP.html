@@ -3185,7 +3185,7 @@
                         * created: 2026-05-18T18:16
                         <br>
                          
-                        * modified: 2026-06-08T18:09
+                        * modified: 2026-06-08T20:01
                         <br>
                         
                     </span>
@@ -3217,6 +3217,9 @@
 <blockquote>
 <p>When sending an acknowledgment TCP uses the number of the bytes it expects next, e.g., if we receive bytes 0-3999 we would send an ack 40000, meaning, we received everything up until but not including byte 4000.</p>
 </blockquote>
+<blockquote>
+<p>Uses Sockets and Ports</p>
+</blockquote>
 <h2>Session</h2>
 <p><strong>Handshake</strong>:</p>
 <ul>
@@ -3234,6 +3237,11 @@
 <h2>Sliding Window</h2>
 <p>Send multiple packages without waiting for acknowledgment to increase efficiency. This allows the sender to transmit <span data-math-style="inline">n</span> packages at ones. If the first package is acknowledged, then the sender can shift the window by one.</p>
 <p>The sender typically also batches acknowledgments. TCP uses <strong>go-back-n</strong>, i.e., all packets that came after <span data-math-style="inline">n</span> have to be retransmitted in case of an error.</p>
+<blockquote>
+<p>Note: Finding the optimal window size -&gt; Sawtooth Pattern
+RTT: Round Trimp Time (packet send - packet ack)
+RTO: Retranmission Timeout (calculated from RTT)</p>
+</blockquote>
 <h2>Segmentation</h2>
 <p>TCP segmentation bridges the gap between TCP's byte-stream abstraction and the packet-based reality of the network. During connection setup, both sides negotiate a Maximum Segment Size (MSS), typically 1460 bytes on Ethernet, which caps how much payload each segment can carry. The sender's kernel buffers application writes and orders them into segments constrained by MSS, the receiver's advertised window, and the congestion window. Nagle's algorithm further unifies small writes to avoid flooding the network with tiny packets, at the cost of some latency.</p>
 <p>On the receiving end, segments are held in a reorder buffer and delivered to the application only once the byte stream is contiguous, using sequence numbers to detect gaps.</p>
