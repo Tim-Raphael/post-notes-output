@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Pair of every element of one set with every element of another set.">
-    <title>Cartesian Product | post-notes</title>
-    <meta name="description" content="Pair of every element of one set with every element of another set.">
+    <meta name="description" content="Description">
+    <title>Title | post-notes</title>
+    <meta name="description" content="Description">
 
    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦕</text></svg>">
  
@@ -3200,61 +3200,41 @@
         </aside>
 
         <article>
-            <span>math-set-cartesian-product.html</span>
+            <span>Network Security.html</span>
 
             <div>
                 <p>
                     <span>
                         <br>
-                        * created: 2025-11-12T17:40
+                        * created: 2026-06-10T23:44
                         <br>
                          
-                        * modified: 2025-11-12T17:42
+                        * modified: 2026-06-10T23:44
                         <br>
                         
                     </span>
                 </p>
 
                 <span>title</span><br>
-                <p>Cartesian Product</p>
+                <p>Title</p>
 
                 <span>description</span><br>
-                <p>Pair of every element of one set with every element of another set.</p>
+                <p>Description</p>
 
-                
-                <span>related notes</span><br>
-                <ul>
-                    
-                    <li>
-                        <a href="./math-standard-number-sets.html#Quantifying Sets">math-standard-number-sets.html#Quantifying Sets</a>
-                    </li>
-                    
-                    <li>
-                        <a href="./math-function-properties.html#Bijective">math-function-properties.html#Bijective</a>
-                    </li>
-                    
-                </ul>
                 
             </div>
 
-            <h1>Cartesian Product (cross product)</h1>
-<p>Written as <span data-math-style="inline">A \times B</span>. Every element <span data-math-style="inline">a \in A</span> gets paired with every element <span data-math-style="inline">b \in B</span>.</p>
-<blockquote>
-<p><strong>Example</strong>:  Let <span data-math-style="inline">A = \{ a_{1}, a_{2}, a_{3} \}</span> and <span data-math-style="inline">B = \{ b_{1}, b_{2} \}</span>, then:
-<span data-math-style="display">
-\begin{align}
-A \times B &amp;= \{ (a_{1}, b_{1}), (a_{1}, b_{2}), (a_{2}, b_{1}), (a_{2}, b_{2}), (a_{3}, b_{1}), (a_{3}, b_{2}) \} \\
-B \times A &amp; = \{ (b_{1}, a_{1}), (b_{1}, a_{3}), (b_{1}, a_{3}), (b_{2}, a_{1}), (b_{2}, a_{2}), (b_{2}, a_{3})\} \\
-B \times B &amp;= \{ (b_{1}, b_{1}), (b_{1}, b_{2}), (b_{2}, b_{1}), (b_{2}, b_{2}) \}
-\end{align}
-</span></p>
-</blockquote>
-<h2>Properties</h2>
+            <h1>Network Security</h1>
+<h2>Packet Filtering</h2>
+<p>Simple ruleset that discards iffy packets. These filter live in layer 3-4.</p>
 <ul>
-<li>With <span data-math-style="inline">A</span> and <span data-math-style="inline">B</span> being <a href="math-standard-number-sets.html#Quantifying%20Sets" data-wikilink="true">finite</a>: <span data-math-style="inline">|A\times B| = |A| \cdot |B|</span></li>
-<li>Not commutative: <span data-math-style="inline">A \times B \neq B \times A</span></li>
-<li><a href="math-function-properties.html#Bijective" data-wikilink="true">Bijection</a>: <span data-math-style="inline">A\times B \to B \times A, (a,b) \to (b,a)</span></li>
+<li><strong>Execution Order</strong>: Rules are evaluated top-to-bottom; the first matching rule wins and subsequent rules are skipped.</li>
+<li><strong>Filter Parameter</strong>: Packet header fields — source/destination IP, source/destination port, protocol (TCP/UDP/ICMP), and interface.</li>
+<li><strong>Decision Rules</strong>: ACCEPT or DROP packets matching specific criteria (e.g. drop packets from a blocked source IP, drop TCP to port 23).</li>
+<li><strong>Default Rule</strong>: The chain policy, applied when no rule matches. Typically, POLICY DROP to deny all unmatched traffic (allowlist model).</li>
 </ul>
+<h2>Application Level Gateway</h2>
+<p>Collects and decodes data, runs an antivirus on it and then forwards the message if everything is ok. These sit on layer 5-7.</p>
 
         </article>
 
