@@ -167,6 +167,10 @@
         </li>
         
         <li>
+            <a href="./Hash-Signature.html">Hash-Signature.html</a>
+        </li>
+        
+        <li>
             <a href="./IP Routing Tables.html">IP Routing Tables.html</a>
         </li>
         
@@ -1207,6 +1211,10 @@
         </li>
         
         <li>
+            <a href="./Hash-Signature.html">Hash-Signature.html</a>
+        </li>
+        
+        <li>
             <a href="./IP Routing Tables.html">IP Routing Tables.html</a>
         </li>
         
@@ -1640,6 +1648,10 @@
         
         <li>
             <a href="./Hash Function.html">Hash Function.html</a>
+        </li>
+        
+        <li>
+            <a href="./Hash-Signature.html">Hash-Signature.html</a>
         </li>
         
         <li>
@@ -2333,6 +2345,26 @@
         
         <li>
             <a href="./math-ring.html">math-ring.html</a>
+        </li>
+        
+    </ul>
+
+    
+    
+    <div>
+</li>
+
+        
+        
+<li>
+    <label for="hash-function">hash-function</label>
+    <input id="hash-function" type="checkbox"></input>
+    <div>
+    
+    <ul>
+        
+        <li>
+            <a href="./Hash-Signature.html">Hash-Signature.html</a>
         </li>
         
     </ul>
@@ -3233,7 +3265,7 @@
                         * created: 2026-05-07T19:16
                         <br>
                          
-                        * modified: 2026-06-07T22:26
+                        * modified: 2026-06-23T21:09
                         <br>
                         
                     </span>
@@ -3283,12 +3315,15 @@
 <p><strong>Static</strong>: Stuff like a fingerprint or a retina scan, which tend to be more consistently recognizable unless you have sweaty hands for example.</p>
 <p><strong>Dynamic</strong>: This refers to stuff like your handwriting or typing pattern, which are pretty to recognize consistently, but can be a great addition for multifactor authentication.</p>
 <h3>Error-Rate</h3>
-<p>Biometric authenticaiton can be quite unreliable; producing false negatives when trying to unlock with wet hands or false positives when your smartphone grants access to your twin brother via face id. The following 3 metrics are used to compare these kinds of errors between systems:</p>
+<p>Biometric authentication can be quite unreliable; producing false negatives when trying to unlock with wet hands or false positives when your smartphone grants access to your twin brother via face-id. The following 3 metrics are used to compare these kinds of errors between systems:</p>
 <ul>
 <li><strong>False Rejection Rate (FRR)</strong>: <span data-math-style="inline">\frac{\text{False Negatives}}{\text{Total Authorized Tries}}</span></li>
-<li><strong>False Acceptance Rate(FAR)</strong>: <span data-math-style="inline">\frac{\text{False Positives}}{\text{Total Unauthorized Tries}}</span></li>
-<li><strong>Equal Error Rate(EER)</strong>: If <span data-math-style="inline">FAR = FRR</span></li>
+<li><strong>False Acceptance Rate (FAR)</strong>: <span data-math-style="inline">\frac{\text{False Positives}}{\text{Total Unauthorized Tries}}</span></li>
+<li><strong>Equal Error Rate (EER)</strong>: If <span data-math-style="inline">FAR = FRR</span></li>
 </ul>
+<blockquote>
+<p>It's possible but very hard to achieve an EER of 0, which might indicate a degenerate case.</p>
+</blockquote>
 
         </article>
 
