@@ -3265,7 +3265,7 @@
                         * created: 2026-06-05T17:39
                         <br>
                          
-                        * modified: 2026-06-15T19:58
+                        * modified: 2026-07-02T17:13
                         <br>
                         
                     </span>
@@ -3293,6 +3293,18 @@
                         <a href="./Formal Languages.html#Alphabet">Formal Languages.html#Alphabet</a>
                     </li>
                     
+                    <li>
+                        <a href="./Formal Languages.html">Formal Languages.html</a>
+                    </li>
+                    
+                    <li>
+                        <a href="./Regular Languages.html">Regular Languages.html</a>
+                    </li>
+                    
+                    <li>
+                        <a href="./Context-free Grammar.html">Context-free Grammar.html</a>
+                    </li>
+                    
                 </ul>
                 
             </div>
@@ -3309,6 +3321,34 @@
 <li><span data-math-style="inline">q_{reject}</span>: Set of invalid states</li>
 <li><span data-math-style="inline">q_{accept}</span>: Set of accepting states</li>
 </ul>
+<h2>The problem with the word</h2>
+<p>The questions if any given word is part of a <a href="Formal%20Languages.html" data-wikilink="true">Formal Languages</a> is called the word problem.</p>
+<p><span data-math-style="display">
+\begin{aligned}
+\text{Let $K$ be a class of languages:} \\
+L_K \coloneqq \{ \langle L, w \rangle \; | \; L \in K \land w \in L \} 
+\end{aligned}
+</span></p>
+<p>To determine if a word belongs to <a href="Regular%20Languages.html" data-wikilink="true">regular language</a>, i.e., to solve the following problem:</p>
+<p><span data-math-style="display">
+L_{RA} \coloneqq \{ \langle R, w \rangle \; | \; \text{$R$ is a regular expression and $w \in L(R)$} \}
+</span></p>
+<p>we have to:</p>
+<ol>
+<li>Check the syntax, i.e., check if the input is a valid regular expression</li>
+<li>Construct <span data-math-style="inline">DFA</span> and then <span data-math-style="inline">DFA</span> from the regular expression</li>
+<li>Simulate <span data-math-style="inline">DFA</span> for input and halt accepting if <span data-math-style="inline">DFA</span> accepts the input</li>
+</ol>
+<p>A similar algorithm can be applied for <a href="Context-free%20Grammar.html" data-wikilink="true">context free languages</a>.</p>
+<h2>The problem with making decisions</h2>
+<blockquote>
+<p>The word problem is decidable</p>
+</blockquote>
+<p>Not all languages are recognizable by a Turing machine, i.e., they're not decidable.</p>
+<h2>The problem with halting</h2>
+<blockquote>
+<p>Looking at the amount of problems we are having, I wonder if that Turing guy may have gone off in the wrong direction to begin with. Maybe we should rethink this.</p>
+</blockquote>
 
         </article>
 
