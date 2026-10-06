@@ -443,10 +443,6 @@
         </li>
         
         <li>
-            <a href="./development-programming-algorithm.html">development-programming-algorithm.html</a>
-        </li>
-        
-        <li>
             <a href="./development-programming-assembly.html">development-programming-assembly.html</a>
         </li>
         
@@ -1392,6 +1388,10 @@
     <ul>
         
         <li>
+            <a href="./Advanced Euclidean Agorithm.html">Advanced Euclidean Agorithm.html</a>
+        </li>
+        
+        <li>
             <a href="./cryptography-square-and-multiply.html">cryptography-square-and-multiply.html</a>
         </li>
         
@@ -1955,10 +1955,6 @@
         </li>
         
         <li>
-            <a href="./development-programming-algorithm.html">development-programming-algorithm.html</a>
-        </li>
-        
-        <li>
             <a href="./math-prime-number-fermats-primality-test.html">math-prime-number-fermats-primality-test.html</a>
         </li>
         
@@ -2091,6 +2087,10 @@
         
         <li>
             <a href="./RabbitMQ.html">RabbitMQ.html</a>
+        </li>
+        
+        <li>
+            <a href="./Rust Serde.html">Rust Serde.html</a>
         </li>
         
         <li>
@@ -3388,20 +3388,19 @@
             </div>
 
             <h1>Rust Ecosystem: Serde</h1>
-<p>The overall structure of Serde consists of:</p>
+<p>Serde is composed of:</p>
 <ul>
-<li><strong>data type</strong>: The rust type in use (<code>Serialize</code> and <code>Deserialize</code>).</li>
-<li><strong>data model</strong>: Mapping types to a giving format and vise versa.</li>
-<li><strong>data format</strong>: A data format like JSON (<code>Serializer</code> and <code>Deserializer</code>).</li>
+<li><strong>Data types</strong>: The rust type in use (<code>Serialize</code> and <code>Deserialize</code>).</li>
+<li><strong>Data model</strong>: Mapping types to a giving format and vise versa.</li>
+<li><strong>Data format</strong>: A data format like JSON (<code>Serializer</code> and <code>Deserializer</code>).</li>
 </ul>
-<h2>The Data Model</h2>
+<h2>The Serde data model</h2>
 <p>A simplified form of the Rust type system; it contains primitives like <code>bool</code>, <code>u8</code>, <code>u16</code>, .. and <code>char</code>, but also string, byte array, option, unit and so on.</p>
-<p>The requirements for any Rust data type is to implement <code>Serialize</code> to describe how to emit their data, and
-<code>Deserialize</code> to describe how to construct themselves from incoming data.</p>
-<p>On the other side, the <code>Serializer</code> is responsible for converting the Serde data model to the bytes of the serialize protocol (e.g. JSON). The <code>Deserializer</code> maps the data of any given protocol to the Serde data model.  When the <code>Deserializer</code> encounters a <code>bool</code> for example, it will call the <code>visit-bool</code> method, which will end up calling the corresponding deserialize method on our Rust data type.</p>
-<p>The Serde data model is therefore not a intermediate Serde data model type which both sides can convert into, but more like a map, telling the implementation of a data format which methods to call to construct your Rust data type (and also the other way around). The benefit being that we don't have to allocate memory for our in-between type, instead constructing our desired type directly.</p>
+<p>Serde requires the implementation of <code>Serialize</code> (describing how to emit data) and  <code>Deserialize</code> (describing how to construct type from incoming data).</p>
+<p>On the other side, the <code>Serializer</code> is responsible for converting the Serde data model to the bytes of the serialize protocol (e.g. JSON). The <code>Deserializer</code> maps the data of any given protocol to the Serde data model.  When the <code>Deserializer</code> encounters a <code>bool</code> for example, it calls the <code>visit-bool</code> method, which ends up calling the corresponding deserialize method on our Rust data type.</p>
+<p>The Serde data model is therefore not an intermediate type, which both sides can convert into, but more like a map telling you which functions to call if you want to construct your data type. The benefit being that we don't have to allocate memory for our in-between type, instead constructing the desired type directly.</p>
 <blockquote>
-<p>That data is not converted into a intermediate Serde data model type, it expresses itself in terms of the Serde data model.</p>
+<p>Data is not converted into an intermediate &quot;data model type&quot;; it expresses itself in terms of the Serde data model.</p>
 </blockquote>
 
         </article>
